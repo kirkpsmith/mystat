@@ -16,8 +16,6 @@ C20                           Capacitor, 3.3 nF, ceramic                        
 C21                           Capacitor, 10 nF, ceramic                                0805          399-7992-1-ND
 C24                           Capacitor, 4700 pF, ceramic                              0805          399-1155-1-ND
 D1,D2                         Schottky diode, dual, BAT721S                            SOT-23        1727-3574-1-ND
-D3                            LED, 3mm, red                                            -             754-1590-ND
-D4                            LED, 3mm, dual red/green, common cathode                 -             754-1221-ND
 U1                            Switched-capacitor voltage convertor, LM2662             SOIC-8        LM2662MX/NOPBCT-ND
 U2                            8-bit USB microcontroller, PIC16F1459                    SOIC-20W      PIC16F1459-I/SO-ND
 U3                            2.5V voltage reference, ADR421                           SOIC-8        ADR421ARZ-ND

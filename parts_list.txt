@@ -27,5 +27,5 @@ U9                            Op-amp, dual, OPA2192                             
 X1                            Crystal oscillator, 2.5 MHz                              HC49          X1003-ND
 K1-K4                         Reed relay, Coto 9007-05-01                              SIP           306-1063-ND
 P1                            Mini USB receptacle, surface mount, type B               -             609-4700-1-ND
-P2                            Terminal block, through hole, 5 position, 3.5mm spacing  -             277-5827-ND
+P2                            Circular connector, 4 position, shielded                 -             A126527-ND
 P3                            Pin header, through hole, 6 pin                          -             S1011EC-06-ND

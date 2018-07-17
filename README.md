@@ -16,7 +16,6 @@ NOTE/WARNING:  This is still a work in progress.  I've built and tested a few bo
 * `firmware`: Source code and compiled firmware for the PIC16F1459 microcontroller. Uses Microchip's XC8 compiler.
 * `python`: Contains `tdstatv3.py`; run this file with Python 3 to bring up a GUI measurement tool.
 * `gerber`: PCB design files in Gerber format, the universal standard for PCB manufacturing.
-* `datasheets`: Datasheets in pdf format for the integrated circuits used in this design.
 * `drivers`: Libusb drivers for Windows (not necessary on other operating systems).
 
 ### Files

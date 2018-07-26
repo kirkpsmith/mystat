@@ -1,4 +1,4 @@
-# mystatv1
+# mystat
 
 A USB-controlled potentiostat/galvanostat for electrochemistry measurements.
 

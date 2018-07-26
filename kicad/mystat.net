@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source /home/matt/mystatv1-master/kicad2/mystat.sch)
-    (date "Sun 15 Jul 2018 11:22:16 PM MDT")
+    (source /media/matt/Backup/mystatv1-master/kicad3/mystat.sch)
+    (date "Mon 23 Jul 2018 02:08:01 PM EDT")
     (tool "Eeschema 5.0.0-rc3+dfsg1-2")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -905,7 +905,7 @@
     (library (logical Device)
       (uri /usr/share/kicad/library/Device.lib))
     (library (logical mylib)
-      (uri /home/matt/mystatv1-master/kicad2/mylib.lib)))
+      (uri /media/matt/Backup/mystatv1-master/kicad3/mylib.lib)))
   (nets
     (net (code 1) (name "Net-(C3-Pad2)")
       (node (ref C3) (pin 2))

@@ -1,4 +1,4 @@
-(module PinHeader_1x05_P2.54mm_Vertical (layer F.Cu) (tedit 5B31A3EF)
+(module PinHeader_1x05_P2.54mm_Vertical (layer F.Cu) (tedit 5B5A000D)
   (descr "Through hole straight pin header, 1x05, 2.54mm pitch, single row")
   (tags "Through hole pin header THT 1x05 2.54mm single row")
   (fp_text reference REF** (at 0 -2.33) (layer F.SilkS)
@@ -30,9 +30,9 @@
   (pad 3 thru_hole oval (at 0 5.08) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))
   (pad 2 thru_hole oval (at 0 7.62) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))
   (pad 1 thru_hole oval (at 0 10.16) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))
-  (model ${KISYS3DMOD}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x05_P2.54mm_Vertical.wrl
-    (at (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+  (model ${KIPRJMOD}/3dshapes/usbtermblock.wrl
+    (offset (xyz 0 -5 7))
+    (scale (xyz 0.3937 0.3937 0.3937))
+    (rotate (xyz 0 0 90))
   )
 )

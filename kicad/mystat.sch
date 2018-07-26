@@ -5,12 +5,12 @@ EELAYER END
 $Descr USLetter 8500 11000 portrait
 encoding utf-8
 Sheet 1 1
-Title "USB-Controlled Potentiostat/Galvanostat"
-Date "2018-07-14"
+Title "MYSTAT"
+Date "2018-07-26"
 Rev "1"
-Comp "GPLv3-Licensed Hardware Design"
+Comp "USB-Controlled Potentiostat/Galvanostat"
 Comment1 "Based on TDSTATv3 designed by Thomas Dobbelaere"
-Comment2 "Modified by: Matthew Yates"
+Comment2 "Created by Matthew Yates"
 Comment3 ""
 Comment4 ""
 $EndDescr

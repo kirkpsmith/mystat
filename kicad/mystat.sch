@@ -320,9 +320,9 @@ P 3400 2750
 F 0 "C11" H 3200 2800 43  0000 L CNN
 F 1 "0.1 µF" H 3100 2700 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 3400 2750 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 3400 2750 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 3400 2750 50  0001 C CNN
 F 4 "KEMET" H 3400 2750 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 3400 2750 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 3400 2750 50  0001 C CNN "Part Number"
 	1    3400 2750
 	1    0    0    -1  
 $EndComp
@@ -344,9 +344,9 @@ P 4750 2900
 F 0 "C12" H 4850 2950 43  0000 L CNN
 F 1 "0.1 µF" H 4850 2850 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4750 2900 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 4750 2900 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 4750 2900 50  0001 C CNN
 F 4 "KEMET" H 4750 2900 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 4750 2900 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 4750 2900 50  0001 C CNN "Part Number"
 	1    4750 2900
 	1    0    0    -1  
 $EndComp
@@ -439,9 +439,9 @@ P 1100 4700
 F 0 "C17" H 900 4700 43  0000 L CNN
 F 1 "12 pF" H 900 4600 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 1100 4700 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL21C120FBANNNC.jsp" H 1100 4700 50  0001 C CNN
-F 4 "Samsung Electro-Mechanics" H 1100 4700 50  0001 C CNN "Manufacturer"
-F 5 "CL21C120FBANNNC" H 1100 4700 50  0001 C CNN "Part Number"
+F 3 "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf" H 1100 4700 50  0001 C CNN
+F 4 "Yageo" H 1100 4700 50  0001 C CNN "Manufacturer"
+F 5 "CC0805FRNPO9BN120" H 1100 4700 50  0001 C CNN "Part Number"
 	1    1100 4700
 	1    0    0    -1  
 $EndComp
@@ -452,9 +452,9 @@ P 1400 4700
 F 0 "C18" H 1200 4700 43  0000 L CNN
 F 1 "12 pF" H 1200 4600 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 1400 4700 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL21C120FBANNNC.jsp" H 1400 4700 50  0001 C CNN
-F 4 "Samsung Electro-Mechanics" H 1400 4700 50  0001 C CNN "Manufacturer"
-F 5 "CL21C120FBANNNC" H 1400 4700 50  0001 C CNN "Part Number"
+F 3 "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf" H 1400 4700 50  0001 C CNN
+F 4 "Yageo" H 1400 4700 50  0001 C CNN "Manufacturer"
+F 5 "CC0805FRNPO9BN120" H 1400 4700 50  0001 C CNN "Part Number"
 	1    1400 4700
 	1    0    0    -1  
 $EndComp
@@ -500,9 +500,9 @@ P 2750 4900
 F 0 "C20" V 2700 4950 43  0000 L CNN
 F 1 "3.3 nF" V 2600 4800 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 2750 4900 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C332J5GACTU.pdf" H 2750 4900 50  0001 C CNN
-F 4 "KEMET" V 2750 4900 50  0001 C CNN "Manufacturer"
-F 5 "C0805C332J5GACTU" V 2750 4900 50  0001 C CNN "Part Number"
+F 3 "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/capacitor/mlcc/c02e.ashx" H 2750 4900 50  0001 C CNN
+F 4 "Murata Electronics North America" V 2750 4900 50  0001 C CNN "Manufacturer"
+F 5 "GRM2165C1H332FA01J" V 2750 4900 50  0001 C CNN "Part Number"
 	1    2750 4900
 	0    -1   -1   0   
 $EndComp
@@ -855,9 +855,9 @@ P 4700 4550
 F 0 "C22" V 4850 4600 43  0000 L CNN
 F 1 "0.1 µF" V 4750 4600 43  0000 L TNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 4700 4550 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 4700 4550 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 4700 4550 50  0001 C CNN
 F 4 "KEMET" V 4700 4550 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" V 4700 4550 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" V 4700 4550 50  0001 C CNN "Part Number"
 	1    4700 4550
 	0    -1   -1   0   
 $EndComp
@@ -879,9 +879,9 @@ P 5100 5450
 F 0 "C23" V 5000 5500 43  0000 R BNN
 F 1 "0.1 µF" V 4900 5500 43  0000 R CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 5100 5450 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 5100 5450 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 5100 5450 50  0001 C CNN
 F 4 "KEMET" H 5100 5450 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 5100 5450 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 5100 5450 50  0001 C CNN "Part Number"
 	1    5100 5450
 	0    -1   -1   0   
 $EndComp
@@ -914,9 +914,9 @@ P 7300 1400
 F 0 "C10" H 7400 1450 43  0000 L CNN
 F 1 "0.1 µF" H 7400 1350 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 7300 1400 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 7300 1400 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 7300 1400 50  0001 C CNN
 F 4 "KEMET" H 7300 1400 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 7300 1400 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 7300 1400 50  0001 C CNN "Part Number"
 	1    7300 1400
 	1    0    0    -1  
 $EndComp
@@ -949,9 +949,9 @@ P 5750 1150
 F 0 "C9" H 5550 1200 43  0000 L CNN
 F 1 "0.1 µF" H 5450 1100 43  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 5750 1150 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 5750 1150 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 5750 1150 50  0001 C CNN
 F 4 "KEMET" H 5750 1150 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 5750 1150 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 5750 1150 50  0001 C CNN "Part Number"
 	1    5750 1150
 	1    0    0    -1  
 $EndComp
@@ -1163,9 +1163,9 @@ P 7000 2650
 F 0 "C14" H 7100 2700 43  0000 L CNN
 F 1 "0.1 µF" H 7100 2600 43  0000 L BNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 7000 2650 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 7000 2650 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 7000 2650 50  0001 C CNN
 F 4 "KEMET" H 7000 2650 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 7000 2650 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 7000 2650 50  0001 C CNN "Part Number"
 	1    7000 2650
 	1    0    0    -1  
 $EndComp
@@ -1187,9 +1187,9 @@ P 7000 3550
 F 0 "C16" H 7100 3600 43  0000 L CNN
 F 1 "0.1 µF" H 7100 3500 43  0000 L BNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 7000 3550 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 7000 3550 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 7000 3550 50  0001 C CNN
 F 4 "KEMET" H 7000 3550 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 7000 3550 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 7000 3550 50  0001 C CNN "Part Number"
 	1    7000 3550
 	1    0    0    -1  
 $EndComp
@@ -2085,9 +2085,9 @@ P 5250 3750
 F 0 "C15" H 5350 3800 43  0000 L CNN
 F 1 "0.1 µF" H 5350 3700 43  0000 L BNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 5250 3750 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 5250 3750 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 5250 3750 50  0001 C CNN
 F 4 "KEMET" H 5250 3750 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 5250 3750 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 5250 3750 50  0001 C CNN "Part Number"
 	1    5250 3750
 	1    0    0    -1  
 $EndComp
@@ -2118,9 +2118,9 @@ P 5250 2400
 F 0 "C13" H 5350 2450 43  0000 L CNN
 F 1 "0.1 µF" H 5350 2350 43  0000 L BNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 5250 2400 50  0001 C CNN
-F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J3RACTU.pdf" H 5250 2400 50  0001 C CNN
+F 3 "https://api.kemet.com/component-edge/download/datasheet/C0805C104J5RALTU.pdf" H 5250 2400 50  0001 C CNN
 F 4 "KEMET" H 5250 2400 50  0001 C CNN "Manufacturer"
-F 5 "C0805C104J3RACTU" H 5250 2400 50  0001 C CNN "Part Number"
+F 5 "C0805C104J5RAL7800" H 5250 2400 50  0001 C CNN "Part Number"
 	1    5250 2400
 	1    0    0    -1  
 $EndComp
@@ -2142,9 +2142,9 @@ P 6650 8200
 F 0 "C29" V 6550 8250 43  0000 R BNN
 F 1 "12 pF" V 6450 8250 43  0000 R CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 6650 8200 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL21C120FBANNNC.jsp" H 6650 8200 50  0001 C CNN
-F 4 "Samsung Electro-Mechanics" V 6650 8200 50  0001 C CNN "Manufacturer"
-F 5 "CL21C120FBANNNC" V 6650 8200 50  0001 C CNN "Part Number"
+F 3 "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf" H 6650 8200 50  0001 C CNN
+F 4 "Yageo" V 6650 8200 50  0001 C CNN "Manufacturer"
+F 5 "CC0805FRNPO9BN120" V 6650 8200 50  0001 C CNN "Part Number"
 	1    6650 8200
 	0    -1   -1   0   
 $EndComp
@@ -2163,9 +2163,9 @@ P 3050 7100
 F 0 "C26" V 2950 7150 43  0000 R BNN
 F 1 "12 pF" V 2850 7150 43  0000 R CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 3050 7100 50  0001 C CNN
-F 3 "http://www.samsungsem.com/kr/support/product-search/mlcc/CL21C120FBANNNC.jsp" H 3050 7100 50  0001 C CNN
-F 4 "Samsung Electro-Mechanics" V 3050 7100 50  0001 C CNN "Manufacturer"
-F 5 "CL21C120FBANNNC" V 3050 7100 50  0001 C CNN "Part Number"
+F 3 "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf" H 3050 7100 50  0001 C CNN
+F 4 "Yageo" V 3050 7100 50  0001 C CNN "Manufacturer"
+F 5 "CC0805FRNPO9BN120" V 3050 7100 50  0001 C CNN "Part Number"
 	1    3050 7100
 	0    -1   -1   0   
 $EndComp

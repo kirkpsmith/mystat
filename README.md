@@ -23,7 +23,7 @@ NOTE/WARNING:  This is still a work in progress.  I've built and tested a few bo
 ### Files
 * `full_schematic.pdf`: Complete schematic diagram in pdf format.
 * `bom.csv`: Bill of materials for all PCB components.
-* `parts_list.txt`: Complete parts list, useful when ordering components.
+* `partslist.csv`: Complete parts list, including enclosure, cables, and connectors, useful when ordering components.
 * `pcb_3dview.png`: 3D rendering of the PCB design, useful for verification of the PCB layout.
 * `pcb_fabrication_diagram.pdf`: Front side of PCB with component locations and values, useful for circuit assembly.
 * `LICENSE`: a copy of the GNU GPLv3 license.

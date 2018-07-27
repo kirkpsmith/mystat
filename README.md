@@ -23,7 +23,7 @@ NOTE/WARNING:  This is still a work in progress.  I've built and tested a few bo
 ### Files
 * `full_schematic.pdf`: Complete schematic diagram in pdf format.
 * `parts_list.txt`: Complete parts list, useful when ordering components.
-* `pcb_3dview.png`: 3D renders of the PCB design, useful for verification of the PCB layout.
+* `pcb_3dview.png`: 3D rendering of the PCB design, useful for verification of the PCB layout.
 * `pcb_fabrication_diagram.pdf`: Front side of PCB with component locations and values, useful for circuit assembly.
 * `photograph.jpg`: A photograph of the assembled circuit, using a PCB manufactured by [OSH Park](https://oshpark.com/).
 * `LICENSE`: a copy of the GNU GPLv3 license.

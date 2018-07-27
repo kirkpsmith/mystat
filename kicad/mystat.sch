@@ -6,11 +6,11 @@ $Descr USLetter 8500 11000 portrait
 encoding utf-8
 Sheet 1 1
 Title "MYSTAT"
-Date "2018-07-26"
+Date "2018-07-27"
 Rev "1"
 Comp "USB-Controlled Potentiostat/Galvanostat"
 Comment1 "Based on TDSTATv3 designed by Thomas Dobbelaere"
-Comment2 "Created by Matthew Yates"
+Comment2 "Modified by Matthew Yates"
 Comment3 ""
 Comment4 ""
 $EndDescr

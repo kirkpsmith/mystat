@@ -16,7 +16,7 @@ NOTE:  The design changes reported here have been implemented into physical hard
 ### Directories
 * `kicad`: KiCad design files (schematic diagram and PCB layout).
 * `firmware`: Source code and compiled firmware for the PIC16F1459 microcontroller. Uses Microchip's XC8 compiler.
-* `python`: Contains `tdstatv3.py`; run this file with Python 3 to bring up a GUI measurement tool.
+* `python`: Contains `mystat.py`; run this file with Python 3 to bring up a GUI measurement tool.
 * `gerber`: PCB design files in Gerber format, the universal standard for PCB manufacturing.
 * `drivers`: Libusb drivers for Windows (not necessary on other operating systems).
 

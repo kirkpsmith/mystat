@@ -45,10 +45,14 @@ tdstatv3 created by:
 * Thomas Dobbelaere
 * email: thomas.dobbelaere@gmail.com
 
-this fork created by:
+Previous fork created by:
 
 * Matthew Yates
 * email: myates@che.rochester.edu
+
+Current fork created by:
+
+* Kirk Smith
 
 ## License
 The contents of this repository are licensed under the GNU General Public License (GPL).

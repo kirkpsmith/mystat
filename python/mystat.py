@@ -5,7 +5,7 @@
 # calibration, and three pre-programmed measurement methods geared towards battery research (staircase cyclic voltammetry, constant-current charge/discharge, and rate testing).
 # It is cross-platform, requiring only a working installation of Python 3.x together with the Numpy, Scipy, PyUSB, and PyQtGraph packages.
 
-# Author: Thomas Dobbelaere, modified by Matthew Yates, Paul Irving, Daniel Fernandez Pinto, Kirk Smith
+# Author: Thomas Dobbelaere, modified by Matthew Yates and Paul Irving
 # License: GPL
 from PyQt5 import QtWidgets, QtGui, QtCore
 import pyqtgraph
@@ -636,8 +636,8 @@ def update_live_graph():
 
 def choose_file(file_entry_field, questionstring):
     """Open a file dialog and write the path of the selected file to a given entry field."""
-    filedialog = QtGui.QFileDialog()
-    file_entry_field.setText(filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtGui.QFileDialog.DontConfirmOverwrite))
+    filedialog = QtWidgets.QFileDialog()
+    file_entry_field.setText(filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtWidgets.QFileDialog.DontConfirmOverwrite))
 
 def emergency_shutdown():
     '''Turns the cell off if the current is above 220 mA'''

@@ -4,8 +4,10 @@
 # This Python program allows control over the USB potentiostat/galvanostat using a graphical user interface. It supports real-time data acquisition and plotting, manual control and
 # calibration, and three pre-programmed measurement methods geared towards battery research (staircase cyclic voltammetry, constant-current charge/discharge, and rate testing).
 # It is cross-platform, requiring only a working installation of Python 3.x together with the Numpy, Scipy, PyUSB, and PyQtGraph packages.
+# To compile releases, use pyinstaller 
 
-# Author: Thomas Dobbelaere, modified by Matthew Yates, Paul Irving, Daniel Fernandez Pinto, Kirk Smith
+
+# Author: Thomas Dobbelaere, modified by Matthew Yates and Paul Irving / Modified by Daniel Fernandez for the FBRC and use with flow batteries.
 # License: GPL
 from PyQt5 import QtWidgets, QtGui, QtCore
 import pyqtgraph
@@ -16,6 +18,8 @@ import os.path
 import collections
 import numpy as np
 import scipy.integrate
+import serial
+import glob
 #import pkg_resources.py2_warn
 
 usb_vid = "0xa0a0" # Default USB vendor ID, can also be adjusted in the GUI
@@ -74,6 +78,34 @@ class States:
     NotConnected, Idle_Init, Idle, Measuring_Offset, Stationary_Graph, Measuring_CV, Measuring_CD, Measuring_Rate = range(8)
 
 state = States.NotConnected # Initial state
+
+def serial_ports():
+    """ Lists serial port names
+
+        :raises EnvironmentError:
+            On unsupported or unknown platforms
+        :returns:
+            A list of the serial ports available on the system
+    """
+    if sys.platform.startswith('win'):
+        ports = ['COM%s' % (i + 1) for i in range(256)]
+    elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
+        # this excludes your current terminal "/dev/tty"
+        ports = glob.glob('/dev/tty[A-Za-z]*')
+    elif sys.platform.startswith('darwin'):
+        ports = glob.glob('/dev/tty.*')
+    else:
+        raise EnvironmentError('Unsupported platform')
+
+    result = []
+    for port in ports:
+        try:
+            s = serial.Serial(port)
+            s.close()
+            result.append(port)
+        except (OSError, serial.SerialException):
+            pass
+    return result
 
 def current_to_string(currentrange, current_in_mA):
     """Format the measured current into a string with appropriate units and number of significant digits."""
@@ -881,7 +913,13 @@ def cd_start():
         hardware_manual_control_range_dropdown.setCurrentIndex(current_range_from_current(cd_currentsetpoint)) # Determine the proper current range for the current setpoint
         set_current_range() # Set new current range
         set_output(1, cd_currentsetpoint) # Set current to setpoint
-        set_control_mode(True) # Galvanostatic control
+        
+        if cd_type_dropdown.currentIndex() == 2:
+            set_output(0, cd_parameters['ulimit'])
+            set_control_mode(False) # Potentiostat # FOR CONSTANT POTENTIAL
+        else:
+            set_control_mode(True) # Galvanostatic control
+        
         time.sleep(.2) # Allow DAC some time to settle
         cd_starttime = timeit.default_timer()
         cd_time_data = AverageBuffer(cd_parameters['numsamples']) # Holds averaged data for elapsed time
@@ -926,15 +964,29 @@ def cd_update():
             cd_plot_curves[cd_currentcycle-1].setData(charge,cd_potential_data.averagebuffer) # Update the graph
             charge_milli = charge[-1]*1.0E6
             cd_current_entry.setText("{}".format(charge_milli)) # Indicate next cycl
-        if (cd_currentsetpoint > 0 and potential > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 0) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 1) or (cd_currentsetpoint < 0 and potential < cd_parameters['lbound']) or (cd_currentsetpoint > 0 and potential > cd_parameters['ulimit']): # An ijected charge cut-off has been reached or a cutoff potential has been reached
+        if (cd_currentsetpoint > 0 and potential > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 0) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 1) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint < 0 and potential < cd_parameters['lbound']) or (cd_currentsetpoint > 0 and potential > cd_parameters['ulimit']): # An ijected charge cut-off has been reached or a cutoff potential has been reached
+        
             if cd_currentsetpoint == cd_parameters['chargecurrent']: # Switch from the discharge phase to the charge phase or vice versa
                 cd_currentsetpoint = cd_parameters['dischargecurrent']
+                if cd_type_dropdown.currentIndex() == 2:
+                    set_control_mode(True) #set galvanostat
             else:
                 cd_currentsetpoint = cd_parameters['chargecurrent']
+                if cd_type_dropdown.currentIndex() == 2:
+                    set_control_mode(False) #set potetntiostat
+                    
             charge_milli = 0.0
             hardware_manual_control_range_dropdown.setCurrentIndex(current_range_from_current(cd_currentsetpoint)) # Determine the proper current range for the new setpoint
             set_current_range() # Set new current range
-            set_output(1, cd_currentsetpoint)  # Set current to setpoint
+            
+            if cd_type_dropdown.currentIndex() == 2:
+                if cd_currentsetpoint > 0:
+                    set_output(0, cd_parameters['ulimit'])
+                else:
+                    set_output(1, cd_currentsetpoint)  # Set current to setpoint        
+            else:
+                set_output(1, cd_currentsetpoint)  # Set current to setpoint
+
             cd_plot_curves.append(plot_frame.plot(pen='y')) # Start a new plot curve and append it to the plot area (keeping the old ones as well)
             cd_charges.append(np.absolute(np.trapz(cd_current_data.averagebuffer,cd_time_data.averagebuffer)/3600.)) # Cumulative charge in Ah
             if cd_currentcycle % 2 == 0: # Write out the charge and discharge capacities after both a charge and discharge phase (i.e. after cycle 2, 4, 6...)
@@ -1084,6 +1136,23 @@ def rate_stop(interrupted=True):
         rate_current_crate_entry.setText("")  # Clear C-rate indicator
         state = States.Stationary_Graph # Keep displaying the last plot until the user clicks a button
         preview_cancel_button.show()
+        
+def on_mc_port_changed():
+    global arduino
+    arduino = serial.Serial(port=str(cd_mc_port_dropdown.itemText(cd_mc_port_dropdown.currentIndex())),  baudrate=9600, timeout=2)
+    time.sleep(2)
+        
+def m1_update():
+    global arduino  
+    message = "<a,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
+    arduino.write(message.encode())
+    cd_mc_m1value.setText(str(cd_mc_m1slider.value()))
+    
+def m2_update():
+    global arduino  
+    message = "<b,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
+    arduino.write(message.encode())
+    cd_mc_m2value.setText(str(cd_mc_m2slider.value()))
 
 # Set up the GUI - Main Window
 app = QtWidgets.QApplication([])
@@ -1452,6 +1521,59 @@ cd_current_entry.setReadOnly(True)
 cd_info_layout.setSpacing(6)
 cd_info_layout.setContentsMargins(3,10,3,3)
 cd_vbox.addWidget(cd_info_box)
+
+## motor controls forms
+cd_mc_box = QtWidgets.QGroupBox(title="Motor controls", flat=False)
+format_box_for_parameter(cd_mc_box)
+cd_mc_layout = QtWidgets.QVBoxLayout()
+cd_mc_box.setLayout(cd_mc_layout)
+
+
+cd_mc_port_label = QtWidgets.QLabel()
+cd_mc_port_label.setText("Arduino Controller Serial Port")
+cd_mc_layout.addWidget(cd_mc_port_label)
+
+cd_mc_port_dropdown = QtWidgets.QComboBox()
+cd_mc_port_dropdown.addItems(serial_ports())
+cd_mc_port_dropdown.currentIndexChanged.connect(on_mc_port_changed)
+cd_mc_layout.addWidget(cd_mc_port_dropdown)
+
+cd_mc_m1label = QtWidgets.QLabel()
+cd_mc_m1label.setText("Motor 1 Control")
+cd_mc_layout.addWidget(cd_mc_m1label)
+
+cd_mc_m1slider = QtWidgets.QSlider()
+cd_mc_m1slider.setOrientation(QtCore.Qt.Horizontal)
+cd_mc_m1slider.setTickPosition(0)
+cd_mc_m1slider.setMinimum(0)
+cd_mc_m1slider.setMaximum(100)
+cd_mc_m1slider.valueChanged.connect(m1_update)
+cd_mc_layout.addWidget(cd_mc_m1slider)
+
+cd_mc_m1value = QtWidgets.QLabel(alignment=QtCore.Qt.AlignCenter)
+cd_mc_m1value.setText("0")
+cd_mc_layout.addWidget(cd_mc_m1value)
+
+cd_mc_m2label = QtWidgets.QLabel()
+cd_mc_m2label.setText("Motor 2 Control")
+cd_mc_layout.addWidget(cd_mc_m2label)
+
+cd_mc_m2slider = QtWidgets.QSlider()
+cd_mc_m2slider.setOrientation(QtCore.Qt.Horizontal)
+cd_mc_m2slider.setTickPosition(0)
+cd_mc_m2slider.setMinimum(0)
+cd_mc_m2slider.setMaximum(100)
+cd_mc_m2slider.valueChanged.connect(m2_update)
+cd_mc_layout.addWidget(cd_mc_m2slider)
+
+cd_mc_m2value = QtWidgets.QLabel(alignment=QtCore.Qt.AlignCenter)
+cd_mc_m2value.setText("0")
+cd_mc_layout.addWidget(cd_mc_m2value)
+
+cd_mc_layout.setSpacing(6)
+cd_mc_layout.setContentsMargins(3,10,3,3)
+cd_vbox.addWidget(cd_mc_box)
+
 
 tabs[2].setLayout(cd_vbox)
 

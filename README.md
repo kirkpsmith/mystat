@@ -9,7 +9,7 @@ This version of the hardware design uses a PCB with dimensions of 55.5 mm by 70 
 
 In order to fit the case, tall components (such as the reed relays and crystal) had to be moved from the board edges that slide into the slots in the extruded aluminum.  As a result, the entire PCB layout was changed.  All traces were made as wide as possible given the PCB size constraints and component footprints.  In addition, this forked design eliminates the power and mode LEDs present in the original tdstatv3.  The choice to eliminate LEDs was made to avoid the need for creating holes in the case that would accommodate them.
 
-NOTE:  The design changes reported here have been implemented into physical hardware and tested to work.  However, there still may been unforseen problems with it.  I'm a Chemical Engineer with virtually zero experience in circuit design.  As such, I don't really know what I am doing, so you have been warned!
+NOTE:  The design changes reported here have been implemented into physical hardware and tested to work.  However, there still may been unforseen problems with it.
 
 ## Repository contents
 
@@ -52,7 +52,7 @@ Previous fork created by:
 
 Current fork created by:
 
-* Kirk Smith
+* Daniel Fernandez Pinto
 
 ## License
 The contents of this repository are licensed under the GNU General Public License (GPL).

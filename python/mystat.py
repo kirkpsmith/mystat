@@ -920,7 +920,7 @@ def cd_start():
         else:
             set_control_mode(True) # Galvanostatic control
         
-        time.sleep(.2) # Allow DAC some time to settle
+        time.sleep(0.2) # Allow DAC some time to settle
         cd_starttime = timeit.default_timer()
         cd_time_data = AverageBuffer(cd_parameters['numsamples']) # Holds averaged data for elapsed time
         cd_potential_data = AverageBuffer(cd_parameters['numsamples']) # Holds averaged data for potential
@@ -943,9 +943,18 @@ def cd_start():
         
 def on_cd_type_changed(value):
     if cd_type_dropdown.currentIndex() == 0:
+        cd_chargecurrent_entry_label.setText(u"Charge current (µA)")
         cd_ubound_entry_label.setText("Upper bound (V)")
+        cd_ulimit_label.setText("Upper safety limit (V)")
     elif cd_type_dropdown.currentIndex() == 1:
+        cd_chargecurrent_entry_label.setText(u"Charge current (µA)")
         cd_ubound_entry_label.setText("Upper bound (uAh)")
+        cd_ulimit_label.setText("Upper safety limit (V)")
+    elif cd_type_dropdown.currentIndex() == 2:
+        cd_chargecurrent_entry_label.setText(u"Min charge current (µA)")
+        cd_ubound_entry_label.setText("Upper bound (uAh)")
+        
+        cd_ulimit_label.setText("Constant Potential Charge (V)")
 
 def cd_update():
     """Add a new data point to the charge/discharge measurement (should be called regularly)."""
@@ -964,7 +973,7 @@ def cd_update():
             cd_plot_curves[cd_currentcycle-1].setData(charge,cd_potential_data.averagebuffer) # Update the graph
             charge_milli = charge[-1]*1.0E6
             cd_current_entry.setText("{}".format(charge_milli)) # Indicate next cycl
-        if (cd_currentsetpoint > 0 and potential > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 0) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 1) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint < 0 and potential < cd_parameters['lbound']) or (cd_currentsetpoint > 0 and potential > cd_parameters['ulimit']): # An ijected charge cut-off has been reached or a cutoff potential has been reached
+        if (cd_currentsetpoint > 0 and potential > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 0) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 1) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint > 0 and charge_milli > 1 and current < cd_parameters['chargecurrent'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint < 0 and potential < cd_parameters['lbound']) or (cd_currentsetpoint > 0 and potential > cd_parameters['ulimit'] and cd_type_dropdown.currentIndex() == 1): # An ijected charge cut-off has been reached or a cutoff potential has been reached
         
             if cd_currentsetpoint == cd_parameters['chargecurrent']: # Switch from the discharge phase to the charge phase or vice versa
                 cd_currentsetpoint = cd_parameters['dischargecurrent']
@@ -1144,15 +1153,37 @@ def on_mc_port_changed():
         
 def m1_update():
     global arduino  
-    message = "<a,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
+    
+    if cd_mlock_checkbox.isChecked():
+        message = "<c,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
+    else:
+        message = "<a,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
+    
     arduino.write(message.encode())
+    
     cd_mc_m1value.setText(str(cd_mc_m1slider.value()))
+    if cd_mlock_checkbox.isChecked():
+        cd_mc_m2slider.setValue(cd_mc_m1slider.value())
+        cd_mc_m2value.setText(str(cd_mc_m1slider.value()))
     
 def m2_update():
     global arduino  
-    message = "<b,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
+    
+    if cd_mlock_checkbox.isChecked():
+        message = "<c,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
+    else:
+        message = "<b,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
+    
     arduino.write(message.encode())
+    
     cd_mc_m2value.setText(str(cd_mc_m2slider.value()))
+    if cd_mlock_checkbox.isChecked():
+        cd_mc_m1slider.setValue(cd_mc_m2slider.value())
+        cd_mc_m1value.setText(str(cd_mc_m2slider.value()))
+        
+def update_ports():
+    cd_mc_port_dropdown.clear()
+    cd_mc_port_dropdown.addItems(serial_ports())
 
 # Set up the GUI - Main Window
 app = QtWidgets.QApplication([])
@@ -1528,7 +1559,6 @@ format_box_for_parameter(cd_mc_box)
 cd_mc_layout = QtWidgets.QVBoxLayout()
 cd_mc_box.setLayout(cd_mc_layout)
 
-
 cd_mc_port_label = QtWidgets.QLabel()
 cd_mc_port_label.setText("Arduino Controller Serial Port")
 cd_mc_layout.addWidget(cd_mc_port_label)
@@ -1537,6 +1567,18 @@ cd_mc_port_dropdown = QtWidgets.QComboBox()
 cd_mc_port_dropdown.addItems(serial_ports())
 cd_mc_port_dropdown.currentIndexChanged.connect(on_mc_port_changed)
 cd_mc_layout.addWidget(cd_mc_port_dropdown)
+
+cd_mrefresh_button = QtWidgets.QPushButton("Refresh serial ports")
+cd_mrefresh_button.clicked.connect(update_ports)
+cd_mc_layout.addWidget(cd_mrefresh_button)
+
+cd_mconnect_button = QtWidgets.QPushButton("Connect to Arduino")
+cd_mconnect_button.clicked.connect(on_mc_port_changed)
+cd_mc_layout.addWidget(cd_mconnect_button)
+
+cd_mlock_checkbox = QtWidgets.QCheckBox("Adjust motors together")
+cd_mc_layout.addWidget(cd_mlock_checkbox)
+cd_mlock_checkbox.setChecked(True)
 
 cd_mc_m1label = QtWidgets.QLabel()
 cd_mc_m1label.setText("Motor 1 Control")

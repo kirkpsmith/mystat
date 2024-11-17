@@ -1553,8 +1553,8 @@ cd_info_layout.setSpacing(6)
 cd_info_layout.setContentsMargins(3,10,3,3)
 cd_vbox.addWidget(cd_info_box)
 
-## motor controls forms
-cd_mc_box = QtWidgets.QGroupBox(title="Motor controls", flat=False)
+## pump controls forms
+cd_mc_box = QtWidgets.QGroupBox(title="Pump Controls", flat=False)
 format_box_for_parameter(cd_mc_box)
 cd_mc_layout = QtWidgets.QVBoxLayout()
 cd_mc_box.setLayout(cd_mc_layout)
@@ -1576,12 +1576,12 @@ cd_mconnect_button = QtWidgets.QPushButton("Connect to Arduino")
 cd_mconnect_button.clicked.connect(on_mc_port_changed)
 cd_mc_layout.addWidget(cd_mconnect_button)
 
-cd_mlock_checkbox = QtWidgets.QCheckBox("Adjust motors together")
+cd_mlock_checkbox = QtWidgets.QCheckBox("Adjust pumps together")
 cd_mc_layout.addWidget(cd_mlock_checkbox)
 cd_mlock_checkbox.setChecked(True)
 
 cd_mc_m1label = QtWidgets.QLabel()
-cd_mc_m1label.setText("Motor 1 Control")
+cd_mc_m1label.setText("Right Pump Control")
 cd_mc_layout.addWidget(cd_mc_m1label)
 
 cd_mc_m1slider = QtWidgets.QSlider()
@@ -1598,7 +1598,7 @@ cd_mc_m1value.setText("0")
 cd_mc_layout.addWidget(cd_mc_m1value)
 
 cd_mc_m2label = QtWidgets.QLabel()
-cd_mc_m2label.setText("Motor 2 Control")
+cd_mc_m2label.setText("Left Pump Control")
 cd_mc_layout.addWidget(cd_mc_m2label)
 
 cd_mc_m2slider = QtWidgets.QSlider()

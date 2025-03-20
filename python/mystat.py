@@ -22,6 +22,8 @@ import serial
 import glob
 #import pkg_resources.py2_warn
 
+basedir = os.path.dirname(__file__)
+
 usb_vid = "0xa0a0" # Default USB vendor ID, can also be adjusted in the GUI
 usb_pid = "0x0002" # Default USB product ID, can also be adjusted in the GUI
 current_range_list = ["200 mA", u"20 mA", u"200 µA", u"2 µA"]
@@ -1190,7 +1192,7 @@ app = QtWidgets.QApplication([])
 win = QtWidgets.QMainWindow()
 win.setGeometry(300,300,1024,700)
 win.setWindowTitle('USB potentiostat/galvanostat')
-win.setWindowIcon(QtGui.QIcon('icon/icon.png'))
+app.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'icon/icon.png')))
 
 potential_monitor, potential_monitor_box = make_groupbox_indicator("Measured potential","+#.### V")
 potential_monitor.setFont(QtGui.QFont("monospace", 32))

@@ -1,0 +1,22 @@
+In this directory, create a virtual environment, activate it, and install the required packages:
+```
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+Run the program (sudo may be needed on Linux for USB privileges)
+```
+sudo .venv/bin/python mystat.py
+```
+
+To package the app, run
+```
+.venv/bin/pyinstaller --onefile --windowed  --noconsole mystat.py
+```
+
+To update requirements.txt:
+
+```
+python -m pip freeze > requirements.txt
+```

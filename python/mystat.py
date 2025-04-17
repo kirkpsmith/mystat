@@ -20,9 +20,13 @@ import numpy as np
 import scipy.integrate
 import serial
 import glob
+from time import sleep
+
 #import pkg_resources.py2_warn
 
-basedir = os.path.dirname(__file__)
+VERSION_NUMBER = "1"
+
+# basedir = os.path.dirname(__file__)
 
 usb_vid = "0xa0a0" # Default USB vendor ID, can also be adjusted in the GUI
 usb_pid = "0x0002" # Default USB product ID, can also be adjusted in the GUI
@@ -48,6 +52,7 @@ overcounter, undercounter, skipcounter = 0, 0, 0 # Global counters used for auto
 time_of_last_adcread = 0.
 adcread_interval = 0.09 # ADC sampling interval (in seconds)
 logging_enabled = False # Enable logging of potential and current in idle mode (can be adjusted in the GUI)
+time_from_last_arduino_update = 0.0
 
 if platform.system() != "Windows":
     # On Linux/OSX, use the Qt timer
@@ -960,12 +965,25 @@ def on_cd_type_changed(value):
 
 def cd_update():
     """Add a new data point to the charge/discharge measurement (should be called regularly)."""
-    global cd_currentsetpoint, cd_currentcycle, state
+    global cd_currentsetpoint, cd_currentcycle, state, time_from_last_arduino_update
     elapsed_time = timeit.default_timer()-cd_starttime
     if cd_currentcycle > cd_parameters['numcycles']: # End of charge/discharge measurements
         cd_stop(interrupted=False)
     else: # Continue charge/discharge measurement process
         read_potential_current() # Read new potential and current
+        
+        try:
+            if elapsed_time-time_from_last_arduino_update > 1:          
+                data = arduino.readline().decode().strip()
+                arduino.reset_input_buffer()
+                rpm1 = int(data.split(",")[0])
+                rpm2 = int(data.split(",")[1])
+                cd_mc_m1label.setText("Motor 1 Control - {} RPM".format(rpm1))
+                cd_mc_m2label.setText("Motor 2 Control - {} RPM".format(rpm2))
+                time_from_last_arduino_update = elapsed_time
+        except:
+            pass
+        
         cd_time_data.add_sample(elapsed_time)
         cd_potential_data.add_sample(potential)
         cd_current_data.add_sample(1e-3*current) # Convert mA to A
@@ -981,6 +999,9 @@ def cd_update():
                 cd_currentsetpoint = cd_parameters['dischargecurrent']
                 if cd_type_dropdown.currentIndex() == 2:
                     set_control_mode(True) #set galvanostat
+                #set_cell_status(False)
+                #sleep(5)
+                #set_cell_status(True)
             else:
                 cd_currentsetpoint = cd_parameters['chargecurrent']
                 if cd_type_dropdown.currentIndex() == 2:
@@ -1191,8 +1212,8 @@ def update_ports():
 app = QtWidgets.QApplication([])
 win = QtWidgets.QMainWindow()
 win.setGeometry(300,300,1024,700)
-win.setWindowTitle('USB potentiostat/galvanostat')
-app.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'icon/icon.png')))
+win.setWindowTitle('USB potentiostat/galvanostat - v{}'.format(VERSION_NUMBER))
+win.setWindowIcon(QtGui.QIcon('icon/icon.png'))
 
 potential_monitor, potential_monitor_box = make_groupbox_indicator("Measured potential","+#.### V")
 potential_monitor.setFont(QtGui.QFont("monospace", 32))

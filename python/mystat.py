@@ -1604,7 +1604,7 @@ cd_mc_layout.addWidget(cd_mlock_checkbox)
 cd_mlock_checkbox.setChecked(True)
 
 cd_mc_m1label = QtWidgets.QLabel()
-cd_mc_m1label.setText("Right Pump Control")
+cd_mc_m1label.setText("Positive Pump Control")
 cd_mc_layout.addWidget(cd_mc_m1label)
 
 cd_mc_m1slider = QtWidgets.QSlider()
@@ -1621,7 +1621,7 @@ cd_mc_m1value.setText("0")
 cd_mc_layout.addWidget(cd_mc_m1value)
 
 cd_mc_m2label = QtWidgets.QLabel()
-cd_mc_m2label.setText("Left Pump Control")
+cd_mc_m2label.setText("Negative Pump Control")
 cd_mc_layout.addWidget(cd_mc_m2label)
 
 cd_mc_m2slider = QtWidgets.QSlider()

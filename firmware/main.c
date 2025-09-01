@@ -44,7 +44,7 @@
 #pragma config STVREN = ON      // Stack Overflow/Underflow Reset Enable (Stack Overflow or Underflow will cause a Reset)
 #pragma config BORV = LO        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
 #pragma config LPBOR = OFF      // Low-Power Brown Out Reset (Low-Power BOR is disabled)
-#pragma config LVP = OFF        // Low-Voltage Programming Enable (High-voltage on MCLR/VPP must be used for programming)
+#pragma config LVP = ON        // Low-Voltage Programming Enable (High-voltage on MCLR/VPP must be used for programming)
 
 #define _XTAL_FREQ 48000000     // 48 MHz CPU clock frequency
 
@@ -58,12 +58,14 @@
 #define GALVANOSTATIC  1
 #define INPUT  1
 #define OUTPUT 0
-#define RANGE1_PIN LATCbits.LATC4
-#define RANGE1_TRIS TRISCbits.TRISC4
-#define RANGE2_PIN LATCbits.LATC5
-#define RANGE2_TRIS TRISCbits.TRISC5
-#define RANGE3_PIN LATCbits.LATC6
-#define RANGE3_TRIS TRISCbits.TRISC6
+#define RANGE1_PIN LATCbits.LATC3
+#define RANGE1_TRIS TRISCbits.TRISC3
+#define RANGE2_PIN LATCbits.LATC4
+#define RANGE2_TRIS TRISCbits.TRISC4
+#define RANGE3_PIN LATCbits.LATC5
+#define RANGE3_TRIS TRISCbits.TRISC5
+#define RANGE4_PIN LATCbits.LATC6
+#define RANGE4_TRIS TRISCbits.TRISC6
 
 static const uint8_t* received_data;
 static uint8_t received_data_length;
@@ -85,9 +87,11 @@ void InitializeIO()
 	RANGE1_TRIS = OUTPUT;
 	RANGE2_TRIS = OUTPUT;
 	RANGE3_TRIS = OUTPUT;
+	RANGE4_TRIS = OUTPUT;
 	RANGE1_PIN = 1; // initialize range to range 1
 	RANGE2_PIN = 0;
 	RANGE3_PIN = 0;
+	RANGE4_PIN = 0;
 	InitializeSPI();
 	__delay_ms(25); // power-up delay - necessary for DAC1220
 	DAC1220_Reset();
@@ -142,6 +146,7 @@ void command_range1()
     __delay_ms(10); // make the new relay setting before breaking the old one
     RANGE2_PIN = 0;
     RANGE3_PIN = 0;
+    RANGE4_PIN = 0;
 	send_OK();
 }
 
@@ -151,6 +156,7 @@ void command_range2()
     __delay_ms(10); // make the new relay setting before breaking the old one
     RANGE1_PIN = 0;
     RANGE3_PIN = 0;
+    RANGE4_PIN = 0;
 	send_OK();
 }
 
@@ -160,6 +166,17 @@ void command_range3()
     __delay_ms(10); // make the new relay setting before breaking the old one
     RANGE1_PIN = 0;
     RANGE2_PIN = 0;
+    RANGE4_PIN = 0;
+	send_OK();
+}
+
+void command_range4()
+{
+    RANGE4_PIN = 1;
+    __delay_ms(10); // make the new relay setting before breaking the old one
+    RANGE1_PIN = 0;
+    RANGE2_PIN = 0;
+    RANGE3_PIN = 0;
 	send_OK();
 }
 
@@ -212,13 +229,13 @@ void command_save_offset(const uint8_t* offset_data)
 void command_read_shuntcalibration()
 {
 	HEFLASH_readBlock(heflashbuffer, 3, FLASH_ROWSIZE);
-	transmit_data_length=6;
+	transmit_data_length=8;
 	memcpy(transmit_data, heflashbuffer, transmit_data_length);
 }
 
 void command_save_shuntcalibration(const uint8_t* shuntcalibration_data)
 {
-	HEFLASH_writeBlock(3, shuntcalibration_data, 6);
+	HEFLASH_writeBlock(3, shuntcalibration_data, 8);
 	send_OK();
 }
 
@@ -252,6 +269,8 @@ void interpret_command() {
         command_range2();
     else if (received_data_length == 7 && strncmp(received_data,"RANGE 3",7) == 0)
         command_range3();
+    else if (received_data_length == 7 && strncmp(received_data,"RANGE 4",7) == 0)
+        command_range4();
     else if (received_data_length == 10 && strncmp(received_data,"DACSET ",7) == 0)
 	command_set_dac(received_data+7);
     else if (received_data_length == 6 && strncmp(received_data,"DACCAL",6) == 0)
@@ -268,7 +287,7 @@ void interpret_command() {
 	command_set_dac_cal(received_data+10);
     else if (received_data_length == 12 && strncmp(received_data,"SHUNTCALREAD",12) == 0)
 	command_read_shuntcalibration();
-    else if (received_data_length == 19 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
+    else if (received_data_length == 21 && strncmp(received_data,"SHUNTCALSAVE ",13) == 0)
 	command_save_shuntcalibration(received_data+13);
     else
         command_unknown();

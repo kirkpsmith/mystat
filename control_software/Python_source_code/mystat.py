@@ -989,7 +989,7 @@ def cd_update():
         cd_current_data.add_sample(1e-3*current) # Convert mA to A
         if len(cd_time_data.samples) == 0 and len(cd_time_data.averagebuffer) > 0: # A new average was just calculated
             cd_outputfile_raw.write("%e\t%e\t%e\n"%(cd_time_data.averagebuffer[-1],cd_potential_data.averagebuffer[-1],cd_current_data.averagebuffer[-1])) # Write it out
-            charge = np.absolute(scipy.integrate.cumtrapz(cd_current_data.averagebuffer,cd_time_data.averagebuffer,initial=0.)/3600.) # Cumulative charge in Ah
+            charge = np.absolute(scipy.integrate.cumulative_trapezoid(cd_current_data.averagebuffer,cd_time_data.averagebuffer,initial=0.)/3600.) # Cumulative charge in Ah
             cd_plot_curves[cd_currentcycle-1].setData(charge,cd_potential_data.averagebuffer) # Update the graph
             charge_milli = charge[-1]*1.0E6
             cd_current_entry.setText("{}".format(charge_milli)) # Indicate next cycl

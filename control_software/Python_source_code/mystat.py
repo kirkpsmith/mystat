@@ -228,7 +228,7 @@ def charge_from_cv(time_arr, current_arr):
     for index in range(0,len(zero_crossing_indices)-1): # Go over all zero crossings
         zc_index1 = zero_crossing_indices[index] # Start index
         zc_index2 = zero_crossing_indices[index+1] # End index
-        charge_arr.append(np.trapz(current_arr[zc_index1:zc_index2],time_arr[zc_index1:zc_index2])*1000./3.6) # Integrate current over time using the trapezoid rule, convert coulomb to uAh
+        charge_arr.append(np.trapezoid(current_arr[zc_index1:zc_index2],time_arr[zc_index1:zc_index2])*1000./3.6) # Integrate current over time using the trapezoid rule, convert coulomb to uAh
     return charge_arr
 
 def make_groupbox_indicator(title_name, default_text):
@@ -1020,7 +1020,7 @@ def cd_update():
                 set_output(1, cd_currentsetpoint)  # Set current to setpoint
 
             cd_plot_curves.append(plot_frame.plot(pen='y')) # Start a new plot curve and append it to the plot area (keeping the old ones as well)
-            cd_charges.append(np.absolute(np.trapz(cd_current_data.averagebuffer,cd_time_data.averagebuffer)/3600.)) # Cumulative charge in Ah
+            cd_charges.append(np.absolute(np.trapezoid(cd_current_data.averagebuffer,cd_time_data.averagebuffer)/3600.)) # Cumulative charge in Ah
             if cd_currentcycle % 2 == 0: # Write out the charge and discharge capacities after both a charge and discharge phase (i.e. after cycle 2, 4, 6...)
                 cd_outputfile_capacities.write("%d\t%e\t%e\n"%(cd_currentcycle/2,cd_charges[cd_currentcycle-2],cd_charges[cd_currentcycle-1]))
             for data in [cd_time_data, cd_potential_data, cd_current_data]: # Clear average buffers to prepare them for the next cycle
@@ -1127,11 +1127,11 @@ def rate_update():
     if (rate_halfcycle_countdown%2 == 0 and potential > rate_parameters['ubound']) or (rate_halfcycle_countdown%2 != 0 and potential < rate_parameters['lbound']): # A potential cut-off has been reached
         rate_halfcycle_countdown -= 1
         if rate_halfcycle_countdown == 1: # Last charge cycle for this C-rate, so calculate and plot the charge capacity
-            charge = np.absolute(scipy.integrate.trapz(rate_current_data.averagebuffer,rate_time_data.averagebuffer)/3600.) # Charge in Ah
+            charge = np.absolute(scipy.integrate.trapezoid(rate_current_data.averagebuffer,rate_time_data.averagebuffer)/3600.) # Charge in Ah
             rate_chg_charges.append(charge)
             rate_plot_scatter_chg.setData(rate_parameters['crates'][0:crate_index+1], rate_chg_charges)
         elif rate_halfcycle_countdown == 0: # Last discharge cycle for this C-rate, so calculate and plot the discharge capacity, and go to the next C-rate
-            charge = np.absolute(scipy.integrate.trapz(rate_current_data.averagebuffer,rate_time_data.averagebuffer)/3600.) # Charge in Ah
+            charge = np.absolute(scipy.integrate.trapezoid(rate_current_data.averagebuffer,rate_time_data.averagebuffer)/3600.) # Charge in Ah
             rate_dis_charges.append(charge)
             rate_plot_scatter_dis.setData(rate_parameters['crates'][0:crate_index+1], rate_dis_charges)
             rate_outputfile_capacities.write("%e\t%e\t%e\n"%(rate_parameters['crates'][crate_index],rate_chg_charges[-1],rate_dis_charges[-1]))

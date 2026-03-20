@@ -54,6 +54,9 @@ adcread_interval = 0.09 # ADC sampling interval (in seconds)
 logging_enabled = False # Enable logging of potential and current in idle mode (can be adjusted in the GUI)
 time_from_last_arduino_update = 0.0
 
+log_file_handle = None
+
+
 if platform.system() != "Windows":
     # On Linux/OSX, use the Qt timer
     busyloop_interval = 0
@@ -639,7 +642,9 @@ def read_potential_current():
         current_monitor.setText(current_to_string(currentrange, current))
         if logging_enabled: # If enabled, all measurements are appended to an output file (even in idle mode)
             try:
-                print("%.2f\t%e\t%e"%(time_of_last_adcread,potential,current*1e-3),file=open(hardware_log_filename.text(),'a',1)) # Output tab-separated data containing time (in s), potential (in V), and current (in A)
+                if log_file_handle is None: # avoids opening the log file on each write, only the first one
+                    log_file_handle = open(hardware_log_filename.text(), 'a', 1)
+                print("%.2f\t%e\t%e"%(time_of_last_adcread,potential,current*1e-3),file=log_file_handle) # Output tab-separated data containing time (in s), potential (in V), and current (in A)
             except:
                 QtWidgets.QMessageBox.critical(mainwidget, "Logging error!", "Logging error!")
                 hardware_log_checkbox.setChecked(False) # Disable logging in case of file errors
@@ -680,7 +685,7 @@ def choose_file(file_entry_field, questionstring):
 
 def emergency_shutdown():
     '''Turns the cell off if the current is above 220 mA'''
-    global current, state
+    global current, state, log_file_handle
     if np.absolute(current) > 220.:
         if state != States.Idle:
             preview_cancel_button.show()
@@ -688,11 +693,23 @@ def emergency_shutdown():
         set_control_mode(True)
         set_output(1,0.)
         QtWidgets.QMessageBox.critical(mainwidget, "Warning!","The current has exceeded its maximum value of 200 mA.")
+    if log_file_handle:
+        log_file_handle.close()
+        log_file_handle = None
         
 def toggle_logging(checkbox_state):
     """Enable or disable logging of measurements to a file based on the state of a checkbox (2 means checked)."""
-    global logging_enabled
+    global logging_enabled, log_file_handle
     logging_enabled = (checkbox_state == 2)
+
+    if logging_enabled:
+        # Open file once, keep handle
+        log_file_handle = open(hardware_log_filename.text(), 'a', 1)
+    else:
+        # Close when disabled
+        if log_file_handle:
+            log_file_handle.close()
+            log_file_handle = None
 
 def cv_getparams():
     """Retrieve the CV parameters from the GUI input fields and store them in a global dictionary. If succesful, return True."""

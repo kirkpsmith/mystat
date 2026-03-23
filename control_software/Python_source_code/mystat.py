@@ -31,6 +31,10 @@ VERSION_NUMBER = "1"
 usb_vid = "0xa0a0" # Default USB vendor ID, can also be adjusted in the GUI
 usb_pid = "0x0002" # Default USB product ID, can also be adjusted in the GUI
 current_range_list = ["200 mA", u"20 mA", u"200 µA", u"2 µA"]
+
+arduino_vid = "0x1a86"  # Default Arduino VID
+arduino_pid = "0x7523"  # Default Arduino PID
+arduino = None
 shunt_calibration = [1.,1.,1.,1.] # Fine adjustment for shunt resistors, containing values of R1/1ohm, R2/10ohm, R3/1kohm, R4/100kohm (can also be adjusted in the GUI)
 currentrange = 0 # Default current range (expressed as index in current_range_list)
 units_list = ["Potential (V)", "Current (mA)", "DAC Code"]
@@ -49,6 +53,7 @@ cv_parameters = {} # Dictionary to hold the CV parameters
 cd_parameters = {} # Dictionary to hold the charge/discharge parameters
 rate_parameters = {} # Dictionary to hold the rate testing parameters
 overcounter, undercounter, skipcounter = 0, 0, 0 # Global counters used for automatic current ranging
+cd_allow_edit_during_cycling = False # Toggle to allow parameter editing during cycling
 time_of_last_adcread = 0.
 adcread_interval = 0.09 # ADC sampling interval (in seconds)
 logging_enabled = False # Enable logging of potential and current in idle mode (can be adjusted in the GUI)
@@ -919,11 +924,17 @@ def cd_validate_parameters():
     if cd_parameters['numsamples'] < 1:
         QtWidgets.QMessageBox.critical(mainwidget, "Charge/discharge error", "The number of samples to average must be at least 1.")
         return False
+    if cd_type_dropdown.currentIndex() == 0 and (cd_parameters['ubound'] < 0.0 or cd_parameters['ubound'] > 3.0):
+        QtWidgets.QMessageBox.critical(mainwidget, "Charge/discharge error", "The upper potential bound must be between 0 and 3.0 V.")
+        return False
     return True
 
 def cd_start():
     """Initialize the charge/discharge measurement."""
     global cd_charges, cd_currentsetpoint, cd_starttime, cd_currentcycle, cd_time_data, cd_potential_data, cd_current_data, cd_plot_curves, cd_outputfile_raw, cd_outputfile_capacities, state
+    # Disable parameter editing during cycling (unless toggle is enabled)
+    set_cd_params_enabled(cd_allow_edit_during_cycling)
+    cd_update_params_button.setEnabled(cd_allow_edit_during_cycling)
     if check_state([States.Idle,States.Stationary_Graph]) and cd_getparams() and cd_validate_parameters() and validate_file(cd_parameters['filename']):
         cd_currentcycle = 1
         cd_charges = []
@@ -980,6 +991,30 @@ def on_cd_type_changed(value):
         
         cd_ulimit_label.setText("Constant Potential Charge (V)")
 
+def on_cd_allow_edit_toggled(checkbox_state):
+    """Handle the allow-edit toggle - update parameter widget states (2 means checked)."""
+    global cd_allow_edit_during_cycling
+    cd_allow_edit_during_cycling = (checkbox_state == 2)
+    set_cd_params_enabled(cd_allow_edit_during_cycling)
+    cd_update_params_button.setEnabled(state == States.Measuring_CD and cd_allow_edit_during_cycling)
+
+def set_cd_params_enabled(enabled):
+    """Enable or disable all charge/discharge parameter widgets."""
+    cd_lbound_entry.setEnabled(enabled)
+    cd_type_dropdown.setEnabled(enabled)
+    cd_ubound_entry.setEnabled(enabled)
+    cd_ulimit.setEnabled(enabled)
+    cd_chargecurrent_entry.setEnabled(enabled)
+    cd_dischargecurrent_entry.setEnabled(enabled)
+    cd_numcycles_entry.setEnabled(enabled)
+    cd_numsamples_entry.setEnabled(enabled)
+
+def on_cd_update_params_clicked():
+    """Validate and update parameters when button is pressed."""
+    if cd_getparams():
+        if cd_validate_parameters():
+            log_message("Parameters updated successfully.")
+
 def cd_update():
     """Add a new data point to the charge/discharge measurement (should be called regularly)."""
     global cd_currentsetpoint, cd_currentcycle, state, time_from_last_arduino_update
@@ -989,17 +1024,6 @@ def cd_update():
     else: # Continue charge/discharge measurement process
         read_potential_current() # Read new potential and current
         
-        try:
-            if elapsed_time-time_from_last_arduino_update > 1:          
-                data = arduino.readline().decode().strip()
-                arduino.reset_input_buffer()
-                rpm1 = int(data.split(",")[0])
-                rpm2 = int(data.split(",")[1])
-                cd_mc_m1label.setText("Motor 1 Control - {} RPM".format(rpm1))
-                cd_mc_m2label.setText("Motor 2 Control - {} RPM".format(rpm2))
-                time_from_last_arduino_update = elapsed_time
-        except:
-            pass
         
         cd_time_data.add_sample(elapsed_time)
         cd_potential_data.add_sample(potential)
@@ -1057,6 +1081,8 @@ def cd_stop(interrupted=True):
         else:
             log_message("Charge/discharge measurement finished. Calculated charges (in uAh): [" + ', '.join("%.2f"%(value*1e6) for value in cd_charges) + "]") # Print list of inserted/extracted charges to the message log
         cd_current_cycle_entry.setText("") # Clear cycle indicator
+        cd_update_params_button.setEnabled(False)
+        set_cd_params_enabled(True)
         state = States.Stationary_Graph # Keep displaying the last plot until the user clicks a button
         preview_cancel_button.show()
 
@@ -1186,20 +1212,26 @@ def rate_stop(interrupted=True):
         state = States.Stationary_Graph # Keep displaying the last plot until the user clicks a button
         preview_cancel_button.show()
         
-def on_mc_port_changed():
-    global arduino
-    arduino = serial.Serial(port=str(cd_mc_port_dropdown.itemText(cd_mc_port_dropdown.currentIndex())),  baudrate=9600, timeout=2)
-    time.sleep(2)
-        
 def m1_update():
     global arduino  
+    
+    if arduino is None:
+        log_message("Arduino not connected.")
+        return
+    
+    # Only send command if pumps are toggled ON
+    if not cd_mc_pumps_toggle.isChecked():
+        return
     
     if cd_mlock_checkbox.isChecked():
         message = "<c,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
     else:
         message = "<a,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
     
-    arduino.write(message.encode())
+    try:
+        arduino.write(message.encode())
+    except Exception as e:
+        log_message("Arduino write error: " + str(e))
     
     cd_mc_m1value.setText(str(cd_mc_m1slider.value()))
     if cd_mlock_checkbox.isChecked():
@@ -1209,21 +1241,105 @@ def m1_update():
 def m2_update():
     global arduino  
     
+    if arduino is None:
+        log_message("Arduino not connected.")
+        return
+    
+    # Only send command if pumps are toggled ON
+    if not cd_mc_pumps_toggle.isChecked():
+        return
+    
     if cd_mlock_checkbox.isChecked():
         message = "<c,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
     else:
         message = "<b,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
     
-    arduino.write(message.encode())
+    try:
+        arduino.write(message.encode())
+    except Exception as e:
+        log_message("Arduino write error: " + str(e))
     
     cd_mc_m2value.setText(str(cd_mc_m2slider.value()))
     if cd_mlock_checkbox.isChecked():
         cd_mc_m1slider.setValue(cd_mc_m2slider.value())
         cd_mc_m1value.setText(str(cd_mc_m2slider.value()))
         
-def update_ports():
-    cd_mc_port_dropdown.clear()
-    cd_mc_port_dropdown.addItems(serial_ports())
+def connect_disconnect_arduino():
+    global arduino
+    if arduino is not None:
+        arduino.close()
+        arduino = None
+        cd_mc_connect_button.setText("Connect")
+        set_pump_controls_enabled(False)
+        log_message("Arduino disconnected.")
+        return
+    
+    vid_string = str(cd_mc_vid.text())
+    pid_string = str(cd_mc_pid.text())
+    vid = int(vid_string, 0)
+    pid = int(pid_string, 0)
+    
+    for port in serial_ports():
+        try:
+            dev = usb.core.find(idVendor=vid, idProduct=pid)
+            if dev is not None:
+                arduino = serial.Serial(port=port, baudrate=9600, timeout=2)
+                time.sleep(2)
+                cd_mc_connect_button.setText("Disconnect")
+                set_pump_controls_enabled(True)
+                log_message("Arduino connected on " + port)
+                return
+        except:
+            pass
+    QtWidgets.QMessageBox.critical(mainwidget, "Arduino Not Found", "No Arduino found with VID %s and PID %s." % (vid_string, pid_string))
+
+def set_pump_controls_enabled(enabled):
+    """Enable or disable all pump control widgets."""
+    cd_mc_m1slider.setEnabled(enabled)
+    cd_mc_m1_input.setEnabled(enabled)
+    cd_mc_m2slider.setEnabled(enabled)
+    cd_mc_m2_input.setEnabled(enabled)
+    cd_mc_pumps_toggle.setEnabled(enabled)
+    cd_mlock_checkbox.setEnabled(enabled)
+
+def on_pumps_toggled(checked):
+    """Handle pumps on/off toggle - controls both pumps."""
+    if checked:
+        cd_mc_pumps_toggle.setText("Turn Pumps Off")
+        m1_update()
+        m2_update()
+    else:
+        cd_mc_pumps_toggle.setText("Turn Pumps On")
+        try:
+            arduino.write("<c,0>".encode())
+        except Exception as e:
+            log_message("Arduino write error: " + str(e))
+
+def on_m1_input_changed(input_widget):
+    """Handle pump 1 manual input."""
+    try:
+        value = int(input_widget.text())
+        if 0 <= value <= 100:
+            cd_mc_m1slider.setValue(value)
+            m1_update()
+            input_widget.setStyleSheet("")
+        else:
+            input_widget.setStyleSheet("QLineEdit { background: red; }")
+    except ValueError:
+        input_widget.setStyleSheet("QLineEdit { background: red; }")
+
+def on_m2_input_changed(input_widget):
+    """Handle pump 2 manual input."""
+    try:
+        value = int(input_widget.text())
+        if 0 <= value <= 100:
+            cd_mc_m2slider.setValue(value)
+            m2_update()
+            input_widget.setStyleSheet("")
+        else:
+            input_widget.setStyleSheet("QLineEdit { background: red; }")
+    except ValueError:
+        input_widget.setStyleSheet("QLineEdit { background: red; }")
 
 # Set up the GUI - Main Window
 app = QtWidgets.QApplication([])
@@ -1531,6 +1647,19 @@ cd_params_box = QtWidgets.QGroupBox(title="Charge/discharge parameters", flat=Fa
 format_box_for_parameter(cd_params_box)
 cd_params_layout = QtWidgets.QVBoxLayout()
 cd_params_box.setLayout(cd_params_layout)
+
+# Toggle for live parameter editing during cycling
+cd_allow_edit_checkbox = QtWidgets.QCheckBox("Allow parameter editing during cycling")
+cd_allow_edit_checkbox.setToolTip("Enable to modify parameters while cycling. Note: changes to charge/discharge current take effect on the subsequent cycle.")
+cd_allow_edit_checkbox.setChecked(False)
+cd_allow_edit_checkbox.stateChanged.connect(on_cd_allow_edit_toggled)
+cd_params_layout.addWidget(cd_allow_edit_checkbox)
+
+cd_update_params_button = QtWidgets.QPushButton("Update Parameters")
+cd_update_params_button.clicked.connect(on_cd_update_params_clicked)
+cd_update_params_button.setEnabled(False)
+cd_params_layout.addWidget(cd_update_params_button)
+
 cd_lbound_entry_label, cd_lbound_entry = make_label_entry(cd_params_layout, "Lower bound (V)")
 
 cd_type_dropdown = QtWidgets.QComboBox()
@@ -1599,22 +1728,16 @@ format_box_for_parameter(cd_mc_box)
 cd_mc_layout = QtWidgets.QVBoxLayout()
 cd_mc_box.setLayout(cd_mc_layout)
 
-cd_mc_port_label = QtWidgets.QLabel()
-cd_mc_port_label.setText("Arduino Controller Serial Port")
-cd_mc_layout.addWidget(cd_mc_port_label)
+cd_mc_vid_pid_hbox = QtWidgets.QHBoxLayout()
+cd_mc_vid_label, cd_mc_vid = make_label_entry(cd_mc_vid_pid_hbox, "VID")
+cd_mc_vid.setText(arduino_vid)
+cd_mc_pid_label, cd_mc_pid = make_label_entry(cd_mc_vid_pid_hbox, "PID")
+cd_mc_pid.setText(arduino_pid)
+cd_mc_layout.addLayout(cd_mc_vid_pid_hbox)
 
-cd_mc_port_dropdown = QtWidgets.QComboBox()
-cd_mc_port_dropdown.addItems(serial_ports())
-cd_mc_port_dropdown.currentIndexChanged.connect(on_mc_port_changed)
-cd_mc_layout.addWidget(cd_mc_port_dropdown)
-
-cd_mrefresh_button = QtWidgets.QPushButton("Refresh serial ports")
-cd_mrefresh_button.clicked.connect(update_ports)
-cd_mc_layout.addWidget(cd_mrefresh_button)
-
-cd_mconnect_button = QtWidgets.QPushButton("Connect to Arduino")
-cd_mconnect_button.clicked.connect(on_mc_port_changed)
-cd_mc_layout.addWidget(cd_mconnect_button)
+cd_mc_connect_button = QtWidgets.QPushButton("Connect")
+cd_mc_connect_button.clicked.connect(connect_disconnect_arduino)
+cd_mc_layout.addWidget(cd_mc_connect_button)
 
 cd_mlock_checkbox = QtWidgets.QCheckBox("Adjust pumps together")
 cd_mc_layout.addWidget(cd_mlock_checkbox)
@@ -1624,6 +1747,7 @@ cd_mc_m1label = QtWidgets.QLabel()
 cd_mc_m1label.setText("Positive Pump Control")
 cd_mc_layout.addWidget(cd_mc_m1label)
 
+cd_mc_m1slider_row = QtWidgets.QHBoxLayout()
 cd_mc_m1slider = QtWidgets.QSlider()
 cd_mc_m1slider.setOrientation(QtCore.Qt.Horizontal)
 cd_mc_m1slider.setTickPosition(0)
@@ -1631,7 +1755,13 @@ cd_mc_m1slider.setMinimum(0)
 cd_mc_m1slider.setMaximum(100)
 cd_mc_m1slider.setTracking(False)
 cd_mc_m1slider.valueChanged.connect(m1_update)
-cd_mc_layout.addWidget(cd_mc_m1slider)
+cd_mc_m1slider_row.addWidget(cd_mc_m1slider)
+
+cd_mc_m1_input = QtWidgets.QLineEdit()
+cd_mc_m1_input.setPlaceholderText("0-100")
+cd_mc_m1_input.returnPressed.connect(lambda: on_m1_input_changed(cd_mc_m1_input))
+cd_mc_m1slider_row.addWidget(cd_mc_m1_input)
+cd_mc_layout.addLayout(cd_mc_m1slider_row)
 
 cd_mc_m1value = QtWidgets.QLabel(alignment=QtCore.Qt.AlignCenter)
 cd_mc_m1value.setText("0")
@@ -1641,6 +1771,7 @@ cd_mc_m2label = QtWidgets.QLabel()
 cd_mc_m2label.setText("Negative Pump Control")
 cd_mc_layout.addWidget(cd_mc_m2label)
 
+cd_mc_m2slider_row = QtWidgets.QHBoxLayout()
 cd_mc_m2slider = QtWidgets.QSlider()
 cd_mc_m2slider.setOrientation(QtCore.Qt.Horizontal)
 cd_mc_m2slider.setTickPosition(0)
@@ -1648,11 +1779,24 @@ cd_mc_m2slider.setMinimum(0)
 cd_mc_m2slider.setMaximum(100)
 cd_mc_m2slider.setTracking(False)
 cd_mc_m2slider.valueChanged.connect(m2_update)
-cd_mc_layout.addWidget(cd_mc_m2slider)
+cd_mc_m2slider_row.addWidget(cd_mc_m2slider)
+
+cd_mc_m2_input = QtWidgets.QLineEdit()
+cd_mc_m2_input.setPlaceholderText("0-100")
+cd_mc_m2_input.returnPressed.connect(lambda: on_m2_input_changed(cd_mc_m2_input))
+cd_mc_m2slider_row.addWidget(cd_mc_m2_input)
+cd_mc_layout.addLayout(cd_mc_m2slider_row)
 
 cd_mc_m2value = QtWidgets.QLabel(alignment=QtCore.Qt.AlignCenter)
 cd_mc_m2value.setText("0")
 cd_mc_layout.addWidget(cd_mc_m2value)
+
+cd_mc_pumps_toggle = QtWidgets.QPushButton("Turn Pumps On")
+cd_mc_pumps_toggle.setCheckable(True)
+cd_mc_pumps_toggle.setChecked(False)
+cd_mc_pumps_toggle.clicked.connect(on_pumps_toggled)
+cd_mc_pumps_toggle.setMinimumWidth(100)
+cd_mc_layout.addWidget(cd_mc_pumps_toggle)
 
 cd_mc_layout.setSpacing(6)
 cd_mc_layout.setContentsMargins(3,10,3,3)
@@ -1754,6 +1898,19 @@ def periodic_update(): # A state machine is used to determine which functions ne
     elif state == States.Stationary_Graph:
         read_potential_current()
         emergency_shutdown()
+    
+    try:
+        global time_from_last_arduino_update
+        if arduino is not None and timeit.default_timer() - time_from_last_arduino_update > 1:
+            data = arduino.readline().decode().strip()
+            arduino.reset_input_buffer()
+            rpm1 = int(data.split(",")[0])
+            rpm2 = int(data.split(",")[1])
+            cd_mc_m1label.setText("Positive Pump Control - {} RPM".format(rpm1))
+            cd_mc_m2label.setText("Negative Pump Control - {} RPM".format(rpm2))
+            time_from_last_arduino_update = timeit.default_timer()
+    except:
+        pass
 
 timer = QtCore.QTimer()
 timer.timeout.connect(periodic_update)

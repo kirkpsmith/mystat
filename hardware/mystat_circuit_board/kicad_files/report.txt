@@ -1,0 +1,3 @@
+Placement file: '/home/kirk/Syncthing/docs/projects/academia/independent-research/FBRC/repos/mystat/hardware/mystat_circuit_board/kicad_files/mystat-all.pos'.
+Info: Component count: 91.
+Info: Done.

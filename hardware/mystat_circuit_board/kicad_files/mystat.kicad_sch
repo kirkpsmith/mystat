@@ -1,0 +1,160 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "0d961adf-a1d6-44d9-8805-c5ad6be0ab6d")
+	(paper "USLetter" portrait)
+	(title_block
+		(title "MYSTAT")
+		(date "2020-08-07")
+		(rev "1")
+		(company "USB-Controlled Potentiostat/Galvanostat")
+		(comment 1 "Based on TDSTATv3 designed by Thomas Dobbelaere")
+		(comment 2 "by Matthew Yates")
+	)
+	(lib_symbols)
+	(sheet
+		(at 58.42 30.48)
+		(size 15.24 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "00000000-0000-0000-0000-00005b637f28")
+		(property "Sheetname" "digital"
+			(at 58.42 29.7684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "digital.kicad_sch"
+			(at 58.42 43.7646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mystat"
+				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 90.17 31.75)
+		(size 13.97 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "00000000-0000-0000-0000-00005b735e8e")
+		(property "Sheetname" "Analog"
+			(at 90.17 31.0384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "analog.kicad_sch"
+			(at 90.17 43.7646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mystat"
+				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30.48 30.48)
+		(size 15.24 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "00000000-0000-0000-0000-00005b875319")
+		(property "Sheetname" "Power"
+			(at 30.48 29.7684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 30.48 43.7646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mystat"
+				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

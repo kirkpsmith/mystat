@@ -143,7 +143,7 @@
         "min_track_width": 0.254,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.381,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -975,6 +975,12 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
         }
       ],
       "filter_string": "",
@@ -1027,7 +1033,7 @@
         "uuid": "0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U1",
     "variants": []
   },
   "sheets": [

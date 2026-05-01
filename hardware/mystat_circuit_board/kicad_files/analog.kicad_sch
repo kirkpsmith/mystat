@@ -4528,6 +4528,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 116.84 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "03ded97e-55f0-4823-979b-2d47de75d241")
 		)
@@ -4639,6 +4650,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 34.29 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "138a857b-bb77-4749-971a-86e7b79221a8")
 		)
@@ -4698,7 +4720,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8579706549159727104"
 			(at 34.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -4719,7 +4741,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 34.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -4730,7 +4752,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-6ENF27R0V"
+		(property "Part Number" "0805W8F270JT5E"
+			(at 34.29 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17594"
 			(at 34.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -4853,7 +4886,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4700 pF"
+		(property "Value" "4.7 nF"
 			(at 71.12 150.495 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4908,6 +4941,17 @@
 			)
 		)
 		(property "Part Number" "CC0805KRX7R9BB472"
+			(at 68.58 149.225 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 68.58 149.225 0)
 			(hide yes)
 			(show_name no)
@@ -4977,7 +5021,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8562006748401074176"
 			(at 31.75 159.385 0)
 			(hide yes)
 			(show_name no)
@@ -4998,7 +5042,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 31.75 159.385 0)
 			(hide yes)
 			(show_name no)
@@ -5009,7 +5053,18 @@
 				)
 			)
 		)
-		(property "Part Number" "RC0805FR-0710KL"
+		(property "Part Number" "0805W8F1002T5E"
+			(at 31.75 159.385 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 31.75 159.385 0)
 			(hide yes)
 			(show_name no)
@@ -5230,7 +5285,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590237047442210816"
 			(at 135.255 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5251,7 +5306,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" " UNI-ROYAL"
 			(at 135.255 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5262,8 +5317,19 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB4023V"
+		(property "Part Number" "TC0525B4023T5G"
 			(at 135.255 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2989478"
+			(at 135.255 33.02 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5332,7 +5398,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590237047442210816"
 			(at 135.255 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -5353,7 +5419,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 135.255 80.01 90)
 			(hide yes)
 			(show_name no)
@@ -5364,7 +5430,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB4023V"
+		(property "Part Number" "TC0525B4023T5G"
+			(at 135.255 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2989478"
 			(at 135.255 80.01 90)
 			(hide yes)
 			(show_name no)
@@ -5435,7 +5512,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 135.255 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -5456,7 +5533,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 135.255 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -5467,7 +5544,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 135.255 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 135.255 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -5538,7 +5626,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 168.275 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -5559,7 +5647,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 168.275 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5570,7 +5658,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 168.275 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 168.275 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5683,6 +5782,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 110.49 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "8c101482-2494-4a61-a234-aed7cb90896b")
 		)
@@ -5774,6 +5884,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 121.92 205.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 121.92 205.74 90)
 			(hide yes)
 			(show_name no)
@@ -6036,6 +6157,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 36.83 133.985 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "801eafdc-9034-4758-8a4b-93e080063219")
 		)
@@ -6213,6 +6345,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 46.99 156.845 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "3ecd9eb6-3d99-4872-a6e6-aa923e4ad808")
 		)
@@ -6347,7 +6490,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1773272&DocType=DS&DocLang=English"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590304557906759680"
 			(at 135.255 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -6368,7 +6511,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity Passive Product"
+		(property "Manufacturer" "TE Connectivity"
 			(at 135.255 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -6379,7 +6522,18 @@
 				)
 			)
 		)
-		(property "Part Number" "2-1625868-7"
+		(property "Part Number" "RP73PF2A10RBTDF"
+			(at 135.255 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C4209318"
 			(at 135.255 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -6449,7 +6603,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588898886454267904"
 			(at 107.95 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6470,7 +6624,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 107.95 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6481,7 +6635,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB102V"
+		(property "Part Number" "RT0805BRD071KL"
+			(at 107.95 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C110774"
 			(at 107.95 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6551,7 +6716,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899165288214528"
 			(at 133.35 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6572,7 +6737,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 133.35 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6583,7 +6748,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB104V"
+		(property "Part Number" "RT0805BRD07100KL"
+			(at 133.35 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C122537"
 			(at 133.35 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -6910,7 +7086,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB202V"
+		(property "Part Number" "ERA6AEB202V"
+			(at 106.68 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C417117"
 			(at 106.68 222.25 0)
 			(hide yes)
 			(show_name no)
@@ -7055,7 +7242,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590239391638716416"
 			(at 119.38 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -7076,7 +7263,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 119.38 215.9 90)
 			(hide yes)
 			(show_name no)
@@ -7087,7 +7274,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB183V"
+		(property "Part Number" "TC0525B1802T5G"
+			(at 119.38 215.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2988901"
 			(at 119.38 215.9 90)
 			(hide yes)
 			(show_name no)
@@ -7157,7 +7355,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 138.43 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -7178,7 +7376,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 138.43 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -7189,7 +7387,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 138.43 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 138.43 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -7259,7 +7468,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 138.43 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -7280,7 +7489,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 138.43 185.42 90)
 			(hide yes)
 			(show_name no)
@@ -7291,7 +7500,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 138.43 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 138.43 185.42 90)
 			(hide yes)
 			(show_name no)
@@ -7361,7 +7581,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 153.67 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -7382,7 +7602,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 153.67 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -7393,7 +7613,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 153.67 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 153.67 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -7463,7 +7694,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588899575725350912"
 			(at 167.64 209.55 0)
 			(hide yes)
 			(show_name no)
@@ -7484,7 +7715,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "YAGEO"
 			(at 167.64 209.55 90)
 			(hide yes)
 			(show_name no)
@@ -7495,7 +7726,18 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
+		(property "Part Number" "RT0805BRD0775KL"
+			(at 167.64 209.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C136919"
 			(at 167.64 209.55 90)
 			(hide yes)
 			(show_name no)
@@ -7683,6 +7925,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 167.64 217.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6a25d659-f070-4529-8539-bc9d88e1fe5f")
 		)
@@ -7775,6 +8028,17 @@
 			)
 		)
 		(property "Part Number" "CC0805JRNPO9BN120"
+			(at 168.275 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 168.275 93.98 90)
 			(hide yes)
 			(show_name no)
@@ -7887,6 +8151,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 44.45 142.875 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "ff6d2673-0234-4fe6-b0f6-9528ec8077e0")
 		)
@@ -7955,7 +8230,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "http://www.susumu.co.jp/common/pdf/n_catalog_partition08_en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8630011273637949440"
 			(at 107.95 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -7976,7 +8251,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Susumu"
+		(property "Manufacturer" "YAGEO"
 			(at 107.95 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -7987,7 +8262,18 @@
 				)
 			)
 		)
-		(property "Part Number" "RL1220S-1R0-F"
+		(property "Part Number" "RT0805BRD071RL"
+			(at 107.95 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C865286"
 			(at 107.95 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -8111,6 +8397,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C2058426"
+			(at 60.96 142.875 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3d807942-31ab-44aa-9f14-8b1b2469d213")
 		)
@@ -8210,6 +8507,17 @@
 			)
 		)
 		(property "Part Number" "ADG1419BRMZ-REEL7"
+			(at 52.07 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22368"
 			(at 52.07 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -8950,6 +9258,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 169.545 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2b3c7020-8731-4249-a421-64c9fadd547e")
 		)
@@ -9061,6 +9380,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 107.95 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1d58b8fc-0eee-4444-b58f-144b192aa420")
 		)
@@ -9163,6 +9493,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 107.95 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c42ac7fa-d237-439d-a1b2-e571894b9474")
 		)
@@ -9256,6 +9597,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 172.085 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 172.085 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9511,6 +9863,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 172.085 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 172.085 44.45 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9776,6 +10139,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "00193707-6fbb-4554-98f5-f37226da753e")
 		)
@@ -9954,6 +10328,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 107.95 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 107.95 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10209,6 +10594,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 107.95 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 107.95 93.98 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10625,6 +11021,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "6ebd2a8e-398c-4931-904e-f7a19465e506")
 		)
@@ -10726,6 +11133,17 @@
 			)
 		)
 		(property "Part Number" "OPA192IDBVR"
+			(at 163.83 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -10913,6 +11331,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 168.91 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 168.91 176.53 90)
 			(hide yes)
 			(show_name no)
@@ -11164,6 +11593,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 166.37 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 166.37 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -11576,6 +12016,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 146.685 158.75 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "15b02d8e-ea39-4c83-be8f-d76c007adaf4")
 		)
@@ -11673,6 +12124,17 @@
 			)
 		)
 		(property "Part Number" "9011-05-11"
+			(at 119.38 158.75 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 119.38 158.75 90)
 			(hide yes)
 			(show_name no)
@@ -11790,6 +12252,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 60.96 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "85b01f29-4823-435a-9dba-37d650acccdb")
 		)
@@ -11887,6 +12360,17 @@
 			)
 		)
 		(property "Part Number" "9011-05-11"
+			(at 146.685 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
 			(at 146.685 130.81 90)
 			(hide yes)
 			(show_name no)
@@ -12004,6 +12488,17 @@
 				)
 			)
 		)
+		(property "LCSC" ""
+			(at 119.38 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "914ca93a-d993-4ed2-a4d1-762dd8c1e3ba")
 		)
@@ -12046,7 +12541,7 @@
 				)
 			)
 		)
-		(property "Value" "SJ1-42534-SMT"
+		(property "Value" "SJ1-42534-SMT-TR"
 			(at 53.9496 63.6524 0)
 			(hide yes)
 			(show_name no)
@@ -12114,6 +12609,17 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
+			)
+		)
+		(property "LCSC" ""
+			(at 61.595 53.975 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "1"

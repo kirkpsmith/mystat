@@ -16,6 +16,13 @@ In order to access the device without requiring root privileges, create a file
 ```
 SUBSYSTEM=="usb", ATTRS{idVendor}=="a0a0", ATTRS{idProduct}=="0002", GROUP="plugdev", MODE="0666"
 ```
+
+If you are using an Arduino or similar to control pumps for flow battery experiments, you will need to make a similar file for that device, for example
+`/etc/udev/rules.d/99-arduino.rules` and
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="7523", GROUP="plugdev", MODE="0666"
+```
+
 This assumes that the current user is a member of the `plugdev` group, and that the default USB Vendor and Product ID's
 as coded in the microcontroller firmware are used; if not, these values need to be adjusted.
 

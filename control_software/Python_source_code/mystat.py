@@ -4,10 +4,9 @@
 # This Python program allows control over the USB potentiostat/galvanostat using a graphical user interface. It supports real-time data acquisition and plotting, manual control and
 # calibration, and three pre-programmed measurement methods geared towards battery research (staircase cyclic voltammetry, constant-current charge/discharge, and rate testing).
 # It is cross-platform, requiring only a working installation of Python 3.x together with the Numpy, Scipy, PyUSB, and PyQtGraph packages.
-# To compile releases, use pyinstaller 
 
 
-# Author: Thomas Dobbelaere, modified by Matthew Yates and Paul Irving / Modified by Daniel Fernandez for the FBRC and use with flow batteries.
+# Author: Thomas Dobbelaere, modified by Matthew Yates and Paul Irving / modified by Daniel Fernandez and Kirk Smith for the FBRC and use with flow batteries.
 # License: GPL
 from PyQt5 import QtWidgets, QtGui, QtCore
 import pyqtgraph
@@ -21,20 +20,26 @@ import scipy.integrate
 import serial
 import glob
 from time import sleep
+from version import __version__
+
 
 #import pkg_resources.py2_warn
 
-VERSION_NUMBER = "1"
+VERSION_NUMBER = __version__
 
 # basedir = os.path.dirname(__file__)
 
 usb_vid = "0xa0a0" # Default USB vendor ID, can also be adjusted in the GUI
 usb_pid = "0x0002" # Default USB product ID, can also be adjusted in the GUI
+selected_usb_identifier = None  # Currently selected device identifier from dropdown
 current_range_list = ["200 mA", u"20 mA", u"200 µA", u"2 µA"]
 
 arduino_vid = "0x1a86"  # Default Arduino VID
 arduino_pid = "0x7523"  # Default Arduino PID
-arduino = None
+arduino_dev = None  # USB device handle for Arduino
+arduino_out_endpoint = 1  # Bulk OUT endpoint
+arduino_in_endpoint = 0x81  # Bulk IN endpoint
+selected_arduino_identifier = None  # Currently selected device identifier (bus, port_numbers, serial)
 shunt_calibration = [1.,1.,1.,1.] # Fine adjustment for shunt resistors, containing values of R1/1ohm, R2/10ohm, R3/1kohm, R4/100kohm (can also be adjusted in the GUI)
 currentrange = 0 # Default current range (expressed as index in current_range_list)
 units_list = ["Potential (V)", "Current (mA)", "DAC Code"]
@@ -58,6 +63,12 @@ time_of_last_adcread = 0.
 adcread_interval = 0.09 # ADC sampling interval (in seconds)
 logging_enabled = False # Enable logging of potential and current in idle mode (can be adjusted in the GUI)
 time_from_last_arduino_update = 0.0
+cd_wait_start_time = 0
+cd_waittime = 0
+cd_stop_after_next_discharge = False
+cd_waiting_after_discharge = False
+cd_discharge_wait_start_time = 0
+cd_discharge_waittime = 30
 
 log_file_handle = None
 
@@ -115,12 +126,203 @@ def serial_ports():
     result = []
     for port in ports:
         try:
-            s = serial.Serial(port)
+            # Use very short timeout to avoid hanging
+            s = serial.Serial(port, timeout=0.1)
             s.close()
             result.append(port)
         except (OSError, serial.SerialException):
             pass
     return result
+
+def find_devices_by_vid_pid(target_vid, target_pid):
+    """Find all devices matching the given VID and PID.
+    
+    Returns a list of ((bus, port_numbers, serial), label) tuples.
+    Uses bus/port/serial to differentiate multiple devices.
+    """
+    devices = []
+    target_vid_int = int(target_vid, 0)
+    target_pid_int = int(target_pid, 0)
+    
+    try:
+        all_devs = usb.core.find(idVendor=target_vid_int, idProduct=target_pid_int, find_all=True)
+        
+        for dev in all_devs:
+            try:
+                bus = dev.bus
+                port_numbers = dev.port_numbers 
+                port_str = '.'.join(map(str, port_numbers))
+                
+                try:
+                    serial = usb.util.get_string(dev, dev.iSerialNumber)
+                except:
+                    serial = None
+                
+                identifier = (bus, port_numbers, serial)
+                
+                if serial:
+                    label = f"{port_str} ({serial})"
+                else:
+                    label = port_str
+                
+                devices.append((identifier, label))
+                usb.util.dispose_resources(dev)
+            except Exception:
+                pass
+    except Exception:
+        pass
+    
+    return devices
+
+def device_matches(dev, bus, port_numbers, serial):
+    """Check if a USB device matches the given identifiers."""
+    if dev.bus != bus:
+        return False
+    if dev.port_numbers != port_numbers:
+        return False
+    if serial:
+        try:
+            return usb.util.get_string(dev, dev.iSerialNumber) == serial
+        except:
+            return False
+    return True
+
+def find_bulk_endpoints(dev):
+    """Find bulk IN and OUT endpoints for a USB device.
+    
+    Returns (bulk_out, bulk_in) endpoint addresses.
+    """
+    #this line is important lol https://github.com/pyusb/pyusb/issues/391
+    #also from here: https://stackoverflow.com/questions/23203563/pyusb-device-claimed-detach-kernel-driver-return-entity-not-found
+    c = 1
+    for config in dev:
+        for i in range(config.bNumInterfaces):
+            if dev.is_kernel_driver_active(i):
+                dev.detach_kernel_driver(i)
+        c+=1
+
+    dev.set_configuration()
+
+    cfg = dev.get_active_configuration()
+    intf = cfg[(0,0)]
+
+
+    ep = usb.util.find_descriptor(
+        intf,
+        # match the first OUT endpoint
+        custom_match = \
+        lambda e: \
+            usb.util.endpoint_direction(e.bEndpointAddress) == \
+            usb.util.ENDPOINT_OUT)
+    bulk_out = ep
+    ep = usb.util.find_descriptor(
+    intf,
+    # match the first OUT endpoint
+    custom_match = \
+    lambda e: \
+        usb.util.endpoint_direction(e.bEndpointAddress) == \
+        usb.util.ENDPOINT_IN)
+    bulk_in = ep
+    return (bulk_out, bulk_in)
+
+def check_safety_limits():
+    """Dedicated function to check safety limits more frequently during measurements"""
+    global state
+    
+    if state != States.Measuring_CD:
+        return
+        
+    try:
+        # Check if we have the necessary parameters
+        if 'cd_parameters' not in globals() or 'ulimit' not in cd_parameters:
+            return
+            
+        # Check for safety threshold warning (95% of ulimit)
+        warning_threshold = cd_parameters['ulimit'] * 0.995
+        if potential > warning_threshold:
+            log_message(f"WARNING: Approaching safety limit - {potential:.3f}V (limit: {cd_parameters['ulimit']:.3f}V)")
+            
+    except Exception as e:
+        log_message(f"Error in safety check: {str(e)}")
+
+def cd_update_parameters():
+    """Update charge/discharge parameters during runtime"""
+    global cd_parameters
+    
+    if state != States.Measuring_CD:
+        log_message("Update Parameters: Parameters can only be updated during a running measurement.")
+        return
+    
+    # Get current values from GUI
+    try:
+        new_params = {}
+        new_params['lbound'] = float(cd_lbound_entry.text())
+        new_params['ubound'] = float(cd_ubound_entry.text())
+        new_params['ulimit'] = float(cd_ulimit.text())
+        new_params['chargecurrent'] = float(cd_chargecurrent_entry.text())/1e3 # convert uA to mA
+        new_params['dischargecurrent'] = float(cd_dischargecurrent_entry.text())/1e3 # convert uA to mA
+        new_params['waittime'] = str(cd_waittime_entry.text())
+        new_params['discharge_waittime'] = str(cd_discharge_wait_entry.text())
+        
+        # Update discharge wait time global variable
+        global cd_discharge_waittime
+        cd_discharge_waittime = float(cd_discharge_wait_entry.text())
+        
+        # Validate critical parameters - log errors instead of showing dialogues
+        if new_params['ubound'] < new_params['lbound']:
+            log_message("Parameter update failed: Upper bound cannot be lower than lower bound")
+            return
+        
+        if new_params['chargecurrent'] == 0. or new_params['dischargecurrent'] == 0.:
+            log_message("Parameter update failed: Currents cannot be zero")
+            return
+            
+        if new_params['chargecurrent'] * new_params['dischargecurrent'] > 0:
+            log_message("Parameter update failed: Charge and discharge currents must have opposite signs")
+            return
+        
+        # Update parameters
+        cd_parameters.update(new_params)
+        
+        # Update auto-stop flag
+        global cd_stop_after_next_discharge
+        cd_stop_after_next_discharge = cd_autostop_checkbox.isChecked()
+        
+        log_message(f"Parameters updated during runtime - New bounds: {new_params['lbound']:.3f}V to {new_params['ubound']:.3f}V, Safety: {new_params['ulimit']:.3f}V")
+        log_message(f"Updated currents - Charge: {new_params['chargecurrent']*1000:.1f}µA, Discharge: {new_params['dischargecurrent']*1000:.1f}µA")
+        log_message(f"Updated wait times - Charge: {new_params['waittime']}s, Discharge: {new_params['discharge_waittime']}s")
+        
+        if cd_stop_after_next_discharge:
+            log_message("Auto-stop enabled - will stop after next discharge cycle")
+            
+    except ValueError:
+        log_message("Parameter update failed: One or more parameters could not be interpreted as a number")
+    except Exception as e:
+        log_message(f"Parameter update failed: {str(e)}")
+
+def cd_discharge_wait_update():
+    """Handle waiting time after discharge cycle"""
+    global cd_waiting_after_discharge, cd_discharge_wait_start_time, cd_discharge_waittime
+    
+    if cd_discharge_wait_start_time == 0:
+        set_cell_status(False)
+        cd_current_cycle_entry_label.setText("Waiting after discharge (s)")
+        cd_discharge_wait_start_time = timeit.default_timer()
+        cd_waiting_after_discharge = True
+        log_message(f"Starting {cd_discharge_waittime}s wait after discharge cycle")
+
+    elapsed_time_since_discharge = timeit.default_timer() - cd_discharge_wait_start_time  
+    cd_current_cycle_entry.setText("{}".format(int(elapsed_time_since_discharge)))
+    
+    if elapsed_time_since_discharge > cd_discharge_waittime:
+        cd_discharge_wait_start_time = 0
+        cd_waiting_after_discharge = False
+        cd_current_cycle_entry_label.setText("Current half cycle")
+        cd_current_cycle_entry.setText("%d"%cd_currentcycle)
+        set_cell_status(True)
+        log_message("Discharge wait period completed, resuming measurement")
+        return True
+    return False    
 
 def current_to_string(currentrange, current_in_mA):
     """Format the measured current into a string with appropriate units and number of significant digits."""
@@ -318,6 +520,12 @@ def connect_disconnect_usb():
             state = States.Idle_Init # Start idle mode
         except ValueError:
             pass # In case the device is not yet calibrated
+
+def on_usb_device_selected(index):
+    """Handle selection change in the USB device dropdown."""
+    global selected_usb_identifier
+    if index >= 0:
+        selected_usb_identifier = hardware_usb_device_dropdown.itemData(index)
 
 def not_connected_errormessage():
     """Generate an error message stating that the device is not connected."""
@@ -689,15 +897,36 @@ def choose_file(file_entry_field, questionstring):
     file_entry_field.setText(filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtWidgets.QFileDialog.DontConfirmOverwrite))
 
 def emergency_shutdown():
-    '''Turns the cell off if the current is above 220 mA'''
-    global current, state, log_file_handle
-    if np.absolute(current) > 220.:
-        if state != States.Idle:
-            preview_cancel_button.show()
-            state = States.Idle
-        set_control_mode(True)
-        set_output(1,0.)
-        QtWidgets.QMessageBox.critical(mainwidget, "Warning!","The current has exceeded its maximum value of 200 mA.")
+    """Check if emergency conditions (overpotential/overcurrent) are present, and if so, shut down the cell."""
+    global current, state, log_file_handle, emergency_voltage_V, emergency_current_mA
+
+    try:
+        emergency_voltage_V = float(hardware_emergency_voltage_entry.text())
+        emergency_current_mA = float(hardware_emergency_current_entry.text())
+    except:
+        return # Use previous values
+    
+    # Check for overpotential
+    if abs(potential) > emergency_voltage_V:
+        set_cell_status(False)
+        log_message("EMERGENCY: Cell switched off due to overpotential (%.3f V)!"%potential)
+    
+    # Check for overcurrent  
+    if abs(current) > emergency_current_mA:
+        set_cell_status(False)
+        log_message("EMERGENCY: Cell switched off due to overcurrent (%.1f mA)!"%current)
+    
+    # Additional safety check for charge/discharge upper limit during measurements
+    if state == States.Measuring_CD:
+        try:
+            # Check if we're in a charge/discharge measurement and have safety limits
+            if 'cd_parameters' in globals() and 'ulimit' in cd_parameters:
+                if potential > cd_parameters['ulimit']:
+                    set_cell_status(False)
+                    log_message("EMERGENCY: Cell switched off due to exceeding upper safety limit (%.3f V > %.3f V)!"%(potential, cd_parameters['ulimit']))
+        except:
+            pass
+
     if log_file_handle:
         log_file_handle.close()
         log_file_handle = None
@@ -899,6 +1128,8 @@ def cd_getparams():
         cd_parameters['numcycles'] = int(cd_numcycles_entry.text())
         cd_parameters['numsamples'] = int(cd_numsamples_entry.text())
         cd_parameters['filename'] = str(cd_file_entry.text())
+        cd_parameters['waittime'] = str(cd_waittime_entry.text())
+        cd_parameters['discharge_waittime'] = str(cd_discharge_wait_entry.text())
         return True
     except ValueError:
         QtWidgets.QMessageBox.critical(mainwidget, "Not a number", "One or more parameters could not be interpreted as a number.")
@@ -914,6 +1145,9 @@ def cd_validate_parameters():
         return False
     if cd_parameters['dischargecurrent'] == 0.:
         QtWidgets.QMessageBox.critical(mainwidget, "Charge/discharge error", "The discharge current cannot be zero.")
+        return False
+    if (abs(cd_parameters['chargecurrent']) > 200000 or abs(cd_parameters['chargecurrent']) > 200000) :
+        QtWidgets.QMessageBox.critical(mainwidget, "Charge/discharge error", "The magnitude of charge/discharge currents cannot exceed 200 mA.")
         return False
     if cd_parameters['chargecurrent']*cd_parameters['dischargecurrent'] > 0:
         QtWidgets.QMessageBox.critical(mainwidget, "Charge/discharge error", "Charge and discharge current must have opposite sign.")
@@ -931,10 +1165,7 @@ def cd_validate_parameters():
 
 def cd_start():
     """Initialize the charge/discharge measurement."""
-    global cd_charges, cd_currentsetpoint, cd_starttime, cd_currentcycle, cd_time_data, cd_potential_data, cd_current_data, cd_plot_curves, cd_outputfile_raw, cd_outputfile_capacities, state
-    # Disable parameter editing during cycling (unless toggle is enabled)
-    set_cd_params_enabled(cd_allow_edit_during_cycling)
-    cd_update_params_button.setEnabled(cd_allow_edit_during_cycling)
+    global cd_charges, cd_currentsetpoint, cd_starttime, cd_currentcycle, cd_time_data, cd_potential_data, cd_current_data, cd_plot_curves, cd_outputfile_raw, cd_outputfile_capacities, state, time_from_last_arduino_update, cd_waittime
     if check_state([States.Idle,States.Stationary_Graph]) and cd_getparams() and cd_validate_parameters() and validate_file(cd_parameters['filename']):
         cd_currentcycle = 1
         cd_charges = []
@@ -945,6 +1176,7 @@ def cd_start():
         cd_outputfile_capacities = open(base+'_capacities'+extension, 'w', 1) # This file will contain capacity data for each cycle
         cd_outputfile_capacities.write("Cycle number\tCharge capacity (Ah)\tDischarge capacity (Ah)\n")
         cd_currentsetpoint = cd_parameters['chargecurrent']
+        cd_waittime = cd_parameters['waittime']
         hardware_manual_control_range_dropdown.setCurrentIndex(current_range_from_current(cd_currentsetpoint)) # Determine the proper current range for the current setpoint
         set_current_range() # Set new current range
         set_output(1, cd_currentsetpoint) # Set current to setpoint
@@ -975,6 +1207,20 @@ def cd_start():
         cd_current_cycle_entry.setText("%d"%cd_currentcycle) # Indicate the current cycle number
         cd_current_entry.setText("0") # Indicate the current for current cycle in uAh
         state = States.Measuring_CD
+        time_from_last_arduino_update = 0.0
+        
+        # Initialize runtime variables
+        global cd_stop_after_next_discharge, cd_waiting_after_discharge, cd_discharge_wait_start_time, cd_discharge_waittime
+        cd_stop_after_next_discharge = False
+        cd_waiting_after_discharge = False
+        cd_discharge_wait_start_time = 0
+        cd_discharge_waittime = float(cd_parameters['discharge_waittime'])  # Get from parameters instead of GUI
+        
+        # Enable runtime controls after successful start
+        cd_update_button.setEnabled(True)
+        cd_autostop_checkbox.setEnabled(True)
+        
+        log_message("Runtime controls enabled - you can now update parameters during the measurement")
         
 def on_cd_type_changed(value):
     if cd_type_dropdown.currentIndex() == 0:
@@ -991,34 +1237,41 @@ def on_cd_type_changed(value):
         
         cd_ulimit_label.setText("Constant Potential Charge (V)")
 
-def on_cd_allow_edit_toggled(checkbox_state):
-    """Handle the allow-edit toggle - update parameter widget states (2 means checked)."""
-    global cd_allow_edit_during_cycling
-    cd_allow_edit_during_cycling = (checkbox_state == 2)
-    set_cd_params_enabled(cd_allow_edit_during_cycling)
-    cd_update_params_button.setEnabled(state == States.Measuring_CD and cd_allow_edit_during_cycling)
+def cd_wait_update():
+    """Handle the waiting period between charge/discharge cycles."""
+    global state, cd_currentsetpoint, cd_wait_start_time
+    
+    if cd_wait_start_time == 0:
+        set_cell_status(False)
+        cd_current_cycle_entry_label.setText("Waiting time (s)")
+        cd_wait_start_time = timeit.default_timer()
 
-def set_cd_params_enabled(enabled):
-    """Enable or disable all charge/discharge parameter widgets."""
-    cd_lbound_entry.setEnabled(enabled)
-    cd_type_dropdown.setEnabled(enabled)
-    cd_ubound_entry.setEnabled(enabled)
-    cd_ulimit.setEnabled(enabled)
-    cd_chargecurrent_entry.setEnabled(enabled)
-    cd_dischargecurrent_entry.setEnabled(enabled)
-    cd_numcycles_entry.setEnabled(enabled)
-    cd_numsamples_entry.setEnabled(enabled)
-
-def on_cd_update_params_clicked():
-    """Validate and update parameters when button is pressed."""
-    if cd_getparams():
-        if cd_validate_parameters():
-            log_message("Parameters updated successfully.")
+    elapsed_time_since_charge = timeit.default_timer() - cd_wait_start_time  
+    cd_current_cycle_entry.setText("{}".format(int(elapsed_time_since_charge)))
+   
+    
 
 def cd_update():
     """Add a new data point to the charge/discharge measurement (should be called regularly)."""
-    global cd_currentsetpoint, cd_currentcycle, state, time_from_last_arduino_update
+    global cd_currentsetpoint, cd_currentcycle, state, time_from_last_arduino_update, cd_wait_start_time, cd_waittime, cd_waiting_after_discharge, cd_stop_after_next_discharge, cd_discharge_wait_start_time
     elapsed_time = timeit.default_timer()-cd_starttime
+    charge_milli = 0.0  # Initialize to prevent undefined variable errors
+    
+    # Handle waiting after charge cycle
+    if cd_wait_start_time > 0:
+        cd_wait_update()
+        if timeit.default_timer() - cd_wait_start_time > int(cd_waittime):
+            cd_wait_start_time = 0
+            cd_current_cycle_entry_label.setText("Current half cycle")
+            cd_current_cycle_entry.setText("%d"%cd_currentcycle)
+            set_cell_status(True)
+    
+    # NEW: Handle waiting after discharge cycle
+    if cd_waiting_after_discharge:
+        if cd_discharge_wait_update():
+            cd_waiting_after_discharge = False
+        # Continue with data reading during discharge wait (don't return)
+                     
     if cd_currentcycle > cd_parameters['numcycles']: # End of charge/discharge measurements
         cd_stop(interrupted=False)
     else: # Continue charge/discharge measurement process
@@ -1033,20 +1286,85 @@ def cd_update():
             charge = np.absolute(scipy.integrate.cumulative_trapezoid(cd_current_data.averagebuffer,cd_time_data.averagebuffer,initial=0.)/3600.) # Cumulative charge in Ah
             cd_plot_curves[cd_currentcycle-1].setData(charge,cd_potential_data.averagebuffer) # Update the graph
             charge_milli = charge[-1]*1.0E6
-            cd_current_entry.setText("{}".format(charge_milli)) # Indicate next cycl
-        if (cd_currentsetpoint > 0 and potential > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 0) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 1) or (cd_currentsetpoint > 0 and charge_milli > cd_parameters['ubound'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint > 0 and charge_milli > 1 and current < cd_parameters['chargecurrent'] and cd_type_dropdown.currentIndex() == 2) or (cd_currentsetpoint < 0 and potential < cd_parameters['lbound']) or (cd_currentsetpoint > 0 and potential > cd_parameters['ulimit'] and cd_type_dropdown.currentIndex() == 1): # An ijected charge cut-off has been reached or a cutoff potential has been reached
+            cd_current_entry.setText("{}".format(charge_milli)) # Indicate next cycle
         
-            if cd_currentsetpoint == cd_parameters['chargecurrent']: # Switch from the discharge phase to the charge phase or vice versa
+        # CRITICAL FIX: Check for various cutoff conditions with ulimit safety check for ALL modes
+        # Skip cutoff checks during waiting periods (but keep safety checks)
+        if cd_wait_start_time > 0 or cd_waiting_after_discharge:
+            # During waiting periods, skip all cutoff checks
+            cutoff_triggered = False
+        else:
+            # Normal cutoff logic when not waiting
+            cutoff_triggered = False
+            cutoff_reason = ""
+            
+            # CHARGE PHASE (positive current): Check upper bounds including ulimit
+            if cd_currentsetpoint > 0:  # CHARGE PHASE
+                # Check ulimit for ALL modes (this was the original bug - it was only in mode 1)
+                if potential > cd_parameters['ulimit']:
+                    cutoff_triggered = True
+                    cutoff_reason = f"Charge safety limit (ulimit) reached: {potential:.3f}V > {cd_parameters['ulimit']:.3f}V"
+                    log_message(f"ulimit triggered during charge - will switch to discharge")
+                
+                # Check mode-specific upper bounds
+                elif cd_type_dropdown.currentIndex() == 0:  # Potential cutoff mode
+                    if potential > cd_parameters['ubound']:
+                        cutoff_triggered = True
+                        cutoff_reason = f"Upper potential bound reached: {potential:.3f}V > {cd_parameters['ubound']:.3f}V"
+                
+                elif cd_type_dropdown.currentIndex() == 1:  # Charge cutoff mode
+                    if charge_milli > cd_parameters['ubound']:
+                        cutoff_triggered = True
+                        cutoff_reason = f"Charge cutoff reached: {charge_milli:.1f}µAh > {cd_parameters['ubound']:.1f}µAh"
+                
+                elif cd_type_dropdown.currentIndex() == 2:  # Potential + Charge cutoff mode
+                    if charge_milli > cd_parameters['ubound']:
+                        cutoff_triggered = True
+                        cutoff_reason = f"Charge cutoff reached: {charge_milli:.1f}µAh > {cd_parameters['ubound']:.1f}µAh"
+                    elif charge_milli > 1 and current < cd_parameters['chargecurrent']:
+                        cutoff_triggered = True
+                        cutoff_reason = f"Current dropped below threshold: {current:.1f}mA < {cd_parameters['chargecurrent']:.1f}mA"
+            
+            # DISCHARGE PHASE (negative current): ONLY check lower bounds
+            elif cd_currentsetpoint < 0:  # DISCHARGE PHASE
+                if potential < cd_parameters['lbound']:
+                    cutoff_triggered = True
+                    cutoff_reason = f"Discharge completed - lower potential bound reached: {potential:.3f}V < {cd_parameters['lbound']:.3f}V"
+                # NOTE: ulimit and other upper thresholds are ignored during discharge
+        
+        # Log the cutoff reason for debugging
+        if cutoff_triggered:
+            log_message(f"Cutoff triggered: {cutoff_reason}")
+        
+        if cutoff_triggered: # A cutoff condition has been reached
+            
+            # Determine current phase based on setpoint sign (more reliable than exact comparison)
+            currently_charging = cd_currentsetpoint > 0
+            
+            if currently_charging: # Switch from charge to discharge phase                                     
                 cd_currentsetpoint = cd_parameters['dischargecurrent']
                 if cd_type_dropdown.currentIndex() == 2:
                     set_control_mode(True) #set galvanostat
-                #set_cell_status(False)
-                #sleep(5)
-                #set_cell_status(True)
-            else:
+                    
+                #wait between cycles to avoid polarization    
+                cd_wait_start_time = 0
+                cd_wait_update()
+                log_message(f"Switching to discharge phase after charge cutoff: {cutoff_reason}")
+            else: # Switch from discharge to charge phase
+                # Check if auto-stop is enabled and we just finished a discharge cycle
+                if cd_stop_after_next_discharge:
+                    log_message("Auto-stop triggered after discharge cycle - stopping measurement")
+                    cd_stop(interrupted=False)
+                    return
+                
                 cd_currentsetpoint = cd_parameters['chargecurrent']
                 if cd_type_dropdown.currentIndex() == 2:
-                    set_control_mode(False) #set potetntiostat
+                    set_control_mode(False) #set potentiostat
+                
+                # NEW: Add waiting after discharge cycle
+                cd_discharge_wait_start_time = 0
+                cd_waiting_after_discharge = True
+                log_message(f"Switching to charge phase after discharge cutoff: {cutoff_reason}")
                     
             charge_milli = 0.0
             hardware_manual_control_range_dropdown.setCurrentIndex(current_range_from_current(cd_currentsetpoint)) # Determine the proper current range for the new setpoint
@@ -1081,8 +1399,18 @@ def cd_stop(interrupted=True):
         else:
             log_message("Charge/discharge measurement finished. Calculated charges (in uAh): [" + ', '.join("%.2f"%(value*1e6) for value in cd_charges) + "]") # Print list of inserted/extracted charges to the message log
         cd_current_cycle_entry.setText("") # Clear cycle indicator
-        cd_update_params_button.setEnabled(False)
-        set_cd_params_enabled(True)
+        
+        # Disable runtime controls
+        cd_update_button.setEnabled(False)
+        cd_autostop_checkbox.setEnabled(False)
+        cd_autostop_checkbox.setChecked(False)
+        
+        # Reset runtime variables
+        global cd_stop_after_next_discharge, cd_waiting_after_discharge, cd_discharge_wait_start_time
+        cd_stop_after_next_discharge = False
+        cd_waiting_after_discharge = False
+        cd_discharge_wait_start_time = 0
+
         state = States.Stationary_Graph # Keep displaying the last plot until the user clicks a button
         preview_cancel_button.show()
 
@@ -1213,9 +1541,9 @@ def rate_stop(interrupted=True):
         preview_cancel_button.show()
         
 def m1_update():
-    global arduino  
+    global arduino_dev, arduino_out_endpoint  
     
-    if arduino is None:
+    if arduino_dev is None:
         log_message("Arduino not connected.")
         return
     
@@ -1229,7 +1557,7 @@ def m1_update():
         message = "<a,{}>".format(int(cd_mc_m1slider.value()*255.0/100.0))
     
     try:
-        arduino.write(message.encode())
+        arduino_dev.write(arduino_out_endpoint, message.encode())
     except Exception as e:
         log_message("Arduino write error: " + str(e))
     
@@ -1239,9 +1567,9 @@ def m1_update():
         cd_mc_m2value.setText(str(cd_mc_m1slider.value()))
     
 def m2_update():
-    global arduino  
+    global arduino_dev, arduino_out_endpoint  
     
-    if arduino is None:
+    if arduino_dev is None:
         log_message("Arduino not connected.")
         return
     
@@ -1255,7 +1583,7 @@ def m2_update():
         message = "<b,{}>".format(int(cd_mc_m2slider.value()*255.0/100.0))
     
     try:
-        arduino.write(message.encode())
+        arduino_dev.write(arduino_out_endpoint, message.encode())
     except Exception as e:
         log_message("Arduino write error: " + str(e))
     
@@ -1265,33 +1593,119 @@ def m2_update():
         cd_mc_m1value.setText(str(cd_mc_m2slider.value()))
         
 def connect_disconnect_arduino():
-    global arduino
-    if arduino is not None:
-        arduino.close()
-        arduino = None
+    global arduino_dev, arduino_out_endpoint, arduino_in_endpoint
+    if arduino_dev is not None:
+        usb.util.dispose_resources(arduino_dev)
+        arduino_dev = None
         cd_mc_connect_button.setText("Connect")
         set_pump_controls_enabled(False)
         log_message("Arduino disconnected.")
         return
     
+    if selected_arduino_identifier is None:
+        QtWidgets.QMessageBox.warning(mainwidget, "No Device Selected", "Please select a device from the dropdown or click Refresh to scan for devices.")
+        return
+    
+    bus, port_numbers, serial = selected_arduino_identifier
+    
+    arduino_dev = usb.core.find(
+        idVendor=int(arduino_vid, 0),
+        idProduct=int(arduino_pid, 0),
+        custom_match=lambda dev: device_matches(dev, bus, port_numbers, serial)
+    )
+    
+    if arduino_dev is None:
+        QtWidgets.QMessageBox.critical(mainwidget, "Arduino Not Found", "Could not find the selected Arduino device.")
+        return
+    
+    try:
+        arduino_out_endpoint, arduino_in_endpoint = find_bulk_endpoints(arduino_dev)
+        cd_mc_connect_button.setText("Disconnect")
+        set_pump_controls_enabled(True)
+        port_str = '.'.join(map(str, port_numbers))
+        log_message(f"Arduino connected on bus {bus}, port {port_str}")
+    except Exception as e:
+        QtWidgets.QMessageBox.critical(mainwidget, "Connection Error", f"Failed to connect: {str(e)}")
+        arduino_dev = None
+
+def refresh_arduino_devices():
+    """Scan for devices matching the current VID/PID and populate the dropdown."""
+    global selected_arduino_port
     vid_string = str(cd_mc_vid.text())
     pid_string = str(cd_mc_pid.text())
-    vid = int(vid_string, 0)
-    pid = int(pid_string, 0)
     
-    for port in serial_ports():
-        try:
-            dev = usb.core.find(idVendor=vid, idProduct=pid)
-            if dev is not None:
-                arduino = serial.Serial(port=port, baudrate=9600, timeout=2)
-                time.sleep(2)
-                cd_mc_connect_button.setText("Disconnect")
-                set_pump_controls_enabled(True)
-                log_message("Arduino connected on " + port)
-                return
-        except:
-            pass
-    QtWidgets.QMessageBox.critical(mainwidget, "Arduino Not Found", "No Arduino found with VID %s and PID %s." % (vid_string, pid_string))
+    cd_mc_device_dropdown.clear()
+    devices = find_devices_by_vid_pid(vid_string, pid_string)
+    
+    if not devices:
+        cd_mc_device_dropdown.addItem("No devices found")
+        selected_arduino_port = None
+    else:
+        for port, label in devices:
+            cd_mc_device_dropdown.addItem(label, port)
+        selected_arduino_port = devices[0][0]
+
+def on_arduino_device_selected(index):
+    """Handle selection change in the device dropdown."""
+    global selected_arduino_identifier
+    if index >= 0:
+        selected_arduino_identifier = cd_mc_device_dropdown.itemData(index)
+
+def create_device_selector(parent_layout, vid_default, pid_default, on_device_selected_callback):
+    """Add a device selector row (dropdown + refresh button) to the given layout.
+    
+    Args:
+        parent_layout: The QLayout to add the selector to
+        vid_default: Default VID string (e.g. "0x1a86")
+        pid_default: Default PID string (e.g. "0x7523")
+        on_device_selected_callback: Function to call when dropdown selection changes
+    
+    Returns:
+        Tuple of (vid_widget, pid_widget, device_dropdown, refresh_button)
+    """
+    vid_pid_hbox = QtWidgets.QHBoxLayout()
+    vid_label, vid_widget = make_label_entry(vid_pid_hbox, "VID")
+    vid_widget.setText(vid_default)
+    pid_label, pid_widget = make_label_entry(vid_pid_hbox, "PID")
+    pid_widget.setText(pid_default)
+    parent_layout.addLayout(vid_pid_hbox)
+    
+    device_hbox = QtWidgets.QHBoxLayout()
+    device_label = QtWidgets.QLabel("Device:")
+    device_hbox.addWidget(device_label)
+    device_dropdown = QtWidgets.QComboBox()
+    device_hbox.addWidget(device_dropdown)
+    refresh_button = QtWidgets.QPushButton("Refresh")
+    refresh_button.setMaximumWidth(80)
+    device_hbox.addWidget(refresh_button)
+    parent_layout.addLayout(device_hbox)
+    
+    device_dropdown.currentIndexChanged.connect(on_device_selected_callback)
+    
+    return vid_widget, pid_widget, device_dropdown, refresh_button
+
+def refresh_device_selector(device_dropdown, vid_widget, pid_widget, selected_identifier_global):
+    """Scan for devices matching the current VID/PID and populate the dropdown.
+    
+    Args:
+        device_dropdown: The QComboBox widget to populate
+        vid_widget: The QLineEdit containing the VID
+        pid_widget: The QLineEdit containing the PID
+        selected_identifier_global: Name of the global variable to store selected device identifier
+    """
+    vid_string = str(vid_widget.text())
+    pid_string = str(pid_widget.text())
+    
+    device_dropdown.clear()
+    devices = find_devices_by_vid_pid(vid_string, pid_string)
+    
+    if not devices:
+        device_dropdown.addItem("No devices found")
+        globals()[selected_identifier_global] = None
+    else:
+        for identifier, label in devices:
+            device_dropdown.addItem(label, identifier)
+        globals()[selected_identifier_global] = devices[0][0]
 
 def set_pump_controls_enabled(enabled):
     """Enable or disable all pump control widgets."""
@@ -1304,16 +1718,18 @@ def set_pump_controls_enabled(enabled):
 
 def on_pumps_toggled(checked):
     """Handle pumps on/off toggle - controls both pumps."""
+    global arduino_dev, arduino_out_endpoint
     if checked:
         cd_mc_pumps_toggle.setText("Turn Pumps Off")
         m1_update()
         m2_update()
     else:
         cd_mc_pumps_toggle.setText("Turn Pumps On")
-        try:
-            arduino.write("<c,0>".encode())
-        except Exception as e:
-            log_message("Arduino write error: " + str(e))
+        if arduino_dev is not None:
+            try:
+                arduino_dev.write(arduino_out_endpoint, "<c,0>".encode())
+            except Exception as e:
+                log_message("Arduino write error: " + str(e))
 
 def on_m1_input_changed(input_widget):
     """Handle pump 1 manual input."""
@@ -1404,18 +1820,19 @@ hardware_usb_box = QtWidgets.QGroupBox(title="USB Interface", flat=False)
 format_box_for_parameter(hardware_usb_box)
 hardware_usb_box_layout = QtWidgets.QVBoxLayout()
 hardware_usb_box.setLayout(hardware_usb_box_layout)
-hardware_usb_vid_pid_layout = QtWidgets.QHBoxLayout()
-hardware_usb_box_layout.addLayout(hardware_usb_vid_pid_layout)
-hardware_usb_vid_label, hardware_usb_vid = make_label_entry(hardware_usb_vid_pid_layout, "VID")
-hardware_usb_vid.setText(usb_vid)
-hardware_usb_pid_label, hardware_usb_pid = make_label_entry(hardware_usb_vid_pid_layout, "PID")
-hardware_usb_pid.setText(usb_pid)
+
+hardware_usb_vid, hardware_usb_pid, hardware_usb_device_dropdown, hardware_usb_refresh_button = create_device_selector(
+    hardware_usb_box_layout, usb_vid, usb_pid, on_usb_device_selected
+)
+
 hardware_usb_connectButton = QtWidgets.QPushButton("Connect")
 hardware_usb_connectButton.clicked.connect(connect_disconnect_usb)
 hardware_usb_box_layout.addWidget(hardware_usb_connectButton)
 hardware_usb_box_layout.setSpacing(5)
 hardware_usb_box_layout.setContentsMargins(3,9,3,3)
 hardware_vbox.addWidget(hardware_usb_box)
+
+hardware_usb_refresh_button.clicked.connect(lambda: refresh_device_selector(hardware_usb_device_dropdown, hardware_usb_vid, hardware_usb_pid, "selected_usb_identifier"))
 
 hardware_device_info_box = QtWidgets.QGroupBox(title="Device Information", flat=False)
 format_box_for_parameter(hardware_device_info_box)
@@ -1648,22 +2065,10 @@ format_box_for_parameter(cd_params_box)
 cd_params_layout = QtWidgets.QVBoxLayout()
 cd_params_box.setLayout(cd_params_layout)
 
-# Toggle for live parameter editing during cycling
-cd_allow_edit_checkbox = QtWidgets.QCheckBox("Allow parameter editing during cycling")
-cd_allow_edit_checkbox.setToolTip("Enable to modify parameters while cycling. Note: changes to charge/discharge current take effect on the subsequent cycle.")
-cd_allow_edit_checkbox.setChecked(False)
-cd_allow_edit_checkbox.stateChanged.connect(on_cd_allow_edit_toggled)
-cd_params_layout.addWidget(cd_allow_edit_checkbox)
-
-cd_update_params_button = QtWidgets.QPushButton("Update Parameters")
-cd_update_params_button.clicked.connect(on_cd_update_params_clicked)
-cd_update_params_button.setEnabled(False)
-cd_params_layout.addWidget(cd_update_params_button)
-
 cd_lbound_entry_label, cd_lbound_entry = make_label_entry(cd_params_layout, "Lower bound (V)")
 
 cd_type_dropdown = QtWidgets.QComboBox()
-cd_type_dropdown.addItems(["Charge to potential", "Charge to injected charge (uAh)"])
+cd_type_dropdown.addItems(["Charge to potential", "Charge to injected charge (uAh)", "Charge to injected charge at constant potential (uAh)"])
 cd_type_dropdown.currentIndexChanged.connect(on_cd_type_changed)
 cd_params_layout.addWidget(cd_type_dropdown)
 
@@ -1674,7 +2079,10 @@ cd_dischargecurrent_entry_label, cd_dischargecurrent_entry = make_label_entry(cd
 cd_numcycles_entry_label, cd_numcycles_entry = make_label_entry(cd_params_layout, "Number of half cycles")
 cd_numsamples_entry_label, cd_numsamples_entry = make_label_entry(cd_params_layout, "Samples to average")
 cd_numsamples_entry.setText("1")
-
+cd_waittime_entry_label, cd_waittime_entry = make_label_entry(cd_params_layout, "Charge wait time (s)")
+cd_waittime_entry.setText("30")
+cd_discharge_wait_entry_label, cd_discharge_wait_entry = make_label_entry(cd_params_layout, "Discharge wait time (s)")
+cd_discharge_wait_entry.setText("30")
 
 
 cd_params_layout.setSpacing(6)
@@ -1704,6 +2112,26 @@ cd_stop_button = QtWidgets.QPushButton("Stop charge/discharge")
 cd_stop_button.clicked.connect(lambda: cd_stop(interrupted=True))
 cd_vbox.addWidget(cd_stop_button)
 
+# NEW: Runtime Control Box
+cd_runtime_box = QtWidgets.QGroupBox(title="Runtime Controls", flat=False)
+format_box_for_parameter(cd_runtime_box)
+cd_runtime_layout = QtWidgets.QVBoxLayout()
+cd_runtime_box.setLayout(cd_runtime_layout)
+
+# Update Parameters Button
+cd_update_button = QtWidgets.QPushButton("Update Parameters During Run")
+cd_update_button.clicked.connect(cd_update_parameters)
+cd_runtime_layout.addWidget(cd_update_button)
+
+# Auto-stop after discharge checkbox
+cd_autostop_checkbox = QtWidgets.QCheckBox("Auto-stop after next discharge cycle")
+cd_autostop_checkbox.setEnabled(False)  # Disabled until measurement starts
+cd_runtime_layout.addWidget(cd_autostop_checkbox)
+
+cd_runtime_layout.setSpacing(6)
+cd_runtime_layout.setContentsMargins(3,10,3,3)
+cd_vbox.addWidget(cd_runtime_box)
+
 cd_vbox.setSpacing(6)
 cd_vbox.setContentsMargins(3,3,3,3)
 
@@ -1728,16 +2156,15 @@ format_box_for_parameter(cd_mc_box)
 cd_mc_layout = QtWidgets.QVBoxLayout()
 cd_mc_box.setLayout(cd_mc_layout)
 
-cd_mc_vid_pid_hbox = QtWidgets.QHBoxLayout()
-cd_mc_vid_label, cd_mc_vid = make_label_entry(cd_mc_vid_pid_hbox, "VID")
-cd_mc_vid.setText(arduino_vid)
-cd_mc_pid_label, cd_mc_pid = make_label_entry(cd_mc_vid_pid_hbox, "PID")
-cd_mc_pid.setText(arduino_pid)
-cd_mc_layout.addLayout(cd_mc_vid_pid_hbox)
+cd_mc_vid, cd_mc_pid, cd_mc_device_dropdown, cd_mc_refresh_button = create_device_selector(
+    cd_mc_layout, arduino_vid, arduino_pid, on_arduino_device_selected
+)
 
 cd_mc_connect_button = QtWidgets.QPushButton("Connect")
 cd_mc_connect_button.clicked.connect(connect_disconnect_arduino)
 cd_mc_layout.addWidget(cd_mc_connect_button)
+
+cd_mc_refresh_button.clicked.connect(lambda: refresh_device_selector(cd_mc_device_dropdown, cd_mc_vid, cd_mc_pid, "selected_arduino_port"))
 
 cd_mlock_checkbox = QtWidgets.QCheckBox("Adjust pumps together")
 cd_mc_layout.addWidget(cd_mlock_checkbox)
@@ -1900,11 +2327,11 @@ def periodic_update(): # A state machine is used to determine which functions ne
         emergency_shutdown()
     
     try:
-        global time_from_last_arduino_update
-        if arduino is not None and timeit.default_timer() - time_from_last_arduino_update > 1:
-            data = arduino.readline().decode().strip()
-            arduino.reset_input_buffer()
-            rpm1 = int(data.split(",")[0])
+        global time_from_last_arduino_update, arduino_in_endpoint
+        if arduino_dev is not None and timeit.default_timer() - time_from_last_arduino_update > 1:
+            data = arduino_dev.read(arduino_in_endpoint, 30, 30) # just guessed on the 30, 30 values
+            data = ''.join([chr(x) for x in data])
+            rpm1 = int(data.split(",")[0])        
             rpm2 = int(data.split(",")[1])
             cd_mc_m1label.setText("Positive Pump Control - {} RPM".format(rpm1))
             cd_mc_m2label.setText("Negative Pump Control - {} RPM".format(rpm2))
@@ -1917,5 +2344,10 @@ timer.timeout.connect(periodic_update)
 timer.start(int(1e3*adcread_interval)) # Calls periodic_update() every adcread_interval (as defined in the beginning of this program)
 log_message("Program started. Press the \"Connect\" button in the hardware tab to connect to the USB interface.")
 
+refresh_arduino_devices()
+refresh_device_selector(hardware_usb_device_dropdown, hardware_usb_vid, hardware_usb_pid, "selected_usb_identifier")
 win.show() # Show the main window
+base = getattr(sys, "_MEIPASS", os.path.abspath("."))
+icon_path = os.path.join(base, "icon", "icon.png")
+win.setWindowIcon(QtGui.QIcon(icon_path))
 sys.exit(app.exec_()) # Keep the program running by periodically calling the periodic_update() until the GUI window is closed

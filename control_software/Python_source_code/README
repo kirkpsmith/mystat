@@ -18,10 +18,10 @@ export QT_QPA_PLATFORM_PLUGIN_PATH=$(python3 -c "import PyQt5.QtCore; print(PyQt
 
 ```
 
-To package the app, run
+To package the app, download [appimagetool](https://github.com/AppImage/appimagetool/releases) to this directory, rename to `appimagetool`, and run
 ```
-.venv/bin/pyinstaller --onefile --windowed  --noconsole mystat.py
-```
+./build-appimage.sh
+ ```
 
 To update requirements.txt:
 

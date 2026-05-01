@@ -4,7 +4,6 @@
 # This Python program allows control over the USB potentiostat/galvanostat using a graphical user interface. It supports real-time data acquisition and plotting, manual control and
 # calibration, and three pre-programmed measurement methods geared towards battery research (staircase cyclic voltammetry, constant-current charge/discharge, and rate testing).
 # It is cross-platform, requiring only a working installation of Python 3.x together with the Numpy, Scipy, PyUSB, and PyQtGraph packages.
-# To compile releases, use pyinstaller 
 
 
 # Author: Thomas Dobbelaere, modified by Matthew Yates and Paul Irving / modified by Daniel Fernandez and Kirk Smith for the FBRC and use with flow batteries.
@@ -21,11 +20,12 @@ import scipy.integrate
 import serial
 import glob
 from time import sleep
+from version import __version__
 
 
 #import pkg_resources.py2_warn
 
-VERSION_NUMBER = "1"
+VERSION_NUMBER = __version__
 
 # basedir = os.path.dirname(__file__)
 
@@ -2335,7 +2335,7 @@ def periodic_update(): # A state machine is used to determine which functions ne
             rpm2 = int(data.split(",")[1])
             cd_mc_m1label.setText("Positive Pump Control - {} RPM".format(rpm1))
             cd_mc_m2label.setText("Negative Pump Control - {} RPM".format(rpm2))
-            time_from_last_arduin_update = timeit.default_timer()
+            time_from_last_arduino_update = timeit.default_timer()
     except:
         pass
 
@@ -2347,4 +2347,7 @@ log_message("Program started. Press the \"Connect\" button in the hardware tab t
 refresh_arduino_devices()
 refresh_device_selector(hardware_usb_device_dropdown, hardware_usb_vid, hardware_usb_pid, "selected_usb_identifier")
 win.show() # Show the main window
+base = getattr(sys, "_MEIPASS", os.path.abspath("."))
+icon_path = os.path.join(base, "icon", "icon.png")
+win.setWindowIcon(QtGui.QIcon(icon_path))
 sys.exit(app.exec_()) # Keep the program running by periodically calling the periodic_update() until the GUI window is closed

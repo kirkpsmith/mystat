@@ -1,3 +1,0 @@
-The executable file named "mystat" is the USB potentiostat/galvanostat control software for Linux. The file mystat includes Python and the supporting modules and libraries needed.  Ensure that the file permissions are set to allow executing (run the command "chmod +x mystat"), then the program can be started from the command line using the command "./mystat".
-
-To give users the ability to control the potentiostat without root permissions, follow the instructions in the main README.

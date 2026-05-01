@@ -15,6 +15,7 @@ case "$(uname -m)" in
   i386|i686) ARCH=i386 ;;
   *) ARCH="$(uname -m)" ;;  # fallback to raw value
 esac
+
 # Clean
 rm -rf "$APPDIR" *.AppImage
 
@@ -23,7 +24,7 @@ mkdir -p "$APPDIR"/usr/bin
 mkdir -p "$APPDIR"/usr/share/icons/hicolor/256x256/apps
 mkdir -p "$APPDIR"/usr/share/applications
 
-# Copy files (copy onedir dist)
+# Copy files
 cp -r "$EXE" "$APPDIR"/usr/bin/mystat
 # make the inner executable executable
 chmod +x "$APPDIR"/usr/bin/mystat/mystat
@@ -48,12 +49,6 @@ exec "$HERE/usr/bin/mystat/mystat" "$@"
 EOF
 chmod +x "$APPDIR"/AppRun
 
-# Download appimagetool if missing
-if [ ! -x ./appimagetool ]; then
-  wget -qO appimagetool https://github.com/AppImage/AppImageKit/releases/latest/download/appimagetool-x86_64.AppImage
-  chmod +x appimagetool
-fi
-
 # Build AppImage
 ./appimagetool "$APPDIR"
 
@@ -64,7 +59,6 @@ rm -rf *.AppDir
 rm -rf  build
 rm -rf dist
 rm mystat.spec
-
 
 echo "Done: ${APPNAME}-${VERSION}-${ARCH}.AppImage"
 

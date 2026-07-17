@@ -3,14 +3,15 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "91a4e791-a372-49b0-a8ed-3596bf9582a9")
-	(paper "USLetter" portrait)
+	(paper "A4" portrait)
 	(title_block
 		(title "MYSTAT")
-		(date "2020-08-07")
-		(rev "1")
+		(date "2026-07-16")
+		(rev "vJULY 2026")
 		(company "USB-Controlled Potentiostat/Galvanostat")
 		(comment 1 "Based on TDSTATv3 designed by Thomas Dobbelaere")
-		(comment 2 "by Matthew Yates")
+		(comment 2 "modified by Matthew Yates")
+		(comment 3 "modified by Kirk Smith")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x06"

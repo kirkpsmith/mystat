@@ -3,14 +3,15 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "91a4e791-a372-49b0-a8ed-3596bf9582a9")
-	(paper "USLetter" portrait)
+	(paper "A4" portrait)
 	(title_block
 		(title "MYSTAT")
-		(date "2020-08-07")
-		(rev "1")
+		(date "2026-07-16")
+		(rev "vJULY 2026")
 		(company "USB-Controlled Potentiostat/Galvanostat")
 		(comment 1 "Based on TDSTATv3 designed by Thomas Dobbelaere")
-		(comment 2 "by Matthew Yates")
+		(comment 2 "modified by Matthew Yates")
+		(comment 3 "modified by Kirk Smith")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x06"
@@ -906,261 +907,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "MCP3550_1"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U8"
-				(at -1.27 8.89 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "MCP3551-E/SN"
-				(at -7.62 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "my_footprints:SOIC-8"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en024716"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Manufacturer" "Microchip Technology"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Part Number" "MCP3551-E/SN"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "LCSC" "C1520170"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "MCP3550_1_0_0"
-				(rectangle
-					(start -7.62 7.62)
-					(end 7.62 -5.08)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -10.16 5.08 0)
-					(length 2.54)
-					(name "VREF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "VIN+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "VIN-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "SCK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "SDO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "CS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 10.16 5.08 180)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5495,18 +5241,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ADR421ARZ-REEL7"
-			(at 55.9381 106.9684 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C9650"
+		(property "Part Number" "ADR421ARZ"
 			(at 55.9381 106.9684 0)
 			(hide yes)
 			(show_name no)
@@ -5786,17 +5521,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 36.8881 106.9684 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "cfc1c3d2-b5b9-4c2e-8408-faebafc95193")
 		)
@@ -5964,17 +5688,6 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
-			(at 71.1781 110.7784 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 71.1781 110.7784 0)
 			(hide yes)
 			(show_name no)
@@ -6225,7 +5938,6 @@
 		)
 	)
 	(symbol
-		(lib_name "MCP3550_1")
 		(lib_id "mylib:MCP3550")
 		(at 163.2531 149.5134 0)
 		(unit 1)
@@ -6600,17 +6312,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 186.1131 109.5084 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "5b02458a-93bf-4cdf-bba5-bd9ad6862f85")
 		)
@@ -6788,17 +6489,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 186.1131 146.9734 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "095fb309-3715-447b-983c-3d6e857aca30")
 		)
@@ -6933,7 +6623,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8562006748401074176"
+		(property "Datasheet" "http://www.yageo.com/documents/recent/PYu-RC_Group_51_RoHS_L_9.pdf"
 			(at 81.3381 110.7784 0)
 			(hide yes)
 			(show_name no)
@@ -6954,7 +6644,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
+		(property "Manufacturer" "Yageo"
 			(at 81.3381 110.7784 0)
 			(hide yes)
 			(show_name no)
@@ -6965,18 +6655,7 @@
 				)
 			)
 		)
-		(property "Part Number" "0805W8F1002T5E"
-			(at 81.3381 110.7784 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17414"
+		(property "Part Number" "RC0805FR-0710KL"
 			(at 81.3381 110.7784 0)
 			(hide yes)
 			(show_name no)
@@ -7142,7 +6821,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
+		(property "Manufacturer" "Yageo"
 			(at 128.9631 146.9734 90)
 			(hide yes)
 			(show_name no)
@@ -7153,18 +6832,7 @@
 				)
 			)
 		)
-		(property "Part Number" "0805W8F1001T5E"
-			(at 128.9631 146.9734 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17513"
+		(property "Part Number" "RC0805FR-071KL"
 			(at 128.9631 146.9734 90)
 			(hide yes)
 			(show_name no)
@@ -7255,7 +6923,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "UNI-ROYAL"
+		(property "Manufacturer" "Yageo"
 			(at 128.9631 98.0784 90)
 			(hide yes)
 			(show_name no)
@@ -7266,18 +6934,7 @@
 				)
 			)
 		)
-		(property "Part Number" "0805W8F1001T5E"
-			(at 128.9631 98.0784 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C17513"
+		(property "Part Number" "RC0805FR-071KL"
 			(at 128.9631 98.0784 90)
 			(hide yes)
 			(show_name no)
@@ -7380,17 +7037,6 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
-			(at 136.5831 152.0534 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 136.5831 152.0534 0)
 			(hide yes)
 			(show_name no)
@@ -7578,17 +7224,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 136.5831 103.1584 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "d0a7eb11-401d-4895-b545-4f672d64493a")
 		)
@@ -7756,17 +7391,6 @@
 			)
 		)
 		(property "Part Number" "PIC16F1459-I/SO"
-			(at 106.045 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C643250"
 			(at 106.045 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -7998,17 +7622,6 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
-			(at 131.445 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 131.445 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -8270,17 +7883,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 79.375 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "49101759-6a1c-463a-910f-7b688d98718d")
 		)
@@ -8446,18 +8048,7 @@
 				)
 			)
 		)
-		(property "Part Number" "DAC1220E/2K5"
-			(at 55.3031 145.0684 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C2679558"
+		(property "Part Number" "DAC1220E"
 			(at 55.3031 145.0684 0)
 			(hide yes)
 			(show_name no)
@@ -8824,18 +8415,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ECS-25-S-1"
-			(at 31.1731 139.9884 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C2636517"
+		(property "Part Number" "ECS-25-S-1X"
 			(at 31.1731 139.9884 0)
 			(hide yes)
 			(show_name no)
@@ -8948,17 +8528,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 27.3631 145.0684 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "310f9741-cfe2-4ebc-ace0-beb87b021b09")
 		)
@@ -9051,17 +8620,6 @@
 			)
 		)
 		(property "Part Number" "CC0805JRNPO9BN120"
-			(at 34.9831 145.0684 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 34.9831 145.0684 0)
 			(hide yes)
 			(show_name no)
@@ -9324,17 +8882,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 74.3531 152.6884 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "0e76cb42-f27a-452f-888d-cd7ca68a24bb")
 		)
@@ -9437,17 +8984,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 69.2731 150.1484 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "1459e966-6f29-40df-b017-f4492b315995")
 		)
@@ -9539,18 +9075,7 @@
 				)
 			)
 		)
-		(property "Part Number" "CL32B106KBJNNNE"
-			(at 40.0631 133.6384 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C138687"
+		(property "Part Number" "CL32B106KBJNNWE"
 			(at 40.0631 133.6384 0)
 			(hide yes)
 			(show_name no)
@@ -9619,7 +9144,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588886995749769216"
+		(property "Datasheet" "https://media.digikey.com/PDF/Data%20Sheets/Sullins%20PDFs/xRxCzzzSxxN-RC_ST_11635-B.pdf"
 			(at 48.895 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9640,7 +9165,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "BOOMELE"
+		(property "Manufacturer" "Sullins Connector Solutions"
 			(at 48.895 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9651,18 +9176,7 @@
 				)
 			)
 		)
-		(property "Part Number" "2.54-1x6PStraight pin"
-			(at 48.895 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C37208"
+		(property "Part Number" "PRPC006SAAN-RC"
 			(at 48.895 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -10139,17 +9653,6 @@
 				(justify left bottom)
 			)
 		)
-		(property "LCSC" "C3197930"
-			(at 169.545 35.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "ec5496f0-56b9-4c49-8b1f-4c4a21f33b68")
 		)
@@ -10271,17 +9774,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 186.055 22.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "5cec79a0-7e93-4c56-82a3-982271a14960")
 		)
@@ -10374,17 +9866,6 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
-			(at 186.055 36.83 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 186.055 36.83 90)
 			(hide yes)
 			(show_name no)
@@ -10497,17 +9978,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 186.055 45.72 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "7b01548b-d828-4c09-994b-f70ac5b9d37d")
 		)
@@ -10600,18 +10070,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ILBB0805ER320V"
-			(at 178.435 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C6968654"
+		(property "Part Number" "*"
 			(at 178.435 27.94 0)
 			(hide yes)
 			(show_name no)

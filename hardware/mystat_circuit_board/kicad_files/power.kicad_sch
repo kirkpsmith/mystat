@@ -3,14 +3,15 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "e40d9ba1-9e46-41c6-af2e-0c3ac08f5d63")
-	(paper "USLetter" portrait)
+	(paper "A4" portrait)
 	(title_block
 		(title "MYSTAT")
-		(date "2020-08-07")
-		(rev "1")
+		(date "2026-07-16")
+		(rev "vJULY 2026")
 		(company "USB-Controlled Potentiostat/Galvanostat")
 		(comment 1 "Based on TDSTATv3 designed by Thomas Dobbelaere")
-		(comment 2 "by Matthew Yates")
+		(comment 2 "modified by Matthew Yates")
+		(comment 3 "modified by Kirk Smith")
 	)
 	(lib_symbols
 		(symbol "Device:C_Small"
@@ -3834,18 +3835,7 @@
 				)
 			)
 		)
-		(property "Part Number" "LTM8045IY#PBF"
-			(at 68.58 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C581193"
+		(property "Part Number" "LTM8045IY"
 			(at 68.58 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -4062,17 +4052,6 @@
 			)
 		)
 		(property "Part Number" "ERJ-6ENF6042V"
-			(at 91.44 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 91.44 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -4416,17 +4395,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 44.45 201.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "51191f95-fcef-4520-8cdc-ca089b28dc41")
 		)
@@ -4606,17 +4574,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 44.45 215.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "2445a125-8e3a-45f4-8f9a-7bc4e93b972a")
 		)
@@ -4786,17 +4743,6 @@
 			)
 		)
 		(property "Part Number" "CL31B475KBHNNNE"
-			(at 44.45 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 44.45 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -5052,18 +4998,7 @@
 				)
 			)
 		)
-		(property "Part Number" "EEEFT1V470AR"
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C193627"
+		(property "Part Number" "EEE-FT1V470AR"
 			(at 77.47 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -5252,17 +5187,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C141943"
-			(at 156.21 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "0b3904eb-3f68-4d44-8524-fad36690925c")
 		)
@@ -5374,17 +5298,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 142.24 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "ae639a22-20d4-4667-89da-6b8a27397b17")
 		)
@@ -5477,17 +5390,6 @@
 			)
 		)
 		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 175.26 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 175.26 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -5788,7 +5690,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590167819447787521"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C328.pdf"
 			(at 175.26 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -5809,7 +5711,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Viking Tech"
+		(property "Manufacturer" "Panasonic Electronic Components"
 			(at 175.26 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -5820,18 +5722,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ARG05BTC2943N"
-			(at 175.26 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C2681629"
+		(property "Part Number" "ERJ-PB6B2943V"
 			(at 175.26 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -5901,7 +5792,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8589819104925687808"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C328.pdf"
 			(at 175.26 199.39 0)
 			(hide yes)
 			(show_name no)
@@ -5922,7 +5813,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TE Connectivity"
+		(property "Manufacturer" "Panasonic Electronic Components"
 			(at 175.26 199.39 0)
 			(hide yes)
 			(show_name no)
@@ -5933,18 +5824,7 @@
 				)
 			)
 		)
-		(property "Part Number" "RQ73C2A174KBTD"
-			(at 175.26 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C2083549"
+		(property "Part Number" "ERJ-PB6B1743V"
 			(at 175.26 199.39 0)
 			(hide yes)
 			(show_name no)
@@ -6046,17 +5926,6 @@
 			)
 		)
 		(property "Part Number" "ADP7182AUJZ-R7"
-			(at 153.67 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C514358"
 			(at 153.67 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -6178,17 +6047,6 @@
 				)
 			)
 		)
-		(property "LCSC" ""
-			(at 139.7 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "36da1e76-9568-46e4-a990-f92d3c67b831")
 		)
@@ -6281,17 +6139,6 @@
 			)
 		)
 		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 167.64 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" ""
 			(at 167.64 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6592,7 +6439,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8590171533386674176"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
 			(at 181.61 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6613,7 +6460,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Viking Tech"
+		(property "Manufacturer" "Panasonic Electronic Components"
 			(at 181.61 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6624,18 +6471,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ARG05BTC8871"
-			(at 181.61 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C2684603"
+		(property "Part Number" "ERA-6AEB8871V"
 			(at 181.61 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -6705,7 +6541,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588935971161182208"
+		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C328.pdf"
 			(at 181.61 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -6726,7 +6562,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "YAGEO"
+		(property "Manufacturer" "Panasonic Electronic Components"
 			(at 181.61 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -6737,18 +6573,7 @@
 				)
 			)
 		)
-		(property "Part Number" "RT0805BRD0788K7L"
-			(at 181.61 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C706252"
+		(property "Part Number" "ERJ-PB6B8872V"
 			(at 181.61 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -6940,17 +6765,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left bottom)
-			)
-		)
-		(property "LCSC" ""
-			(at 54.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "3"

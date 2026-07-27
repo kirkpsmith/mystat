@@ -1,6 +1,6 @@
 #!/bin/sh
 
-.venv/bin/pyinstaller --windowed --noconsole --add-data ".venv/lib/python3.12/site-packages/PyQt5/Qt5/plugins:PyQt5/Qt5/plugins" mystat.py
+.venv/bin/pyinstaller --windowed --noconsole mystat.py
 
 set -e
 

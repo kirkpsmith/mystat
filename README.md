@@ -26,6 +26,12 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="7523", GROUP="plugde
 This assumes that the current user is a member of the `plugdev` group, and that the default USB Vendor and Product ID's
 as coded in the microcontroller firmware are used; if not, these values need to be adjusted.
 
+Reload of rules may be needed:
+```
+sudo udevadm control --reload
+sudo udevadm trigger
+```
+
 ## Credits
 tdstatv3 created by:
 

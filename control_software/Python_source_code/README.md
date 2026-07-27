@@ -8,7 +8,7 @@ python3 -m pip install -r requirements.txt
 
 Run the program (sudo may be needed on Linux for USB privileges)
 ```
-sudo .venv/bin/python mystat.py
+.venv/bin/python mystat.py
 ```
 
 On Linux, the following commands are sometimes needed:

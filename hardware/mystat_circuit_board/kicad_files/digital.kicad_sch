@@ -5303,7 +5303,11 @@
 			)
 		)
 		(property "Value" "MCP3551"
+<<<<<<< Updated upstream
 			(at 158.75 118.618 0)
+=======
+			(at 158.1731 118.3984 0)
+>>>>>>> Stashed changes
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5356,6 +5360,7 @@
 				)
 			)
 		)
+<<<<<<< Updated upstream
 		(property "Part Number" "MCP3551-E/SN"
 			(at 163.2531 112.0484 0)
 			(hide yes)
@@ -5368,6 +5373,9 @@
 			)
 		)
 		(property "LCSC" "C1520170"
+=======
+		(property "Part Number" "MCP3551"
+>>>>>>> Stashed changes
 			(at 163.2531 112.0484 0)
 			(hide yes)
 			(show_name no)
@@ -6240,7 +6248,11 @@
 			)
 		)
 		(property "Value" "MCP3551"
+<<<<<<< Updated upstream
 			(at 158.496 156.21 0)
+=======
+			(at 158.1731 155.8634 0)
+>>>>>>> Stashed changes
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6293,6 +6305,7 @@
 				)
 			)
 		)
+<<<<<<< Updated upstream
 		(property "Part Number" "MCP3551-E/SN"
 			(at 163.2531 149.5134 0)
 			(hide yes)
@@ -6305,6 +6318,9 @@
 			)
 		)
 		(property "LCSC" "C1520170"
+=======
+		(property "Part Number" "MCP3551"
+>>>>>>> Stashed changes
 			(at 163.2531 149.5134 0)
 			(hide yes)
 			(show_name no)
@@ -8741,8 +8757,8 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
+		(in_pos_files no)
+		(dnp yes)
 		(uuid "00000000-0000-0000-0000-00005b654fc5")
 		(property "Reference" "X1"
 			(at 31.1731 137.4484 0)
@@ -8786,8 +8802,9 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "DNP to hand-solder at 90 degree angle if fitting in Hammond enclosure"
 			(at 31.1731 139.9884 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

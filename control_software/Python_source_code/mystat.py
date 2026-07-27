@@ -805,7 +805,7 @@ def wait_for_adcread():
 
 def read_potential_current():
     """Read the most recent potential and current values from the device's ADC."""
-    global potential, current, raw_potential, raw_current, time_of_last_adcread
+    global potential, current, raw_potential, raw_current, time_of_last_adcread, log_file_handle
     wait_for_adcread()
     time_of_last_adcread = timeit.default_timer()
     dev.write(0x01,b'ADCREAD') # 0x01 = write address of EP1
@@ -829,7 +829,8 @@ def read_potential_current():
                 if log_file_handle is None: # avoids opening the log file on each write, only the first one
                     log_file_handle = open(hardware_log_filename.text(), 'a', 1)
                 print("%.2f\t%e\t%e"%(time_of_last_adcread,potential,current*1e-3),file=log_file_handle) # Output tab-separated data containing time (in s), potential (in V), and current (in A)
-            except:
+            except Exception as e:
+                print(e)
                 QtWidgets.QMessageBox.critical(mainwidget, "Logging error!", "Logging error!")
                 hardware_log_checkbox.setChecked(False) # Disable logging in case of file errors
 

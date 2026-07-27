@@ -19,6 +19,8 @@ import numpy as np
 import scipy.integrate
 from time import sleep
 from version import __version__
+import tkinter as tk
+from tkinter import filedialog
 
 
 #import pkg_resources.py2_warn
@@ -861,10 +863,22 @@ def update_live_graph():
     current_plot_curve.setData(xvalues, list(last_current_values))
 
 def choose_file(file_entry_field, questionstring):
-    """Open a file dialog and write the path of the selected file to a given entry field."""
-    filedialog = QtWidgets.QFileDialog()
-    file_entry_field.setText(filedialog.getSaveFileName(mainwidget, questionstring, "", "ASCII data (*.txt)",options=QtWidgets.QFileDialog.DontConfirmOverwrite))
+    root = tk.Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
 
+    filename = filedialog.asksaveasfilename(
+        title=questionstring,
+        initialdir=os.path.expanduser("~"),
+        defaultextension=".txt",
+        filetypes=[("ASCII data", "*.txt")]
+    )
+
+    root.destroy()
+
+    if filename:
+        file_entry_field.setText(filename)
+        
 def emergency_shutdown():
     """Check if emergency conditions (overpotential/overcurrent) are present, and if so, shut down the cell."""
     global current, state, log_file_handle, emergency_voltage_V, emergency_current_mA
@@ -903,12 +917,24 @@ def emergency_shutdown():
 def toggle_logging(checkbox_state):
     """Enable or disable logging of measurements to a file based on the state of a checkbox (2 means checked)."""
     global logging_enabled, log_file_handle
-    logging_enabled = (checkbox_state == 2)
 
-    if logging_enabled:
+    if checkbox_state == 2:
+        filename = hardware_log_filename.text().strip()
+
+        if not filename:
+            QtWidgets.QMessageBox.warning(
+                mainwidget,
+                "No file selected",
+                "Please choose a log file location before enabling logging."
+            )
+            hardware_log_checkbox.setChecked(False)  # this re-triggers toggle_logging with state 0
+            return
+
+        logging_enabled = True
         # Open file once, keep handle
-        log_file_handle = open(hardware_log_filename.text(), 'a', 1)
+        log_file_handle = open(filename, 'a', 1)
     else:
+        logging_enabled = False
         # Close when disabled
         if log_file_handle:
             log_file_handle.close()

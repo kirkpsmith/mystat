@@ -12,9 +12,12 @@ Run the program (sudo may be needed on Linux for USB privileges)
 ```
 
 On Linux, the following commands are sometimes needed:
+
 ```
+source .venv/bin/activate
 export LD_LIBRARY_PATH=$(python3 -c "import PyQt5.QtCore; print(PyQt5.QtCore.QLibraryInfo.location(PyQt5.QtCore.QLibraryInfo.LibrariesPath))"):$LD_LIBRARY_PATH
 export QT_QPA_PLATFORM_PLUGIN_PATH=$(python3 -c "import PyQt5.QtCore; print(PyQt5.QtCore.QLibraryInfo.location(PyQt5.QtCore.QLibraryInfo.PluginsPath))")
+.venv/bin/python mystat.py
 
 ```
 

@@ -32,6 +32,16 @@ sudo udevadm control --reload
 sudo udevadm trigger
 ```
 
+## Windows Driver
+
+To install the USB drivers in Windows, you must have Windows version 7 or later.  Download and run the program Zadig.exe found [here](https://github.com/pbatard/libwdi/releases/download/v1.5.1/zadig-2.9.exe).  The potentiostat should appear in the device list as "USB potentiostat/galvanostat".  Install the driver named "libusbK".
+
+More information on Zadig can be found from its authors at: https://zadig.akeo.ie/
+
+Zadig is based on libwdi and is licensed under GPLv3.  The libwdi source code is included here as a zip compressed archive. The Zadig source code is found in the examples directory of the libwdi archive.
+
+Alternatively, the latest version of the source code may be downloaded from the git repository: https://github.com/pbatard/libwdi
+
 ## Credits
 tdstatv3 created by:
 

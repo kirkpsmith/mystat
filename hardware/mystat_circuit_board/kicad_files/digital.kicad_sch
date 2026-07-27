@@ -5049,11 +5049,7 @@
 			)
 		)
 		(property "Value" "MCP3551"
-<<<<<<< Updated upstream
 			(at 158.75 118.618 0)
-=======
-			(at 158.1731 118.3984 0)
->>>>>>> Stashed changes
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5106,7 +5102,6 @@
 				)
 			)
 		)
-<<<<<<< Updated upstream
 		(property "Part Number" "MCP3551-E/SN"
 			(at 163.2531 112.0484 0)
 			(hide yes)
@@ -5119,9 +5114,6 @@
 			)
 		)
 		(property "LCSC" "C1520170"
-=======
-		(property "Part Number" "MCP3551"
->>>>>>> Stashed changes
 			(at 163.2531 112.0484 0)
 			(hide yes)
 			(show_name no)
@@ -5960,11 +5952,7 @@
 			)
 		)
 		(property "Value" "MCP3551"
-<<<<<<< Updated upstream
 			(at 158.496 156.21 0)
-=======
-			(at 158.1731 155.8634 0)
->>>>>>> Stashed changes
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6017,7 +6005,6 @@
 				)
 			)
 		)
-<<<<<<< Updated upstream
 		(property "Part Number" "MCP3551-E/SN"
 			(at 163.2531 149.5134 0)
 			(hide yes)
@@ -6030,9 +6017,6 @@
 			)
 		)
 		(property "LCSC" "C1520170"
-=======
-		(property "Part Number" "MCP3551"
->>>>>>> Stashed changes
 			(at 163.2531 149.5134 0)
 			(hide yes)
 			(show_name no)

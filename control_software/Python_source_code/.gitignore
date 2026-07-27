@@ -4,3 +4,4 @@ build
 dist
 mystat.spec
 appimagetool
+*.AppImage

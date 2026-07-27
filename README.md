@@ -55,7 +55,7 @@ Previous fork created by:
 
 Current fork created by:
 
-* [Daniel Fernandez Pinto](https://chemisting.com)) and [Kirk Smith](https://dualpower.supply)
+* [Daniel Fernandez Pinto](https://chemisting.com) and [Kirk Smith](https://dualpower.supply)
 
 ## License
 The contents of this repository are licensed under the GNU General Public License (GPL).

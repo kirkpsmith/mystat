@@ -2207,6 +2207,12 @@
 		(uuid "13dc0e7c-a509-4474-b6da-680ee4b45cc2")
 	)
 	(junction
+		(at 41.91 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "150bc237-69d5-44b6-b5c8-ca1a1c4f1d1f")
+	)
+	(junction
 		(at 114.3 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2273,6 +2279,12 @@
 		(uuid "54cdc6e2-d060-481b-8efc-ad7aea52f417")
 	)
 	(junction
+		(at 58.42 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "55f92fa9-71d7-4ef0-9991-ed167fb001ee")
+	)
+	(junction
 		(at 167.005 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2333,12 +2345,6 @@
 		(uuid "b090a74e-0220-4c4a-8c20-e02912219f6a")
 	)
 	(junction
-		(at 43.18 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cc703efd-2129-401e-b2af-8a92ab5b5c0e")
-	)
-	(junction
 		(at 43.18 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2349,6 +2355,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d229d6c7-8733-4772-9915-68839ce1af8c")
+	)
+	(junction
+		(at 43.18 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8dea03b-cc72-46e1-9656-a2ff6b6cd379")
 	)
 	(junction
 		(at 127 80.01)
@@ -2522,7 +2534,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 149.86) (xy 43.18 161.29)
+			(xy 41.91 149.86) (xy 41.91 151.13)
 		)
 		(stroke
 			(width 0)
@@ -2592,6 +2604,16 @@
 	)
 	(wire
 		(pts
+			(xy 60.96 149.86) (xy 60.96 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d1c1028-ecc6-429d-b22d-2a193010f4fa")
+	)
+	(wire
+		(pts
 			(xy 169.545 68.58) (xy 167.005 68.58)
 		)
 		(stroke
@@ -2632,6 +2654,16 @@
 	)
 	(wire
 		(pts
+			(xy 58.42 149.86) (xy 58.42 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2541b808-17b4-4136-aa7f-8aa85d1558d4")
+	)
+	(wire
+		(pts
 			(xy 184.785 44.45) (xy 184.785 46.99)
 		)
 		(stroke
@@ -2642,7 +2674,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 144.78) (xy 38.1 144.78)
+			(xy 33.02 144.78) (xy 36.83 144.78)
 		)
 		(stroke
 			(width 0)
@@ -2782,7 +2814,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 133.35) (xy 43.18 134.62)
+			(xy 41.91 133.35) (xy 41.91 134.62)
 		)
 		(stroke
 			(width 0)
@@ -2949,6 +2981,16 @@
 			(type default)
 		)
 		(uuid "43f3c981-e5cc-4ee8-b29e-f7f9520665a9")
+	)
+	(wire
+		(pts
+			(xy 41.91 133.35) (xy 43.18 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4654b23a-b905-40de-893c-af1e5ed95b57")
 	)
 	(wire
 		(pts
@@ -3312,6 +3354,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 142.24) (xy 53.34 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b05b365-3bcb-45f4-9631-01d91602b8b2")
+	)
+	(wire
+		(pts
 			(xy 133.35 153.67) (xy 133.35 151.13)
 		)
 		(stroke
@@ -3542,6 +3594,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 151.13) (xy 43.18 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bde1f92-aaef-42cb-bb5c-270c82b98164")
+	)
+	(wire
+		(pts
 			(xy 171.45 176.53) (xy 175.26 176.53)
 		)
 		(stroke
@@ -3602,6 +3664,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 151.13) (xy 43.18 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b297886b-e7f6-4854-bc4a-556ed44ad8ff")
+	)
+	(wire
+		(pts
 			(xy 113.03 187.96) (xy 116.84 187.96)
 		)
 		(stroke
@@ -3632,7 +3704,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 149.86) (xy 60.96 149.86)
+			(xy 43.18 151.13) (xy 58.42 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3972,7 +4044,7 @@
 	)
 	(wire
 		(pts
-			(xy 39.37 133.35) (xy 43.18 133.35)
+			(xy 39.37 133.35) (xy 41.91 133.35)
 		)
 		(stroke
 			(width 0)
@@ -4002,13 +4074,23 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 139.7) (xy 31.75 139.7)
+			(xy 36.83 139.7) (xy 31.75 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f87f348b-0812-41eb-a095-2ad9496d0e5c")
+	)
+	(wire
+		(pts
+			(xy 58.42 151.13) (xy 60.96 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f99e1d78-0465-433a-b5b2-aaa1024ea23a")
 	)
 	(wire
 		(pts
@@ -4618,6 +4700,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 116.84 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "03ded97e-55f0-4823-979b-2d47de75d241")
 		)
@@ -4729,6 +4822,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 34.29 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "138a857b-bb77-4749-971a-86e7b79221a8")
 		)
@@ -4821,6 +4925,17 @@
 			)
 		)
 		(property "Part Number" "ERJ-6ENF27R0V"
+			(at 34.29 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 34.29 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -5008,6 +5123,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 73.66 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "b01c1d85-3418-4fbc-88af-a633e08574f5")
 		)
@@ -5100,6 +5226,17 @@
 			)
 		)
 		(property "Part Number" "RC0805FR-0710KL"
+			(at 33.02 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 33.02 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -5363,6 +5500,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 135.255 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7ebfdb8e-4ffe-487c-9573-ce0420f879ab")
 		)
@@ -5455,6 +5603,17 @@
 			)
 		)
 		(property "Part Number" "ERA-6AEB4023V"
+			(at 135.255 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 135.255 80.01 90)
 			(hide yes)
 			(show_name no)
@@ -5568,6 +5727,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 135.255 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "e3fb9185-f00f-4fe1-85bf-9f9fc34a899b")
 		)
@@ -5661,6 +5831,17 @@
 			)
 		)
 		(property "Part Number" "ERA-6AEB753V"
+			(at 168.275 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 168.275 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -5773,6 +5954,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 110.49 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "8c101482-2494-4a61-a234-aed7cb90896b")
 		)
@@ -5864,6 +6056,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 121.92 205.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 121.92 205.74 90)
 			(hide yes)
 			(show_name no)
@@ -6126,6 +6329,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 36.83 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "801eafdc-9034-4758-8a4b-93e080063219")
 		)
@@ -6294,6 +6508,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 48.26 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 48.26 161.29 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6480,6 +6705,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 135.255 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "48ee4b34-0380-48e9-9f9f-aad014ce09ea")
 		)
@@ -6582,6 +6818,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 107.95 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "d2bcb39b-2c7f-4eed-9caf-a3f7a9db7697")
 		)
@@ -6674,6 +6921,17 @@
 			)
 		)
 		(property "Part Number" "ERA-6AEB104V"
+			(at 133.35 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 133.35 148.59 0)
 			(hide yes)
 			(show_name no)
@@ -7011,6 +7269,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 106.68 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "96b935b3-cf14-4159-a162-310b4976a474")
 		)
@@ -7188,6 +7457,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 119.38 215.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a38bf7f0-512c-4170-bf79-3565078fbd33")
 		)
@@ -7280,6 +7560,17 @@
 			)
 		)
 		(property "Part Number" "ERA-6AEB753V"
+			(at 138.43 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 138.43 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -7392,6 +7683,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 138.43 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "29a33879-83ab-46ce-ab51-c13a22d68c83")
 		)
@@ -7494,6 +7796,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 153.67 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5357a31e-dcac-437f-9062-a78f8e57ea91")
 		)
@@ -7586,6 +7899,17 @@
 			)
 		)
 		(property "Part Number" "ERA-6AEB753V"
+			(at 167.64 209.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 167.64 209.55 90)
 			(hide yes)
 			(show_name no)
@@ -7773,6 +8097,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 167.64 217.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "6a25d659-f070-4529-8539-bc9d88e1fe5f")
 		)
@@ -7875,6 +8210,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 168.275 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e6e759cc-6d2b-4009-b00f-90e9d6b624cb")
 		)
@@ -7892,7 +8238,7 @@
 	)
 	(symbol
 		(lib_id "mylib:OPA192")
-		(at 45.72 142.24 0)
+		(at 44.45 142.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7902,7 +8248,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005b63ebc1")
 		(property "Reference" "U10"
-			(at 46.99 135.89 0)
+			(at 45.72 135.89 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7913,7 +8259,7 @@
 			)
 		)
 		(property "Value" "OPA192"
-			(at 46.99 138.43 0)
+			(at 45.72 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7924,7 +8270,7 @@
 			)
 		)
 		(property "Footprint" "my_footprints:OPA192"
-			(at 45.72 142.24 0)
+			(at 44.45 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7935,7 +8281,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fopa192"
-			(at 45.72 142.24 0)
+			(at 44.45 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7946,7 +8292,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 45.72 142.24 0)
+			(at 44.45 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7956,7 +8302,7 @@
 			)
 		)
 		(property "Manufacturer" "Texas Instruments"
-			(at 45.72 142.24 0)
+			(at 44.45 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7967,7 +8313,18 @@
 			)
 		)
 		(property "Part Number" "OPA192IDBVR"
-			(at 45.72 142.24 0)
+			(at 44.45 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 44.45 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8088,6 +8445,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 107.95 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "a927d94e-7ce4-4aac-ad65-3fd30afe3324")
 		)
@@ -8178,6 +8546,17 @@
 			)
 		)
 		(property "Part Number" "ADG1419BRMZ-REEL7"
+			(at 52.07 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 52.07 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -8918,6 +9297,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 169.545 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2b3c7020-8731-4249-a421-64c9fadd547e")
 		)
@@ -9029,6 +9419,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 107.95 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "1d58b8fc-0eee-4444-b58f-144b192aa420")
 		)
@@ -9131,6 +9532,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 107.95 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c42ac7fa-d237-439d-a1b2-e571894b9474")
 		)
@@ -9224,6 +9636,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 172.085 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 172.085 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9479,6 +9902,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 172.085 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 172.085 44.45 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9744,6 +10178,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "00193707-6fbb-4554-98f5-f37226da753e")
 		)
@@ -9922,6 +10367,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 107.95 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 107.95 68.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10177,6 +10633,17 @@
 		)
 		(property "Part Number" "08055C104KAT2A"
 			(at 107.95 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
+			(at 107.95 93.98 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10593,6 +11060,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "6ebd2a8e-398c-4931-904e-f7a19465e506")
 		)
@@ -10694,6 +11172,17 @@
 			)
 		)
 		(property "Part Number" "OPA192IDBVR"
+			(at 163.83 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -10881,6 +11370,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 168.91 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 168.91 176.53 90)
 			(hide yes)
 			(show_name no)
@@ -11132,6 +11632,17 @@
 			)
 		)
 		(property "Part Number" "08055C104KAT2A"
+			(at 166.37 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 166.37 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -11544,6 +12055,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 146.685 158.75 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "15b02d8e-ea39-4c83-be8f-d76c007adaf4")
 		)
@@ -11641,6 +12163,17 @@
 			)
 		)
 		(property "Part Number" "9011-05-11"
+			(at 119.38 158.75 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 119.38 158.75 90)
 			(hide yes)
 			(show_name no)
@@ -11758,6 +12291,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 60.96 105.41 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "85b01f29-4823-435a-9dba-37d650acccdb")
 		)
@@ -11865,6 +12409,17 @@
 				)
 			)
 		)
+		(property "MFN" ""
+			(at 146.685 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e0685e34-0bb5-4311-8c00-d53791db4f91")
 		)
@@ -11962,6 +12517,17 @@
 			)
 		)
 		(property "Part Number" "9011-05-11"
+			(at 119.38 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 119.38 130.81 90)
 			(hide yes)
 			(show_name no)
@@ -12135,6 +12701,17 @@
 				(justify left)
 			)
 		)
+		(property "MFN" ""
+			(at 60.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "14d34889-b73a-4c5c-a9e7-fec96c4f8d7e")
 		)
@@ -12226,6 +12803,17 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 63.5 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MFN" ""
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)

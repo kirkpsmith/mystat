@@ -76,19 +76,14 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        [
-          "zones_intersect|76280943|109437404|00000000-0000-0000-0000-00005da0c9c6|00000000-0000-0000-0000-00005da0c9cf",
-          ""
-        ]
-      ],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
       },
       "rule_severities": {
         "annular_width": "error",
-        "clearance": "ignore",
+        "clearance": "error",
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
@@ -100,11 +95,11 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
-        "footprint_filters_mismatch": "ignore",
+        "footprint_filters_mismatch": "warning",
         "footprint_symbol_field_mismatch": "warning",
         "footprint_symbol_mismatch": "warning",
-        "footprint_type_mismatch": "ignore",
-        "hole_clearance": "ignore",
+        "footprint_type_mismatch": "warning",
+        "hole_clearance": "warning",
         "hole_to_hole": "warning",
         "holes_co_located": "warning",
         "invalid_outline": "error",
@@ -117,7 +112,7 @@
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "mirrored_text_on_front_layer": "warning",
-        "missing_courtyard": "ignore",
+        "missing_courtyard": "warning",
         "missing_footprint": "warning",
         "missing_tuning_profile": "warning",
         "net_conflict": "warning",
@@ -130,8 +125,8 @@
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
-        "solder_mask_bridge": "ignore",
-        "starved_thermal": "ignore",
+        "solder_mask_bridge": "warning",
+        "starved_thermal": "warning",
         "text_height": "warning",
         "text_on_edge_cuts": "error",
         "text_thickness": "warning",
@@ -139,12 +134,12 @@
         "too_many_vias": "error",
         "track_angle": "error",
         "track_dangling": "warning",
-        "track_not_centered_on_via": "ignore",
+        "track_not_centered_on_via": "warning",
         "track_on_post_machined_layer": "error",
         "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
-        "tuning_profile_track_geometries": "ignore",
+        "tuning_profile_track_geometries": "warning",
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
@@ -170,7 +165,7 @@
         "min_track_width": 0.254,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.381,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -1066,7 +1061,7 @@
         "uuid": "0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
       }
     ],
-    "used_designators": "K3-9,R26-27,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80,#PWR84-88,J3-4,U1",
+    "used_designators": "N1,U1,J3-4,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80,#PWR84-88,R26-27,K3-9",
     "variants": []
   },
   "sheets": [

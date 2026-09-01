@@ -311,6 +311,210 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda2kicad:EFVM035ADA470M0554"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "EFVM035ADA470M0554"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:CAP-SMD_BD5.0-L5.3-W5.3-LS6.0-FD"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C22387982.pdf"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "FOLLON(富隆电子)"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "EFVM035ADA470M0554"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C22387982"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "EFVM035ADA470M0554_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -0.51 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.78 1.78) (xy -1.78 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 1.78) (xy -0.51 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.51 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.13 -1.75)
+					(mid 0.4201 0.0241)
+					(end 1.15 1.79)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "mylib:+13.4V"
 			(power global)
 			(pin_names
@@ -2440,12 +2644,6 @@
 		(uuid "fd513b1b-cb86-4fd9-b5a3-79e62e59fbb0")
 	)
 	(junction
-		(at 77.47 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0243de0a-e1e6-4386-9d60-e813b244267d")
-	)
-	(junction
 		(at 69.85 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2678,6 +2876,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cb99b7df-0bdd-49b4-9168-1bc9b6add25f")
+	)
+	(junction
+		(at 77.47 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cc8d60ee-ba7c-4845-bc1b-8a01f673be25")
 	)
 	(junction
 		(at 44.45 173.99)
@@ -2913,6 +3117,16 @@
 	)
 	(wire
 		(pts
+			(xy 77.47 88.9) (xy 90.17 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37024f54-4543-4064-b6ac-70d08b7d354f")
+	)
+	(wire
+		(pts
 			(xy 44.45 209.55) (xy 44.45 213.36)
 		)
 		(stroke
@@ -2930,6 +3144,16 @@
 			(type default)
 		)
 		(uuid "465ca302-cc52-445d-9424-ac4f507c5b65")
+	)
+	(wire
+		(pts
+			(xy 77.47 88.9) (xy 77.47 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "484334a0-8970-4403-8a75-6ef6e7a212ba")
 	)
 	(wire
 		(pts
@@ -2990,16 +3214,6 @@
 			(type default)
 		)
 		(uuid "51f4174b-410d-4334-8395-5962875dd816")
-	)
-	(wire
-		(pts
-			(xy 59.69 88.9) (xy 77.47 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "52355333-d030-401e-a6c2-65c96cb3f494")
 	)
 	(wire
 		(pts
@@ -3123,7 +3337,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 88.9) (xy 90.17 88.9)
+			(xy 59.69 88.9) (xy 77.47 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3160,16 +3374,6 @@
 			(type default)
 		)
 		(uuid "6d3e0110-6ea0-4b0f-892d-182349ecd5e4")
-	)
-	(wire
-		(pts
-			(xy 77.47 99.06) (xy 77.47 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d706fe4-1522-4f12-be31-b7803b743302")
 	)
 	(wire
 		(pts
@@ -3300,6 +3504,16 @@
 			(type default)
 		)
 		(uuid "87667bca-7a02-4536-ac44-a5cd467f8e3f")
+	)
+	(wire
+		(pts
+			(xy 77.47 100.33) (xy 77.47 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "876afb71-8efb-4b9a-9f47-31ef4378b329")
 	)
 	(wire
 		(pts
@@ -3703,16 +3917,6 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 93.98) (xy 77.47 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0e82e2d-feef-4e07-9c1f-f21404f48a84")
-	)
-	(wire
-		(pts
 			(xy 50.8 184.15) (xy 50.8 186.69)
 		)
 		(stroke
@@ -3835,28 +4039,6 @@
 				)
 			)
 		)
-		(property "Part Number" "LTM8045IY"
-			(at 68.58 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 68.58 186.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 68.58 186.69 0)
 			(hide yes)
@@ -3957,6 +4139,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 68.58 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "LTM8045IY"
+			(at 68.58 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "LTM8045IY"
+			(at 68.58 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 68.58 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -4172,28 +4387,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-6ENF6042V"
-			(at 91.44 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 91.44 168.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 91.44 168.91 0)
 			(hide yes)
@@ -4294,6 +4487,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 91.44 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-6ENF6042V"
+			(at 91.44 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-6ENF6042V"
+			(at 91.44 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 91.44 168.91 0)
 			(hide yes)
 			(show_name no)
@@ -4626,28 +4852,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-6ENF1783V"
-			(at 44.45 201.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 44.45 201.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 44.45 201.93 0)
 			(hide yes)
@@ -4748,6 +4952,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 44.45 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-6ENF1783V"
+			(at 44.45 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-6ENF1783V"
+			(at 44.45 201.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 44.45 201.93 0)
 			(hide yes)
 			(show_name no)
@@ -4926,28 +5163,6 @@
 				)
 			)
 		)
-		(property "Part Number" "CL31B475KBHNNNE"
-			(at 44.45 215.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 44.45 215.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 44.45 215.9 0)
 			(hide yes)
@@ -5048,6 +5263,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 44.45 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL31B475KBHNNNE"
+			(at 44.45 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "CL31B475KBHNNNE"
+			(at 44.45 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 44.45 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -5226,28 +5474,6 @@
 				)
 			)
 		)
-		(property "Part Number" "CL31B475KBHNNNE"
-			(at 44.45 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 44.45 167.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 44.45 167.64 0)
 			(hide yes)
@@ -5348,6 +5574,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 44.45 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CL31B475KBHNNNE"
+			(at 44.45 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "CL31B475KBHNNNE"
+			(at 44.45 167.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 44.45 167.64 0)
 			(hide yes)
 			(show_name no)
@@ -5528,229 +5787,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 77.47 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00000000-0000-0000-0000-00005b850821")
-		(property "Reference" "C3"
-			(at 79.8068 95.3516 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "47 uF"
-			(at 79.8068 97.663 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "my_footprints:EEE-FT1V470AR"
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "http://www.rubycon.co.jp/en/catalog/e_pdfs/aluminum/e_zlh.pdf"
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 77.47 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Panasonic Electronic Components"
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "EEE-FT1V470AR"
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_1" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_2" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_3" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_4" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_5" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_6" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_7" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_8" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42_9" ""
-			(at 77.47 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e6250d68-ea9f-4001-87eb-6f020d9c9c0f")
-		)
-		(pin "2"
-			(uuid "276fcc71-6b0c-4fdd-84c3-a02805e695a1")
-		)
-		(instances
-			(project "mystat"
-				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d/00000000-0000-0000-0000-00005b875319"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 77.47 102.87 0)
 		(unit 1)
@@ -5902,28 +5938,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ADP7118AUJZ-5.0-R7"
-			(at 156.21 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 156.21 190.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 156.21 190.5 0)
 			(hide yes)
@@ -6024,6 +6038,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 156.21 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ADP7118AUJZ-5.0-R7"
+			(at 156.21 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ADP7118AUJZ-5.0-R7"
+			(at 156.21 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 156.21 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -6134,28 +6181,6 @@
 				)
 			)
 		)
-		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 142.24 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 142.24 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 142.24 177.8 0)
 			(hide yes)
@@ -6256,6 +6281,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 142.24 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1V475K125AC"
+			(at 142.24 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "C2012X7R1V475K125AC"
+			(at 142.24 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 142.24 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -6357,28 +6415,6 @@
 				)
 			)
 		)
-		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 175.26 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 175.26 177.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 175.26 177.8 0)
 			(hide yes)
@@ -6479,6 +6515,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 175.26 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1V475K125AC"
+			(at 175.26 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "C2012X7R1V475K125AC"
+			(at 175.26 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 175.26 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -6811,28 +6880,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-PB6B2943V"
-			(at 175.26 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 175.26 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 175.26 191.77 0)
 			(hide yes)
@@ -6933,6 +6980,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 175.26 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-PB6B2943V"
+			(at 175.26 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-PB6B2943V"
+			(at 175.26 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 175.26 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -7034,28 +7114,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-PB6B1743V"
-			(at 175.26 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 175.26 199.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 175.26 199.39 0)
 			(hide yes)
@@ -7156,6 +7214,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 175.26 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-PB6B1743V"
+			(at 175.26 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-PB6B1743V"
+			(at 175.26 199.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 175.26 199.39 0)
 			(hide yes)
 			(show_name no)
@@ -7256,28 +7347,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ADP7182AUJZ-R7"
-			(at 153.67 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 153.67 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 153.67 95.25 0)
 			(hide yes)
@@ -7378,6 +7447,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 153.67 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ADP7182AUJZ-R7"
+			(at 153.67 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ADP7182AUJZ-R7"
+			(at 153.67 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 153.67 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -7488,28 +7590,6 @@
 				)
 			)
 		)
-		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 139.7 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 139.7 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 139.7 74.93 0)
 			(hide yes)
@@ -7610,6 +7690,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 139.7 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1V475K125AC"
+			(at 139.7 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "C2012X7R1V475K125AC"
+			(at 139.7 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 139.7 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -7711,28 +7824,6 @@
 				)
 			)
 		)
-		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 167.64 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 167.64 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 167.64 74.93 0)
 			(hide yes)
@@ -7833,6 +7924,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 167.64 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "C2012X7R1V475K125AC"
+			(at 167.64 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "C2012X7R1V475K125AC"
+			(at 167.64 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 167.64 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -8165,28 +8289,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB8871V"
-			(at 181.61 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 181.61 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 181.61 74.93 0)
 			(hide yes)
@@ -8287,6 +8389,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 181.61 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB8871V"
+			(at 181.61 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB8871V"
+			(at 181.61 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 181.61 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -8388,28 +8523,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-PB6B8872V"
-			(at 181.61 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 181.61 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 181.61 85.09 0)
 			(hide yes)
@@ -8510,6 +8623,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 181.61 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-PB6B8872V"
+			(at 181.61 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-PB6B8872V"
+			(at 181.61 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 181.61 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -8691,29 +8837,6 @@
 				(justify left bottom)
 			)
 		)
-		(property "Part Number" "PJ-063AH"
-			(at 54.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "MFN" ""
-			(at 54.61 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 54.61 91.44 0)
 			(hide yes)
@@ -8824,6 +8947,39 @@
 				)
 			)
 		)
+		(property "MPN" "PJ-063AH"
+			(at 54.61 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "PJ-063AH"
+			(at 54.61 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
+			(at 54.61 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "3e005527-98ba-4fbd-bf40-b40a1d67b866")
 		)
@@ -8837,6 +8993,143 @@
 			(project "mystat"
 				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d/00000000-0000-0000-0000-00005b875319"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:EFVM035ADA470M0554")
+		(at 77.47 95.25 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f59a52f4-80a0-4aa1-8e09-9e52d03a4b92")
+		(property "Reference" "C3"
+			(at 80.01 93.9799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47 uF"
+			(at 80.01 96.5199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:CAP-SMD_BD5.0-L5.3-W5.3-LS6.0-FD"
+			(at 69.85 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C22387982.pdf"
+			(at 67.31 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "FOLLON(富隆电子)"
+			(at 64.77 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EFVM035ADA470M0554"
+			(at 62.23 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C22387982"
+			(at 59.69 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "EFVM035ADA470M0554"
+			(at 77.47 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
+			(at 77.47 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "86579bbf-d3f5-4228-8ff5-2aa238b8a39b")
+		)
+		(pin "1"
+			(uuid "b7e58856-eb84-40bf-925a-2536049a2205")
+		)
+		(instances
+			(project "mystat"
+				(path "/0d961adf-a1d6-44d9-8805-c5ad6be0ab6d/00000000-0000-0000-0000-00005b875319"
+					(reference "C3")
 					(unit 1)
 				)
 			)

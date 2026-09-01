@@ -51,7 +51,7 @@
         "silk_text_upright": false,
         "zones": {
           "border_display_style": 2,
-          "border_hatch_pitch": 0.5,
+          "border_hatch_pitch": 0.508,
           "corner_radius": 0.0,
           "corner_smoothing": 0,
           "fill_mode": 0,
@@ -61,12 +61,12 @@
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
           "min_clearance": 0.254,
-          "min_island_area": 10.0,
-          "min_thickness": 0.25,
-          "pad_connection": 1,
+          "min_island_area": 0.0013161349,
+          "min_thickness": 0.254,
+          "pad_connection": 2,
           "remove_islands": 0,
-          "thermal_relief_gap": 0.5,
-          "thermal_relief_spoke_width": 0.5
+          "thermal_relief_gap": 0.254,
+          "thermal_relief_spoke_width": 0.508
         }
       },
       "diff_pair_dimensions": [
@@ -76,7 +76,32 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "footprint_filters_mismatch|77300000|128700000|00000000-0000-0000-0000-00005bf21249|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "footprint_type_mismatch|99100000|90000000|00000000-0000-0000-0000-00005d0002f9|00000000-0000-0000-0000-000000000000",
+          "thermal vias"
+        ],
+        [
+          "hole_clearance|83460000|123745000|6c61bb55-f8fd-4438-b57f-5de5bc87de1f|668a8351-b88d-4111-ba86-c5bd6b747c78",
+          ""
+        ],
+        [
+          "hole_clearance|89560000|123745000|3deaf166-9d18-4453-a8df-76e7194f0ee3|51162ed5-f111-430a-bc87-9d1845fbcb5a",
+          ""
+        ],
+        [
+          "starved_thermal|83310000|123275000|00000000-0000-0000-0000-00005da0c9c6|6c61bb55-f8fd-4438-b57f-5de5bc87de1f|F.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|89710000|123275000|00000000-0000-0000-0000-00005da0c9c6|3deaf166-9d18-4453-a8df-76e7194f0ee3|F.Cu",
+          ""
+        ]
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -867,15 +892,15 @@
       "exclude_dnp": false,
       "fields_ordered": [
         {
-          "group_by": true,
-          "label": "Value",
-          "name": "Value",
-          "show": true
-        },
-        {
           "group_by": false,
           "label": "Reference",
           "name": "Reference",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
           "show": true
         },
         {
@@ -970,20 +995,14 @@
         },
         {
           "group_by": false,
-          "label": "MFN",
-          "name": "MFN",
-          "show": true
-        },
-        {
-          "group_by": false,
           "label": "Manufacturer",
           "name": "Manufacturer",
           "show": true
         },
         {
           "group_by": false,
-          "label": "Part Number",
-          "name": "Part Number",
+          "label": "MPN",
+          "name": "MPN",
           "show": true
         },
         {
@@ -1006,17 +1025,35 @@
         },
         {
           "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
+          "label": "LCSC Part",
+          "name": "LCSC Part",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "DKPN",
+          "name": "DKPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Part Number",
+          "name": "Part Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LSCS Part",
+          "name": "LSCS Part",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": false,
       "name": "",
-      "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_asc": false,
+      "sort_field": "LCSC Part"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -1061,7 +1098,7 @@
         "uuid": "0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
       }
     ],
-    "used_designators": "N1,U1,J3-4,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80,#PWR84-88,R26-27,K3-9",
+    "used_designators": "C40,N1,U1,J3-4,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80,#PWR84-88,R26-27,K3-9",
     "variants": []
   },
   "sheets": [

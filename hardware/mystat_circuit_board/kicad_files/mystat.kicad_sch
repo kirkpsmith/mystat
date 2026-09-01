@@ -434,9 +434,9 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "b215f15a-f94e-4578-890f-7fed2cd7ee52")
 		(property "Reference" "N1"
@@ -472,7 +472,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.hammfg.com/electronics/small-case/extruded/1455"
 			(at 135.89 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -484,6 +484,61 @@
 			)
 		)
 		(property "Description" "Housing"
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "1455B802"
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Hammond Manufacturing"
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "DKPN" "HM1117-ND"
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "1455B802"
+			(at 134.62 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 134.62 38.1 0)
 			(hide yes)
 			(show_name no)

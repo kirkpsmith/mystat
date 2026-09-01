@@ -14,275 +14,6 @@
 		(comment 3 "modified by Kirk Smith")
 	)
 	(lib_symbols
-		(symbol "Amplifier_Buffer:BUF634AxDDA"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 6.35 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "BUF634AxDDA"
-				(at 10.414 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Package_SO:TI_SO-PowerPAD-8_ThermalVias"
-				(at 3.81 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/buf634.pdf"
-				(at 3.81 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Description" "250mA High-Speed Buffer, PowerPAD SOIC-8"
-				(at 3.81 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "ki_keywords" "buffer amplifier"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "TI*SO*PowerPAD*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "BUF634AxDDA_0_1"
-				(polyline
-					(pts
-						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "BUF634AxDDA_1_0"
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 5.08)
-					(name "THPAD"
-						(effects
-							(font
-								(size 0.762 0.762)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "BUF634AxDDA_1_1"
-				(pin input line
-					(at 2.54 -7.62 90)
-					(length 6.35)
-					(name "BW"
-						(effects
-							(font
-								(size 0.762 0.762)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -5.08 5.08 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "V_{IN}"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 3.81)
-					(name "V-"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 3.81)
-					(name "V+"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin no_connect line
-					(at -5.08 -2.54 0)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Screw_Terminal_01x04"
 			(pin_names
 				(offset 1.016)
@@ -1329,6 +1060,273 @@
 						)
 					)
 					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "mylib:BUF634AxDDA"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 6.35 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BUF634AxDDA"
+				(at 10.414 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:TI_SO-PowerPAD-8_ThermalVias"
+				(at 3.81 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/buf634.pdf"
+				(at 3.81 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "250mA High-Speed Buffer, PowerPAD SOIC-8"
+				(at 3.81 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "ki_keywords" "buffer amplifier"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TI*SO*PowerPAD*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BUF634AxDDA_0_1"
+				(polyline
+					(pts
+						(xy 5.08 0) (xy -5.08 5.08) (xy -5.08 -5.08) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "BUF634AxDDA_1_1"
+				(pin input line
+					(at 2.54 -7.62 90)
+					(length 6.35)
+					(name "BW"
+						(effects
+							(font
+								(size 0.762 0.762)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 5.08 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "V_{IN}"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 5.08)
+					(name "THPAD"
+						(effects
+							(font
+								(size 0.762 0.762)
+							)
+						)
+					)
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4834,28 +4832,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 116.84 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 116.84 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 116.84 33.02 0)
 			(hide yes)
@@ -4956,6 +4932,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 116.84 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 116.84 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 116.84 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 116.84 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5066,28 +5075,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 80.01 108.585 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 80.01 108.585 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 80.01 108.585 0)
 			(hide yes)
@@ -5188,6 +5175,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 80.01 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 80.01 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 80.01 108.585 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 80.01 108.585 0)
 			(hide yes)
 			(show_name no)
@@ -5289,28 +5309,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERJ-6ENF27R0V"
-			(at 80.01 102.235 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 80.01 102.235 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 80.01 102.235 0)
 			(hide yes)
@@ -5411,6 +5409,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 80.01 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERJ-6ENF27R0V"
+			(at 80.01 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERJ-6ENF27R0V"
+			(at 80.01 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 80.01 102.235 0)
 			(hide yes)
 			(show_name no)
@@ -5587,28 +5618,6 @@
 				)
 			)
 		)
-		(property "Part Number" "CC0805KRX7R9BB472"
-			(at 73.66 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 73.66 147.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 73.66 147.32 0)
 			(hide yes)
@@ -5709,6 +5718,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 73.66 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805KRX7R9BB472"
+			(at 73.66 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "CC0805KRX7R9BB472"
+			(at 73.66 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 73.66 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -5810,28 +5852,6 @@
 				)
 			)
 		)
-		(property "Part Number" "RC0805FR-0710KL"
-			(at 33.02 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 33.02 163.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 33.02 163.83 0)
 			(hide yes)
@@ -5932,6 +5952,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 33.02 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RC0805FR-0710KL"
+			(at 33.02 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "RC0805FR-0710KL"
+			(at 33.02 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 33.02 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -6109,28 +6162,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB4023V"
-			(at 135.255 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 135.255 33.02 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 135.255 33.02 90)
 			(hide yes)
@@ -6231,6 +6262,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 135.255 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB4023V"
+			(at 135.255 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB4023V"
+			(at 135.255 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 135.255 33.02 90)
 			(hide yes)
 			(show_name no)
@@ -6332,28 +6396,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB4023V"
-			(at 135.255 80.01 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 135.255 80.01 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 135.255 80.01 90)
 			(hide yes)
@@ -6454,6 +6496,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 135.255 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB4023V"
+			(at 135.255 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB4023V"
+			(at 135.255 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 135.255 80.01 90)
 			(hide yes)
 			(show_name no)
@@ -6556,28 +6631,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 135.255 54.61 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 135.255 54.61 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 135.255 54.61 90)
 			(hide yes)
@@ -6678,6 +6731,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 135.255 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 135.255 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 135.255 54.61 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 135.255 54.61 90)
 			(hide yes)
 			(show_name no)
@@ -6780,28 +6866,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 168.275 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 168.275 87.63 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 168.275 87.63 90)
 			(hide yes)
@@ -6902,6 +6966,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 168.275 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 168.275 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 168.275 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 168.275 87.63 90)
 			(hide yes)
 			(show_name no)
@@ -7003,28 +7100,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 110.49 187.96 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 110.49 187.96 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 110.49 187.96 90)
 			(hide yes)
@@ -7125,6 +7200,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 110.49 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 110.49 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 110.49 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 110.49 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -7225,28 +7333,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 121.92 205.74 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 121.92 205.74 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 121.92 205.74 90)
 			(hide yes)
@@ -7347,6 +7433,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 121.92 205.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 121.92 205.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 121.92 205.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 121.92 205.74 90)
 			(hide yes)
 			(show_name no)
@@ -7598,28 +7717,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 36.83 133.35 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 36.83 133.35 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 36.83 133.35 90)
 			(hide yes)
@@ -7720,6 +7817,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 36.83 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 36.83 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 36.83 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 36.83 133.35 90)
 			(hide yes)
 			(show_name no)
@@ -7896,28 +8026,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 48.26 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 48.26 161.29 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 48.26 161.29 90)
 			(hide yes)
@@ -8018,6 +8126,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 48.26 161.29 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 48.26 161.29 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 48.26 161.29 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 48.26 161.29 90)
 			(hide yes)
 			(show_name no)
@@ -8194,28 +8335,6 @@
 				)
 			)
 		)
-		(property "Part Number" "2-1625868-7"
-			(at 152.4 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 152.4 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 152.4 121.92 0)
 			(hide yes)
@@ -8316,6 +8435,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 152.4 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "2-1625868-7"
+			(at 152.4 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "2-1625868-7"
+			(at 152.4 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 152.4 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -8417,28 +8569,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB102V"
-			(at 127 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 127 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 127 149.86 0)
 			(hide yes)
@@ -8539,6 +8669,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 127 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB102V"
+			(at 127 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB102V"
+			(at 127 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 127 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8640,28 +8803,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB104V"
-			(at 156.21 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 156.21 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 156.21 149.86 0)
 			(hide yes)
@@ -8762,6 +8903,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 156.21 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB104V"
+			(at 156.21 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB104V"
+			(at 156.21 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 156.21 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8863,28 +9037,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB202V"
-			(at 106.68 222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 106.68 222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 106.68 222.25 0)
 			(hide yes)
@@ -8985,6 +9137,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 106.68 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB202V"
+			(at 106.68 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB202V"
+			(at 106.68 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 106.68 222.25 0)
 			(hide yes)
 			(show_name no)
@@ -9161,28 +9346,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB183V"
-			(at 119.38 215.9 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 119.38 215.9 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 119.38 215.9 90)
 			(hide yes)
@@ -9283,6 +9446,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 119.38 215.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB183V"
+			(at 119.38 215.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB183V"
+			(at 119.38 215.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 119.38 215.9 90)
 			(hide yes)
 			(show_name no)
@@ -9384,28 +9580,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 138.43 196.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 138.43 196.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 138.43 196.85 90)
 			(hide yes)
@@ -9506,6 +9680,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 138.43 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 138.43 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 138.43 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 138.43 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -9607,28 +9814,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 138.43 185.42 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 138.43 185.42 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 138.43 185.42 90)
 			(hide yes)
@@ -9729,6 +9914,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 138.43 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 138.43 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 138.43 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 138.43 185.42 90)
 			(hide yes)
 			(show_name no)
@@ -9830,28 +10048,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 153.67 215.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 153.67 215.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 153.67 215.9 0)
 			(hide yes)
@@ -9952,6 +10148,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 153.67 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 153.67 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 153.67 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 153.67 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -10053,28 +10282,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ERA-6AEB753V"
-			(at 167.64 209.55 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 167.64 209.55 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 167.64 209.55 90)
 			(hide yes)
@@ -10175,6 +10382,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 167.64 209.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ERA-6AEB753V"
+			(at 167.64 209.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ERA-6AEB753V"
+			(at 167.64 209.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 167.64 209.55 90)
 			(hide yes)
 			(show_name no)
@@ -10351,28 +10591,6 @@
 				)
 			)
 		)
-		(property "Part Number" "CC0805JRNPO9BN120"
-			(at 167.64 217.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 167.64 217.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 167.64 217.17 90)
 			(hide yes)
@@ -10473,6 +10691,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 167.64 217.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805JRNPO9BN120"
+			(at 167.64 217.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "CC0805JRNPO9BN120"
+			(at 167.64 217.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 167.64 217.17 90)
 			(hide yes)
 			(show_name no)
@@ -10574,28 +10825,6 @@
 				)
 			)
 		)
-		(property "Part Number" "CC0805JRNPO9BN120"
-			(at 168.275 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 168.275 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 168.275 93.98 90)
 			(hide yes)
@@ -10696,6 +10925,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 168.275 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "CC0805JRNPO9BN120"
+			(at 168.275 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "CC0805JRNPO9BN120"
+			(at 168.275 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 168.275 93.98 90)
 			(hide yes)
 			(show_name no)
@@ -10797,28 +11059,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 44.45 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 44.45 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 44.45 142.24 0)
 			(hide yes)
@@ -10919,6 +11159,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 44.45 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 44.45 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 44.45 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 44.45 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -11018,29 +11291,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Susumu"
-			(at 125.73 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "RL1220S-1R0-F"
-			(at 125.73 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
+		(property "Manufacturer" "YAGEO"
 			(at 125.73 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -11151,6 +11402,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 125.73 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "RT0805BRD071RL"
+			(at 125.73 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "RT0805BRD071RL"
+			(at 125.73 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 125.73 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -11250,28 +11534,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ADG1419BRMZ-REEL7"
-			(at 52.07 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 52.07 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 52.07 179.07 0)
 			(hide yes)
@@ -11372,6 +11634,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 52.07 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "ADG1419BRMZ-REEL7"
+			(at 52.07 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "ADG1419BRMZ-REEL7"
+			(at 52.07 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 52.07 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -12101,28 +12396,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 169.545 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 169.545 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 169.545 57.15 0)
 			(hide yes)
@@ -12223,6 +12496,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 169.545 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 169.545 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 169.545 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 169.545 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -12333,28 +12639,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 107.95 22.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 107.95 22.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 107.95 22.86 90)
 			(hide yes)
@@ -12455,6 +12739,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 107.95 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 107.95 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 107.95 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 107.95 22.86 90)
 			(hide yes)
 			(show_name no)
@@ -12556,28 +12873,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 107.95 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 107.95 46.99 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 107.95 46.99 90)
 			(hide yes)
@@ -12678,6 +12973,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 107.95 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 107.95 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 107.95 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 107.95 46.99 90)
 			(hide yes)
 			(show_name no)
@@ -12779,28 +13107,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 172.085 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 172.085 68.58 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 172.085 68.58 90)
 			(hide yes)
@@ -12901,6 +13207,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 172.085 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 172.085 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 172.085 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 172.085 68.58 90)
 			(hide yes)
 			(show_name no)
@@ -13155,28 +13494,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 172.085 44.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 172.085 44.45 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 172.085 44.45 90)
 			(hide yes)
@@ -13277,6 +13594,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 172.085 44.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 172.085 44.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 172.085 44.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 172.085 44.45 90)
 			(hide yes)
 			(show_name no)
@@ -13532,28 +13882,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 116.84 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 116.84 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 116.84 80.01 0)
 			(hide yes)
@@ -13654,6 +13982,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 116.84 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 116.84 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -13840,28 +14201,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 107.95 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 107.95 68.58 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 107.95 68.58 90)
 			(hide yes)
@@ -13962,6 +14301,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 107.95 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 107.95 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 107.95 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 107.95 68.58 90)
 			(hide yes)
 			(show_name no)
@@ -14216,28 +14588,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 107.95 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 107.95 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 107.95 93.98 90)
 			(hide yes)
@@ -14338,6 +14688,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 107.95 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 107.95 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 107.95 93.98 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 107.95 93.98 90)
 			(hide yes)
 			(show_name no)
@@ -14669,28 +15052,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 119.38 196.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 119.38 196.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 119.38 196.85 0)
 			(hide yes)
@@ -14791,6 +15152,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 119.38 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 119.38 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -14901,28 +15295,6 @@
 				)
 			)
 		)
-		(property "Part Number" "OPA192IDBVR"
-			(at 163.83 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 163.83 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 163.83 187.96 0)
 			(hide yes)
@@ -15023,6 +15395,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 163.83 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "OPA192IDBVR"
+			(at 163.83 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "OPA192IDBVR"
+			(at 163.83 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 163.83 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -15209,28 +15614,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 168.91 176.53 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 168.91 176.53 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 168.91 176.53 90)
 			(hide yes)
@@ -15331,6 +15714,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 168.91 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 168.91 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 168.91 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 168.91 176.53 90)
 			(hide yes)
 			(show_name no)
@@ -15506,28 +15922,6 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 166.37 196.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MFN" ""
-			(at 166.37 196.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Field42" ""
 			(at 166.37 196.85 90)
 			(hide yes)
@@ -15628,6 +16022,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 166.37 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "08055C104KAT2A"
+			(at 166.37 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "08055C104KAT2A"
+			(at 166.37 196.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 166.37 196.85 90)
 			(hide yes)
 			(show_name no)
@@ -15805,7 +16232,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Buffer:BUF634AxDDA")
+		(lib_id "mylib:BUF634AxDDA")
 		(at 60.96 142.24 0)
 		(unit 1)
 		(body_style 1)
@@ -15869,17 +16296,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(property "MFN" ""
-			(at 60.96 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "Field42" ""
@@ -15982,6 +16398,28 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 60.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
+			(at 60.96 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" ""
 			(at 60.96 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -16203,17 +16641,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C41371794"
-			(at 100.33 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Manufacturer" "MiRelay"
 			(at 100.33 132.08 0)
 			(hide yes)
@@ -16225,7 +16652,40 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C41371794"
+			(at 100.33 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SIP-HV1A05D"
+			(at 100.33 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Part Number" "SIP-HV1A05D"
+			(at 100.33 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 100.33 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -16511,17 +16971,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C41371794"
-			(at 127 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Manufacturer" "MiRelay"
 			(at 127 132.08 0)
 			(hide yes)
@@ -16533,7 +16982,40 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C41371794"
+			(at 127 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SIP-HV1A05D"
+			(at 127 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Part Number" "SIP-HV1A05D"
+			(at 127 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 127 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -16740,17 +17222,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C41371794"
-			(at 100.33 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Manufacturer" "MiRelay"
 			(at 100.33 160.02 0)
 			(hide yes)
@@ -16762,7 +17233,40 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C41371794"
+			(at 100.33 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SIP-HV1A05D"
+			(at 100.33 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Part Number" "SIP-HV1A05D"
+			(at 100.33 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 100.33 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -17048,17 +17552,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C41371794"
-			(at 36.83 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Manufacturer" "MiRelay"
 			(at 36.83 109.22 0)
 			(hide yes)
@@ -17070,7 +17563,40 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C41371794"
+			(at 36.83 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SIP-HV1A05D"
+			(at 36.83 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Part Number" "SIP-HV1A05D"
+			(at 36.83 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 36.83 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -17292,7 +17818,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-4-2.54_1x04_P2.54mm_Horizontal"
+		(property "Footprint" "easyeda2kicad:CONN-TH_4P-P2.54_MX128-2.54-GN01-04P-CU-Y-A"
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -17303,7 +17829,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C5188444.pdf"
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -17314,7 +17840,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -17325,18 +17851,7 @@
 				)
 			)
 		)
-		(property "MFN" ""
-			(at 63.5 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Field42" ""
+		(property "LCSC Part" "C5188444"
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -17436,6 +17951,39 @@
 			)
 		)
 		(property "Field42_9" ""
+			(at 63.5 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "MX128-2.54-04P-GN01-Cu-Y-A"
+			(at 63.5 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Part Number" "MX128-2.54-04P-GN01-Cu-Y-A"
+			(at 63.5 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 63.5 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -17958,17 +18506,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C41371794"
-			(at 129.54 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Manufacturer" "MiRelay"
 			(at 129.54 160.02 0)
 			(hide yes)
@@ -17980,7 +18517,40 @@
 				)
 			)
 		)
+		(property "LCSC Part" "C41371794"
+			(at 129.54 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "SIP-HV1A05D"
+			(at 129.54 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Part Number" "SIP-HV1A05D"
+			(at 129.54 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LSCS Part" ""
 			(at 129.54 160.02 0)
 			(hide yes)
 			(show_name no)

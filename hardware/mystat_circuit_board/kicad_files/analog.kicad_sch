@@ -16274,7 +16274,7 @@
 				(justify left)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/buf634.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/buf634a.pdf"
 			(at 64.77 149.86 0)
 			(hide yes)
 			(show_name no)

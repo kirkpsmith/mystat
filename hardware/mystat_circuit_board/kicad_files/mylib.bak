@@ -3465,26 +3465,6 @@
 				)
 			)
 		)
-		(symbol "BUF634AxDDA_1_0"
-			(pin power_in line
-				(at 0 -7.62 90)
-				(length 5.08)
-				(name "THPAD"
-					(effects
-						(font
-							(size 0.762 0.762)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
 		(symbol "BUF634AxDDA_1_1"
 			(pin input line
 				(at 2.54 -7.62 90)
@@ -3634,150 +3614,16 @@
 				)
 			)
 			(pin power_in line
-				(at -5.08 10.16 0)
-				(length 2.54)
-				(hide yes)
+				(at 0 -7.62 90)
+				(length 5.08)
 				(name "THPAD"
 					(effects
 						(font
-							(size 1.27 1.27)
+							(size 0.762 0.762)
 						)
 					)
 				)
-				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 13.97 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "11"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "15"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "16"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin power_in line
-				(at -5.08 15.24 0)
-				(length 2.54)
-				(hide yes)
-				(name "THPAD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "17"
+				(number "9"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -9268,7 +9114,7 @@
 			)
 			(polyline
 				(pts
-					(xy 12.7 3.81) (xy 12.7 1.27)
+					(xy 12.7 1.27) (xy 15.24 2.54) (xy 12.7 3.81) (xy 12.7 1.27)
 				)
 				(stroke
 					(width 0)
@@ -9318,7 +9164,7 @@
 			)
 			(polyline
 				(pts
-					(xy 15.24 1.27) (xy 12.7 2.54) (xy 15.24 3.81) (xy 15.24 1.27)
+					(xy 15.24 3.81) (xy 15.24 1.27)
 				)
 				(stroke
 					(width 0)

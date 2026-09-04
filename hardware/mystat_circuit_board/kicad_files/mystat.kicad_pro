@@ -61,9 +61,9 @@
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
           "min_clearance": 0.254,
-          "min_island_area": 0.0013161349,
+          "min_island_area": 10.0,
           "min_thickness": 0.254,
-          "pad_connection": 2,
+          "pad_connection": 1,
           "remove_islands": 0,
           "thermal_relief_gap": 0.254,
           "thermal_relief_spoke_width": 0.508
@@ -86,10 +86,6 @@
           ""
         ],
         [
-          "footprint_symbol_field_mismatch|99100000|90000000|00000000-0000-0000-0000-00005d0002f9|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
           "footprint_type_mismatch|99100000|90000000|00000000-0000-0000-0000-00005d0002f9|00000000-0000-0000-0000-000000000000",
           "thermal vias"
         ],
@@ -102,23 +98,15 @@
           ""
         ],
         [
-          "silk_overlap|60106667|76830000|9a9f82c2-4926-48c0-9f8a-1c42e56a38c6|b20b1a48-e01c-4c33-82c4-cbc35faa5e44",
+          "starved_thermal|83310000|123275000|00000000-0000-0000-0000-00005da0c9c3|6c61bb55-f8fd-4438-b57f-5de5bc87de1f|F.Cu",
           ""
         ],
         [
-          "silk_overlap|67168333|76830000|9f6d9bff-0572-48aa-af14-acbb59319fc3|e20d10eb-401e-45e1-9da6-ec9af62738da",
+          "starved_thermal|86080000|53830000|00000000-0000-0000-0000-00005da0c9c3|593fcadd-1aa5-4be0-8ec3-e17f7cf58164|F.Cu",
           ""
         ],
         [
-          "silk_overlap|74230000|76830000|b8666ed0-cb4d-455e-b316-82d87da840e1|e55b2861-04ad-436d-b28f-4f69ef8b84e7",
-          ""
-        ],
-        [
-          "starved_thermal|83310000|123275000|00000000-0000-0000-0000-00005da0c9c6|6c61bb55-f8fd-4438-b57f-5de5bc87de1f|F.Cu",
-          ""
-        ],
-        [
-          "starved_thermal|89710000|123275000|00000000-0000-0000-0000-00005da0c9c6|3deaf166-9d18-4453-a8df-76e7194f0ee3|F.Cu",
+          "starved_thermal|89710000|123275000|00000000-0000-0000-0000-00005da0c9c3|3deaf166-9d18-4453-a8df-76e7194f0ee3|F.Cu",
           ""
         ]
       ],
@@ -1072,8 +1060,8 @@
       "group_symbols": true,
       "include_excluded_from_bom": false,
       "name": "",
-      "sort_asc": false,
-      "sort_field": "LCSC Part"
+      "sort_asc": true,
+      "sort_field": "Value"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -1118,7 +1106,7 @@
         "uuid": "0d961adf-a1d6-44d9-8805-c5ad6be0ab6d"
       }
     ],
-    "used_designators": "C40,N1,U1,J3-4,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80,#PWR84-88,R26-27,K3-9",
+    "used_designators": "C40,N1,U1,J3-4,#PWR4,#PWR23,#PWR46,#PWR68,#PWR71,#PWR75,#PWR77,#PWR80-81,#PWR84-88,R26-27,K3-9",
     "variants": []
   },
   "sheets": [

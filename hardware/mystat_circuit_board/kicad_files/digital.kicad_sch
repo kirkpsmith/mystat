@@ -5401,8 +5401,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP3551"
-			(at 155.5169 144.9996 0)
+		(property "Value" "MCP3551-E/SN"
+			(at 151.892 145.034 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5565,7 +5565,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C1520170"
+		(property "LCSC Part" "C623293"
 			(at 160.02 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5576,29 +5576,7 @@
 				)
 			)
 		)
-		(property "MPN" "MCP3551-E/SN"
-			(at 160.02 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "MCP3551-E/SN"
-			(at 160.02 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "MPN" "MCP3551T-E/SN"
 			(at 160.02 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5828,7 +5806,7 @@
 				)
 			)
 		)
-		(property "MPN" "ADR421ARZ"
+		(property "MPN" "ADR421ARZ-REEL7"
 			(at 52.705 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -5839,18 +5817,7 @@
 				)
 			)
 		)
-		(property "Part Number" "ADR421ARZ"
-			(at 52.705 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C9650"
 			(at 52.705 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6108,7 +6075,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 33.655 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6229,7 +6196,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 33.655 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6240,18 +6207,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 33.655 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 33.655 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6417,7 +6373,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 67.945 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -6538,7 +6494,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 67.945 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -6549,18 +6505,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 67.945 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 67.945 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -6832,8 +6777,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP3551"
-			(at 155.2629 182.5916 0)
+		(property "Value" "MCP3551-E/SN"
+			(at 152.654 182.626 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6996,7 +6941,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C1520170"
+		(property "LCSC Part" "C623293"
 			(at 160.02 175.895 0)
 			(hide yes)
 			(show_name no)
@@ -7007,29 +6952,7 @@
 				)
 			)
 		)
-		(property "MPN" "MCP3551-E/SN"
-			(at 160.02 175.895 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "MCP3551-E/SN"
-			(at 160.02 175.895 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "MPN" "MCP3551T-E/SN"
 			(at 160.02 175.895 0)
 			(hide yes)
 			(show_name no)
@@ -7287,7 +7210,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7408,7 +7331,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7419,18 +7342,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 182.88 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 182.88 135.89 0)
 			(hide yes)
 			(show_name no)
@@ -7596,7 +7508,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 182.88 173.355 0)
 			(hide yes)
 			(show_name no)
@@ -7717,7 +7629,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 182.88 173.355 0)
 			(hide yes)
 			(show_name no)
@@ -7728,18 +7640,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 182.88 173.355 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 182.88 173.355 0)
 			(hide yes)
 			(show_name no)
@@ -8037,18 +7938,7 @@
 				)
 			)
 		)
-		(property "Part Number" "RC0805FR-0710KL"
-			(at 78.105 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C84376"
 			(at 78.105 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -8346,18 +8236,7 @@
 				)
 			)
 		)
-		(property "Part Number" "RC0805FR-071KL"
-			(at 125.73 173.355 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C95781"
 			(at 125.73 173.355 90)
 			(hide yes)
 			(show_name no)
@@ -8580,18 +8459,7 @@
 				)
 			)
 		)
-		(property "Part Number" "RC0805FR-071KL"
-			(at 125.73 124.46 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C95781"
 			(at 125.73 124.46 90)
 			(hide yes)
 			(show_name no)
@@ -8682,7 +8550,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 133.35 178.435 0)
 			(hide yes)
 			(show_name no)
@@ -8803,7 +8671,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 133.35 178.435 0)
 			(hide yes)
 			(show_name no)
@@ -8814,18 +8682,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 133.35 178.435 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 133.35 178.435 0)
 			(hide yes)
 			(show_name no)
@@ -8991,7 +8848,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 133.35 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -9112,7 +8969,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 133.35 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -9123,18 +8980,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 133.35 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 133.35 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -9432,18 +9278,7 @@
 				)
 			)
 		)
-		(property "Part Number" "PIC16F1459-I/SO"
-			(at 106.045 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C643250"
 			(at 106.045 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -9663,7 +9498,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 131.445 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -9784,7 +9619,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 131.445 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -9795,18 +9630,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 131.445 38.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 131.445 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -10046,7 +9870,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 79.375 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -10167,7 +9991,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 79.375 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -10178,18 +10002,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 79.375 31.75 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 79.375 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -10486,18 +10299,7 @@
 				)
 			)
 		)
-		(property "Part Number" "DAC1220E"
-			(at 52.07 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C478450"
 			(at 52.07 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -10985,28 +10787,6 @@
 				)
 			)
 		)
-		(property "Part Number" "ECS-25-S-1X"
-			(at 27.94 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
-			(at 27.94 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "2"
 			(uuid "739df86a-a1f3-471d-8842-509de7a0c673")
 		)
@@ -11055,7 +10835,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 24.13 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11066,7 +10846,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf"
+		(property "Datasheet" "kicad-embed://C38523.pdf"
 			(at 24.13 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11087,7 +10867,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 24.13 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11208,7 +10988,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0805JRNPO9BN120"
+		(property "MPN" "CL10C120JB8NNNC"
 			(at 24.13 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11219,18 +10999,7 @@
 				)
 			)
 		)
-		(property "Part Number" "CC0805JRNPO9BN120"
-			(at 24.13 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C38523"
 			(at 24.13 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11289,7 +11058,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 31.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11300,7 +11069,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "http://www.yageo.com/documents/recent/UPY-GP_NP0_16V-to-50V_16.pdf"
+		(property "Datasheet" "kicad-embed://C38523.pdf"
 			(at 31.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11321,7 +11090,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Yageo"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 31.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11442,7 +11211,7 @@
 				)
 			)
 		)
-		(property "MPN" "CC0805JRNPO9BN120"
+		(property "MPN" "CL10C120JB8NNNC"
 			(at 31.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11453,18 +11222,7 @@
 				)
 			)
 		)
-		(property "Part Number" "CC0805JRNPO9BN120"
-			(at 31.75 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C38523"
 			(at 31.75 171.45 0)
 			(hide yes)
 			(show_name no)
@@ -11837,18 +11595,7 @@
 				)
 			)
 		)
-		(property "Part Number" "C0805C103J5GACTU"
-			(at 71.12 179.07 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C2167597"
 			(at 71.12 179.07 90)
 			(hide yes)
 			(show_name no)
@@ -12071,18 +11818,7 @@
 				)
 			)
 		)
-		(property "Part Number" "GRM2165C1H332JA01D"
-			(at 66.04 176.53 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C77062"
 			(at 66.04 176.53 90)
 			(hide yes)
 			(show_name no)
@@ -12141,7 +11877,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 36.83 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -12294,7 +12030,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL32B106KBJNNWE"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 36.83 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -12305,18 +12041,7 @@
 				)
 			)
 		)
-		(property "Part Number" "CL32B106KBJNNWE"
-			(at 36.83 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C15850"
 			(at 36.83 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -12539,28 +12264,6 @@
 			)
 		)
 		(property "MPN" "HX PZ2.54-1x6P ZZ"
-			(at 48.895 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "HX PZ2.54-1x6P ZZ"
-			(at 48.895 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
 			(at 48.895 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -12944,18 +12647,7 @@
 				)
 			)
 		)
-		(property "Part Number" "C0805C103J5GACTU"
-			(at 187.96 69.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C2167597"
 			(at 187.96 69.85 90)
 			(hide yes)
 			(show_name no)
@@ -13046,7 +12738,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "AVX Corporation"
+		(property "Manufacturer" "YAGEO"
 			(at 187.96 83.82 90)
 			(hide yes)
 			(show_name no)
@@ -13167,7 +12859,7 @@
 				)
 			)
 		)
-		(property "MPN" "08055C104KAT2A"
+		(property "MPN" "CC0805KRX7R9BB104"
 			(at 187.96 83.82 90)
 			(hide yes)
 			(show_name no)
@@ -13178,18 +12870,7 @@
 				)
 			)
 		)
-		(property "Part Number" "08055C104KAT2A"
-			(at 187.96 83.82 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C49678"
 			(at 187.96 83.82 90)
 			(hide yes)
 			(show_name no)
@@ -13259,7 +12940,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf"
+		(property "Datasheet" "kicad-embed://C1779.pdf"
 			(at 187.96 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -13280,7 +12961,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TDK Corporation"
+		(property "Manufacturer" "Samsung Electro-Mechanics"
 			(at 187.96 92.71 90)
 			(hide yes)
 			(show_name no)
@@ -13401,7 +13082,7 @@
 				)
 			)
 		)
-		(property "MPN" "C2012X7R1V475K125AC"
+		(property "MPN" "CL21A475KAQNNNE"
 			(at 187.96 92.71 90)
 			(hide yes)
 			(show_name no)
@@ -13412,18 +13093,7 @@
 				)
 			)
 		)
-		(property "Part Number" "C2012X7R1V475K125AC"
-			(at 187.96 92.71 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
+		(property "LCSC Part" "C1779"
 			(at 187.96 92.71 90)
 			(hide yes)
 			(show_name no)
@@ -13515,7 +13185,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "APV"
+		(property "Manufacturer" "Vishay Intertech"
 			(at 180.34 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -13636,7 +13306,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C50326194"
+		(property "LCSC Part" "C6968654"
 			(at 180.34 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -13647,29 +13317,7 @@
 				)
 			)
 		)
-		(property "MPN" "APBH2012-330WTD16"
-			(at 180.34 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" "C50326194"
-			(at 180.34 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "APBH2012-330WTD16"
+		(property "MPN" "ILBB0805ER320V"
 			(at 180.34 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -14032,7 +13680,7 @@
 				)
 			)
 		)
-		(property "LSCS Part" ""
+		(property "MPN" "0805W8F5101T5E"
 			(at 148.59 48.26 90)
 			(hide yes)
 			(show_name no)
@@ -14043,7 +13691,7 @@
 				)
 			)
 		)
-		(property "Part Number" ""
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 148.59 48.26 90)
 			(hide yes)
 			(show_name no)
@@ -14333,7 +13981,7 @@
 				)
 			)
 		)
-		(property "LSCS Part" ""
+		(property "MPN" "0805W8F5101T5E"
 			(at 148.59 33.02 90)
 			(hide yes)
 			(show_name no)
@@ -14344,7 +13992,7 @@
 				)
 			)
 		)
-		(property "Part Number" ""
+		(property "Manufacturer" "UNI-ROYAL"
 			(at 148.59 33.02 90)
 			(hide yes)
 			(show_name no)
@@ -14636,28 +14284,6 @@
 			)
 		)
 		(property "MPN" "GT-USB-7010ASV"
-			(at 151.13 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Part Number" "GT-USB-7010ASV"
-			(at 151.13 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LSCS Part" ""
 			(at 151.13 58.42 0)
 			(hide yes)
 			(show_name no)

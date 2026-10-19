@@ -8730,7 +8730,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" ""
 			(at 156.21 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8751,7 +8751,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "VISHAY"
 			(at 156.21 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8872,7 +8872,7 @@
 				)
 			)
 		)
-		(property "MPN" "ERA-6AEB104V"
+		(property "MPN" "TNPW0805100KBEEA"
 			(at 156.21 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -8883,7 +8883,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C192074"
+		(property "LCSC Part" "C3034987"
 			(at 156.21 149.86 0)
 			(hide yes)
 			(show_name no)

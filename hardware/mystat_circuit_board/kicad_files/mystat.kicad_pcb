@@ -13667,7 +13667,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C307.pdf"
+		(property "Datasheet" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -13858,7 +13858,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Panasonic Electronic Components"
+		(property "Manufacturer" "VISHAY"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13871,7 +13871,7 @@
 				)
 			)
 		)
-		(property "MPN" "ERA-6AEB104V"
+		(property "MPN" "TNPW0805100KBEEA"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13910,7 +13910,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C192074"
+		(property "LCSC Part" "C3034987"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")

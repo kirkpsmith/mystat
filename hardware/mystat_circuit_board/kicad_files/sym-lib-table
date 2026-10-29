@@ -2,4 +2,5 @@
 	(version 7)
 	(lib (name "mylib") (type "KiCad") (uri "${KIPRJMOD}/mylib.kicad_sym") (options "") (descr ""))
 	(lib (name "BUF634A HSOIC") (type "KiCad") (uri "/home/kirk/Downloads/ul_XBUF634AIDDAT/KiCADv6/2026-07-16_15-31-11.kicad_sym") (options "") (descr ""))
+	(lib (name "easyeda2kicad") (type "KiCad") (uri "${KIPRJMOD}/libs/my_lib/easyeda2kicad.kicad_sym") (options "") (descr ""))
 )

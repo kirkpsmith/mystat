@@ -1,0 +1,263 @@
+(footprint "Relay_SPST_StandexMeder_SIL_Form1A"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Standex-Meder SIL-relais, Form 1A, see https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_SIL.pdf")
+	(tags "Standex Meder SIL reed relais")
+	(property "Reference" "REF**"
+		(at 7.75 -3.65 0)
+		(layer "F.SilkS")
+		(uuid "2a1287e1-377f-46bd-9eb3-c5e2890b6df6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Relay_SPST_StandexMeder_SIL_Form1A"
+		(at 7.65 3.55 0)
+		(layer "F.Fab")
+		(uuid "dccfa5b6-0ac4-4de9-9ee6-25fb11c9190a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fc827516-beaa-48e2-aa70-fc3b10eb56eb")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "48724af8-3f27-4f42-b3fb-7d2b9fd74413")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.55 2.8)
+		(end -2.55 1.8)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2d1c481d-c61f-4359-8bc8-98d5f2233878")
+	)
+	(fp_line
+		(start -2.35 -2.6)
+		(end 17.55 -2.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e6d893b7-beec-4ca3-be44-6687cb493054")
+	)
+	(fp_line
+		(start -2.35 2.6)
+		(end -2.35 -2.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dd038310-5886-4a5c-be92-23e88808d4d9")
+	)
+	(fp_line
+		(start -1.45 2.8)
+		(end -2.55 2.8)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6c82d33e-353d-4256-8f01-fd663db4aa5d")
+	)
+	(fp_line
+		(start 17.55 -2.6)
+		(end 17.55 2.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3171a24e-dcad-443a-b499-086d26838abd")
+	)
+	(fp_line
+		(start 17.55 2.6)
+		(end -2.35 2.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "eab60718-1260-43b0-aa3f-d7732f8d5d13")
+	)
+	(fp_line
+		(start -2.55 -2.8)
+		(end -2.55 2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "16af6de6-bebc-48eb-b3af-c0e3a5f17511")
+	)
+	(fp_line
+		(start -2.55 -2.8)
+		(end 17.75 -2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "602c7b2a-ef78-4fd7-87a1-4b0c14c0a4c6")
+	)
+	(fp_line
+		(start 17.75 2.8)
+		(end -2.55 2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9e35e424-d784-401b-8f72-d08f981eb898")
+	)
+	(fp_line
+		(start 17.75 2.8)
+		(end 17.75 -2.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "dc7ba9e1-c08a-4899-8bfc-749537ac634f")
+	)
+	(fp_line
+		(start -2.3 -2.58326)
+		(end 17.5 -2.58326)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "85b76c6d-3022-4688-8de9-9ebdeb76cc95")
+	)
+	(fp_line
+		(start -2.3 1.66674)
+		(end -2.3 -2.58326)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4832d6e8-4629-487b-8289-b5d7edb48181")
+	)
+	(fp_line
+		(start -1.5 2.51674)
+		(end -2.3 1.66674)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "79798d00-e7fe-48db-8420-b79af35e4225")
+	)
+	(fp_line
+		(start 17.5 -2.58326)
+		(end 17.5 2.51674)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "99e37512-c0d9-4de1-8634-825681df8941")
+	)
+	(fp_line
+		(start 17.5 2.51674)
+		(end -1.5 2.51674)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4d4d1eec-79dc-4d1d-a96c-874fba17f2e3")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 7.75 0 0)
+		(layer "F.Fab")
+		(uuid "ccf38c8d-faf0-4f69-b069-b081fb72d5fe")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.4 1.4)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "656df7c7-2258-4971-a385-fa906f757029")
+	)
+	(pad "3" thru_hole circle
+		(at 5.08 0)
+		(size 1.4 1.4)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "884636bb-f387-4a4f-b255-ddc79480cfd5")
+	)
+	(pad "5" thru_hole circle
+		(at 10.16 0)
+		(size 1.4 1.4)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9223bbc6-eb0a-4ffb-b7ea-2fd870be04ce")
+	)
+	(pad "7" thru_hole circle
+		(at 15.24 0)
+		(size 1.4 1.4)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "348f8cf9-c7e2-447c-b27c-fb73194c32c8")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Relay_THT.3dshapes/Relay_SPST_StandexMeder_SIL_Form1A.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
